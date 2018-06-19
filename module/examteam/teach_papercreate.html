@@ -1,0 +1,1029 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<title>添加试卷-固定试卷</title>
+		<meta name="keywords" content="">
+		<meta name="description" content="">
+		<link rel="shortcut icon" href="favicon.ico">
+		<link href="../../css/bootstrap.min14ed.css?v=3.3.6" rel="stylesheet">
+		<link href="../../css/font-awesome.min93e3.css?v=4.4.0" rel="stylesheet">
+		<link href="../../css/plugins/bootstrap-table/bootstrap-table.min.css" rel="stylesheet">
+		<link href="../../css/plugins/awesome-bootstrap-checkbox/awesome-bootstrap-checkbox.css" rel="stylesheet">
+		<link href="../../css/animate.min.css" rel="stylesheet">
+		<link href="../../css/style.min862f.css?v=4.1.0" rel="stylesheet">
+		<!--下拉搜索框-->
+		<link href="../../css/plugins/chosen/chosen.css" rel="stylesheet">
+		<!--zTree-->
+		<link href="../../css/plugins/zTreeStyle/zTreeStyle.css" rel="stylesheet">
+		<link href="../../css/pages.css" rel="stylesheet">
+	</head>
+
+	<body class="gray-bg">
+		<div class="wrapper wrapper-content animated fadeInRight">
+			<!-- Panel Other -->
+			<div class="ibox float-e-margins">
+				<div class="ibox-title exam-ibox">
+					<h5>添加试卷-固定试卷</h5>
+					<div class="ibox-tools">
+						<a class="collapse-link">
+							<i class="fa fa-chevron-up"></i>
+						</a>
+						<a class="dropdown-toggle" data-toggle="dropdown" href="#">
+							<i class="fa fa-wrench"></i>
+						</a>
+						<a class="close-link">
+							<i class="fa fa-times"></i>
+						</a>
+					</div>
+				</div>
+				<div class="ibox-content">
+					<div class="row" style="display: block;position: relative;">
+						<div class="col-xs-3">
+							<div id="paper-form-nav" class="pad paper-form-nav unselectable affix-top">
+								<ul class="part nav">
+									<li class=""><a class="btn" href="#a1">试卷信息</a></li>
+									<li class=""><a class="btn btn-part" href="#paper-part-0">单选部分</a></li>
+									<li class="">
+										<a class="btn btn-part" href="#paper-part-1">多选部分</a>
+									</li>
+									<li class="">
+										<a class="btn btn-part" href="#paper-part-2">判断部分</a>
+									</li>
+									<li class="">
+										<a class="btn btn-part" href="#paper-part-3">简答部分</a>
+									</li>
+									<li class="">
+										<a class="btn btn-part" href="#paper-part-4">综合题部分</a>
+									</li>
+									
+								</ul>
+								<div class="part summary">
+									<ul class="summary-ul">
+										<li class="summary-li clearfix">
+											<span class="summary-text">总题数：</span>
+											<span class="summary-right"><em class="num text-golden-yellow">0</em>道</span>
+										</li>
+										<li class="summary-li clearfix">
+											<span class="summary-text">总分值：</span>
+											<span class="summary-right"><em class="num text-golden-yellow">0</em>分</span>
+										</li>
+										<li class="summary-li clearfix">
+											<span class="summary-text">总时长：</span>
+											<span class="summary-right">
+												<input type="" name="" id="" value="1" />
+												分钟</span>
+										</li>
+									</ul>
+									<table class="w">
+										<tbody>
+											<tr>
+												<td><a class="btn btn-warning btn-block btn-save-paper">保存试卷</a></td>
+											</tr>
+										</tbody>
+									</table>
+								</div>
+							</div>
+						</div>
+						<div class="col-xs-9">
+							<div class="paper-form-container">
+								<div class="section-basic" id="a1">
+									<div>
+										<a class="anchor-mark" id="anchor-paper-name"></a>
+										<input type="text" class="form-control form-input input-lg paper-name mb10" placeholder="试卷名称（必填）">
+									</div>
+									<div>
+										<a class="anchor-mark" id="anchor-paper-desc"></a>
+										<textarea class="form-control form-input paper-desc mb10" placeholder="试卷描述（选填）"></textarea>
+									</div>
+								</div>
+								<div class="section-part" id="paper-part-0">
+									<div class="part-header">
+										<form class="form-inline part-name-wrap">
+											<div class="form-group">
+												<label>单选部分：</label>
+												<input type="text" class="form-control form-input part-name" placeholder="部分名称">
+											</div>
+											<a class="btn btn-default btn-remove-part pull-right del">删除该部分</a>
+											<div class="btn-group pull-right mr5">
+												<a class="btn btn-default btn-up-part" disabled="disabled"><i class="fa fa-arrow-up"></i> 上移</a>
+												<a class="btn btn-default btn-down-part"><i class="fa fa-arrow-down"></i> 下移</a>
+											</div>
+										</form>
+										<form class="form mt10 w">
+											<div>
+												<textarea class="form-control form-input paper-desc mb10" placeholder="部分答题说明，该信息考生可见（选填）"></textarea>
+											</div>
+										</form>
+										<div class="clear"></div>
+										<div class="row row-lg">
+											<div class="col-sm-12">
+												<!-- Example Toolbar -->
+												<div class="bars pull-left">
+													<div class="search-bar mt-10">
+														<button href="javascript:viod();" class="btn btn-primary addtest">选择试题</button>
+													</div>
+												</div>
+												<table id="exampleTableToolbar" class="table table-striped table-bordered table-hover" data-mobile-responsive="true">
+													<thead>
+														<tr>
+															<th data-field="types">题型</th>
+															<th data-field="num">题目数</th>
+															<th data-field="score">每题分值</th>
+															<th data-field="value">所占分值</th>
+														</tr>
+													</thead>
+													<tbody>
+														<tr>
+															<td>单选题</td>
+															<td>3</td>
+															<td>3</td>
+															<td>20%</td>
+														</tr>
+													</tbody>
+												</table>
+												<!-- End Example Toolbar -->
+											</div>
+										</div>
+									</div>
+								</div>
+								<div class="section-part" id="paper-part-1">
+									<div class="part-header">
+										<form class="form-inline part-name-wrap">
+											<div class="form-group">
+												<label>多选部分：</label>
+												<input type="text" class="form-control form-input part-name" placeholder="多选题">
+											</div>
+											<a class="btn btn-default btn-remove-part pull-right del">删除该部分</a>
+											<div class="btn-group pull-right mr5">
+												<a class="btn btn-default btn-up-part" disabled="disabled"><i class="fa fa-arrow-up"></i> 上移</a>
+												<a class="btn btn-default btn-down-part"><i class="fa fa-arrow-down"></i> 下移</a>
+											</div>
+										</form>
+										<form class="form mt10 w">
+											<div>
+												<textarea class="form-control form-input paper-desc mb10" placeholder="部分答题说明，该信息考生可见（选填）"></textarea>
+											</div>
+										</form>
+										<div class="clear"></div>
+										<div class="row row-lg">
+											<div class="col-sm-12">
+												<!-- Example Toolbar -->
+												<div class="bars pull-left">
+													<div class="search-bar mt-10">
+														<button href="javascript:viod();" class="btn btn-primary addtest">选择试题</button>
+													</div>
+												</div>
+												<table id="exampleTableToolbar" class="table table-striped table-bordered table-hover" data-mobile-responsive="true">
+													<thead>
+														<tr>
+															<th data-field="types">题型</th>
+															<th data-field="num">题目数</th>
+															<th data-field="score">每题分值</th>
+															<th data-field="value">所占分值</th>
+														</tr>
+													</thead>
+													<tbody>
+														<tr>
+															<td>多选题</td>
+															<td>3</td>
+															<td>3</td>
+															<td>20%</td>
+														</tr>
+													</tbody>
+												</table>
+												<!-- End Example Toolbar -->
+											</div>
+										</div>
+									</div>
+								</div>
+								<div class="section-part" id="paper-part-2">
+									<div class="part-header">
+										<form class="form-inline part-name-wrap">
+											<div class="form-group">
+												<label>判断部分：</label>
+												<input type="text" class="form-control form-input part-name" placeholder="判断题">
+											</div>
+											<a class="btn btn-default btn-remove-part pull-right del">删除该部分</a>
+											<div class="btn-group pull-right mr5">
+												<a class="btn btn-default btn-up-part" disabled="disabled"><i class="fa fa-arrow-up"></i> 上移</a>
+												<a class="btn btn-default btn-down-part"><i class="fa fa-arrow-down"></i> 下移</a>
+											</div>
+										</form>
+										<form class="form mt10 w">
+											<div>
+												<textarea class="form-control form-input paper-desc mb10" placeholder="部分答题说明，该信息考生可见（选填）"></textarea>
+											</div>
+										</form>
+										<div class="clear"></div>
+										<div class="row row-lg">
+											<div class="col-sm-12">
+												<!-- Example Toolbar -->
+												<div class="bars pull-left">
+													<div class="search-bar mt-10">
+														<button href="javascript:viod();" class="btn btn-primary addtest">选择试题</button>
+													</div>
+												</div>
+												<table id="exampleTableToolbar" class="table table-striped table-bordered table-hover" data-mobile-responsive="true">
+													<thead>
+														<tr>
+															<th data-field="types">题型</th>
+															<th data-field="num">题目数</th>
+															<th data-field="score">每题分值</th>
+															<th data-field="value">所占分值</th>
+														</tr>
+													</thead>
+													<tbody>
+														<tr>
+															<td>判断题</td>
+															<td>3</td>
+															<td>3</td>
+															<td>20%</td>
+														</tr>
+													</tbody>
+												</table>
+												<!-- End Example Toolbar -->
+											</div>
+										</div>
+									</div>
+								</div>
+								<div class="section-part" id="paper-part-3">
+									<div class="part-header">
+										<form class="form-inline part-name-wrap">
+											<div class="form-group">
+												<label>简答部分：</label>
+												<input type="text" class="form-control form-input part-name" placeholder="简答题">
+											</div>
+											<a class="btn btn-default btn-remove-part pull-right del">删除该部分</a>
+											<div class="btn-group pull-right mr5">
+												<a class="btn btn-default btn-up-part" disabled="disabled"><i class="fa fa-arrow-up"></i> 上移</a>
+												<a class="btn btn-default btn-down-part"><i class="fa fa-arrow-down"></i> 下移</a>
+											</div>
+										</form>
+										<form class="form mt10 w">
+											<div>
+												<textarea class="form-control form-input paper-desc mb10" placeholder="部分答题说明，该信息考生可见（选填）"></textarea>
+											</div>
+										</form>
+										<div class="clear"></div>
+										<div class="row row-lg">
+											<div class="col-sm-12">
+												<!-- Example Toolbar -->
+												<div class="bars pull-left">
+													<div class="search-bar mt-10">
+														<button href="javascript:viod();" class="btn btn-primary addtest">选择试题</button>
+													</div>
+												</div>
+												<table id="exampleTableToolbar" class="table table-striped table-bordered table-hover" data-mobile-responsive="true">
+													<thead>
+														<tr>
+															<th data-field="types">题型</th>
+															<th data-field="num">题目数</th>
+															<th data-field="score">每题分值</th>
+															<th data-field="value">所占分值</th>
+														</tr>
+													</thead>
+													<tbody>
+														<tr>
+															<td>简答题</td>
+															<td>3</td>
+															<td>3</td>
+															<td>20%</td>
+														</tr>
+													</tbody>
+												</table>
+												<!-- End Example Toolbar -->
+											</div>
+										</div>
+									</div>
+								</div>
+								<div class="section-part" id="paper-part-4">
+									<div class="part-header">
+										<form class="form-inline part-name-wrap">
+											<div class="form-group">
+												<label>综合部分：</label>
+												<input type="text" class="form-control form-input part-name" placeholder="组合题">
+											</div>
+											<a class="btn btn-default btn-remove-part pull-right del">删除该部分</a>
+											<div class="btn-group pull-right mr5">
+												<a class="btn btn-default btn-up-part" disabled="disabled"><i class="fa fa-arrow-up"></i> 上移</a>
+												<a class="btn btn-default btn-down-part"><i class="fa fa-arrow-down"></i> 下移</a>
+											</div>
+										</form>
+										<form class="form mt10 w">
+											<div>
+												<textarea class="form-control form-input paper-desc mb10" placeholder="部分答题说明，该信息考生可见（选填）"></textarea>
+											</div>
+										</form>
+										<div class="clear"></div>
+										<div class="row row-lg">
+											<div class="col-sm-12">
+												<!-- Example Toolbar -->
+												<div class="bars pull-left">
+													<div class="search-bar mt-10">
+														<button href="javascript:viod();" class="btn btn-primary addtest">选择试题</button>
+													</div>
+												</div>
+												<table id="exampleTableToolbar" class="table table-striped table-bordered table-hover" data-mobile-responsive="true">
+													<thead>
+														<tr>
+															<th data-field="types">题型</th>
+															<th data-field="num">题目数</th>
+															<th data-field="score">每题分值</th>
+															<th data-field="value">所占分值</th>
+														</tr>
+													</thead>
+													<tbody>
+														<tr>
+															<td>组合题</td>
+															<td>3</td>
+															<td>3</td>
+															<td>20%</td>
+														</tr>
+													</tbody>
+												</table>
+												<!-- End Example Toolbar -->
+											</div>
+										</div>
+									</div>
+								</div>
+							
+							
+							
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<!-- End Panel Other -->
+		</div>
+		<!--addcontent st-->
+		<!--delpart st-->
+		<!--delcon st-->
+		<div class="delcon" style="display: none;">
+			<div class="pop-content">
+				<div class="del-content">您确定要删除该部分吗？</div>
+			</div>
+			<div class="modal-footer text-center">
+				<button type="button" class="btn btn-primary" data-dismiss="modal">确定</button>
+				<button type="button" class="btn btn-default close-layer" data-dismiss="modal">取消</button>
+			</div>
+		</div>
+		<!--selectsubject st-->
+		<div class="table-addcon" style="display: none;">
+			<div class="pop-content tiku-content">
+				<div class="row">
+					<div class="col-sm-4 col-md-3">
+						<div class="tree-content">
+							<div class="tree-title">章节信息</div>
+							<div class="zTreeDemoBackground">
+								<ul id="treeDemo" class="ztree">ddd</ul>
+							</div>
+						</div>
+					</div>
+					<div class="col-sm-8 col-md-9 animated fadeInRight">
+						<div class="search-topform">
+							<form class="form-inline" id="searchForm">
+								<input type="hidden" class="form-control" id="" value="" name="wuStatus" placeholder="">
+								<input type="hidden" class="form-control" id="pageNo" value="1" name="pageNo" placeholder="">
+								<input type="hidden" class="form-control" id="pageSize" value="10" name="pageSize" placeholder="">
+								<div class="form-group">
+									<label for="">试题列表：</label>
+									<input type="text" class="form-control" id="" name="hgName" value="" placeholder="输入试题标题">
+								</div>
+								<div class="form-group">
+									<label for="">试题难易：</label>
+									<select class="form-control" style="width:100px;" name="wuType">
+							                <option value="简单">简单</option>
+							                <option value="中等">中等</option>
+							                <option value="困难">困难</option>
+						              	</select>
+								</div>
+								<button class="btn btn-primary" type="submit">搜索</button>
+							</form>
+						</div>
+
+						<div class="row row-lg">
+							<div class="col-sm-12">
+								<!-- Example Toolbar -->
+								<div class="bars pull-left bars-add">
+									<div id="toolbar">
+										<a class="btn btn-primary ml15">选择</a>
+									</div>
+								</div>
+								<div class="tiku-shiti">
+									<div class="q-list">
+										<li class="q-item sets-question-item">
+											<div class="check-wrap">
+												<div class="checkbox checkbox-info">
+													<input id="singleCheckbox2" value="option2" checked="" aria-label="Single checkbox Two" type="checkbox">
+													<label></label>
+												</div>
+											</div>
+											<div class="q-data">
+												<span class="q-sequence">1</span>
+												<span class="text-medium-gray">[ 单选题 ]</span>
+												<span class="ml5 label-skill text-ellipsis">中等</span>
+												<span class="ml5 label-difficulty text-ellipsis">90%</span>
+												<span class="ml5 label-difficulty text-ellipsis">微积分</span>
+												<span class="ml5 text-muted-more f12">更新于 2018-03-20 16:37</span>
+												<label class="hide-input unselectable q-expand-toggle independent" style="margin-left: 0">
+										     	<a href="###" _fcksavedurl="###" onclick="openShutManager(this,'box',false,'收起','展开')">展开</a>    
+										    </label>
+												<div class="q-title" style="margin-top: 10px;">
+													<p>最好的在线考试产品是哪个？</p>
+												</div>
+												<ul class="list-title-media mt10"></ul>
+												<div id="box" style="display: none;">
+													<ul class="q-options-wrap mt20">
+														<li class="q-option">
+															<div class="checkbox checkbox-primary block-inline">
+																<input id="singleCheckbox2" value="" checked="" disabled="" type="checkbox">
+																<label></label>
+															</div>
+															<span class="option-index">A</span>
+															<div class="q-option-content pl5">华源创想在线考试系统</div>
+														</li>
+														<li class="q-option">
+															<div class="checkbox checkbox-primary block-inline">
+																<input id="singleCheckbox2" value="" disabled="" type="checkbox">
+																<label></label>
+															</div>
+															<span class="option-index">B</span>
+															<div class="q-option-content pl5">腾讯考试系统</div>
+														</li>
+														<li class="q-option">
+															<div class="checkbox checkbox-primary block-inline">
+																<input id="singleCheckbox2" value="" disabled="" type="checkbox">
+																<label></label>
+															</div>
+															<span class="option-index">C</span>
+															<div class="q-option-content pl5">百度考试系统</div>
+														</li>
+														<li class="q-option">
+															<div class="checkbox checkbox-primary block-inline">
+																<input id="singleCheckbox2" value="" disabled="" type="checkbox">
+																<label></label>
+															</div>
+															<span class="option-index">D</span>
+															<div class="q-option-content pl5">网易考试系统</div>
+														</li>
+													</ul>
+													<div class="q-answer mt20">
+													</div>
+													<div class="q-answer mt20" style="display: block;">
+														<p class="q-ans-label">题目解析：</p>
+														华源创想在线考试系统
+													</div>
+													<p class="mt5" style="color:#AAB2BD">
+														该题目来自题库：混合题型样题库  创建人：华源创想
+													</p>
+												</div>
+											</div>
+										</li>
+									</div>
+									<div class="q-list">
+										<li class="q-item sets-question-item">
+											<div class="check-wrap">
+												<div class="checkbox checkbox-info">
+													<input id="singleCheckbox2" value="option2" aria-label="" type="checkbox">
+													<label></label>
+												</div>
+											</div>
+											<div class="q-data">
+												<span class="q-sequence">2</span>
+												<span class="text-medium-gray">[ 单选题 ]</span>
+												<span class="ml5 label-skill text-ellipsis">中等</span>
+												<span class="ml5 label-difficulty text-ellipsis">90%</span>
+												<span class="ml5 label-difficulty text-ellipsis">微积分</span>
+												<span class="ml5 text-muted-more f12">更新于 2018-03-20 16:37</span>
+												<label class="hide-input unselectable q-expand-toggle independent" style="margin-left: 0">
+										     	<a href="###" _fcksavedurl="###" onclick="openShutManager(this,'box2',false,'收起','展开')">展开</a>    
+										    </label>
+												<div class="q-title" style="margin-top: 10px;">
+													<p>最好的在线考试产品是哪个？</p>
+												</div>
+												<ul class="list-title-media mt10"></ul>
+												<div id="box2" style="display: none;">
+													<ul class="q-options-wrap mt20">
+														<li class="q-option">
+															<div class="checkbox checkbox-primary block-inline">
+																<input id="singleCheckbox2" value="" checked="" disabled="" type="checkbox">
+																<label></label>
+															</div>
+															<span class="option-index">A</span>
+															<div class="q-option-content pl5">华源创想在线考试系统</div>
+														</li>
+														<li class="q-option">
+															<div class="checkbox checkbox-primary block-inline">
+																<input id="singleCheckbox2" value="" disabled="" type="checkbox">
+																<label></label>
+															</div>
+															<span class="option-index">B</span>
+															<div class="q-option-content pl5">腾讯考试系统</div>
+														</li>
+														<li class="q-option">
+															<div class="checkbox checkbox-primary block-inline">
+																<input id="singleCheckbox2" value="" disabled="" type="checkbox">
+																<label></label>
+															</div>
+															<span class="option-index">C</span>
+															<div class="q-option-content pl5">百度考试系统</div>
+														</li>
+														<li class="q-option">
+															<div class="checkbox checkbox-primary block-inline">
+																<input id="singleCheckbox2" value="" disabled="" type="checkbox">
+																<label></label>
+															</div>
+															<span class="option-index">D</span>
+															<div class="q-option-content pl5">网易考试系统</div>
+														</li>
+													</ul>
+													<div class="q-answer mt20">
+													</div>
+													<div class="q-answer mt20" style="display: block;">
+														<p class="q-ans-label">题目解析：</p>
+														华源创想在线考试系统
+													</div>
+													<p class="mt5" style="color:#AAB2BD">
+														该题目来自题库：混合题型样题库  创建人：华源创想
+													</p>
+												</div>
+											</div>
+										</li>
+									</div>
+									<div class="q-list">
+										<li class="q-item sets-question-item">
+											<div class="check-wrap">
+												<div class="checkbox checkbox-info">
+													<input id="singleCheckbox2" value="option2" aria-label="" type="checkbox">
+													<label></label>
+												</div>
+											</div>
+											<div class="q-data">
+												<span class="q-sequence">3</span>
+												<span class="text-medium-gray">[ 单选题 ]</span>
+												<span class="ml5 label-skill text-ellipsis">中等</span>
+												<span class="ml5 label-difficulty text-ellipsis">90%</span>
+												<span class="ml5 label-difficulty text-ellipsis">微积分</span>
+												<span class="ml5 text-muted-more f12">更新于 2018-03-20 16:37</span>
+												<label class="hide-input unselectable q-expand-toggle independent" style="margin-left: 0">
+										     	<a href="###" _fcksavedurl="###" onclick="openShutManager(this,'box3',false,'收起','展开')">展开</a>    
+										    </label>
+												<div class="q-title" style="margin-top: 10px;">
+													<p>最好的在线考试产品是哪个？</p>
+												</div>
+												<ul class="list-title-media mt10"></ul>
+												<div id="box3" style="display: none;">
+													<ul class="q-options-wrap mt20">
+														<li class="q-option">
+															<div class="checkbox checkbox-primary block-inline">
+																<input id="singleCheckbox2" value="" checked="" disabled="" type="checkbox">
+																<label></label>
+															</div>
+															<span class="option-index">A</span>
+															<div class="q-option-content pl5">华源创想在线考试系统</div>
+														</li>
+														<li class="q-option">
+															<div class="checkbox checkbox-primary block-inline">
+																<input id="singleCheckbox2" value="" disabled="" type="checkbox">
+																<label></label>
+															</div>
+															<span class="option-index">B</span>
+															<div class="q-option-content pl5">腾讯考试系统</div>
+														</li>
+														<li class="q-option">
+															<div class="checkbox checkbox-primary block-inline">
+																<input id="singleCheckbox2" value="" disabled="" type="checkbox">
+																<label></label>
+															</div>
+															<span class="option-index">C</span>
+															<div class="q-option-content pl5">百度考试系统</div>
+														</li>
+														<li class="q-option">
+															<div class="checkbox checkbox-primary block-inline">
+																<input id="singleCheckbox2" value="" disabled="" type="checkbox">
+																<label></label>
+															</div>
+															<span class="option-index">D</span>
+															<div class="q-option-content pl5">网易考试系统</div>
+														</li>
+													</ul>
+													<div class="q-answer mt20">
+													</div>
+													<div class="q-answer mt20" style="display: block;">
+														<p class="q-ans-label">题目解析：</p>
+														华源创想在线考试系统
+													</div>
+													<p class="mt5" style="color:#AAB2BD">
+														该题目来自题库：混合题型样题库  创建人：华源创想
+													</p>
+												</div>
+											</div>
+										</li>
+									</div>
+								</div>
+								<div class="box-title mb0">已选试题（3道）</div>
+								<div class="tiku-shiti">
+									<div class="q-list">
+										<li class="q-item sets-question-item">
+											<div class="check-wrap">
+												<div class="checkbox checkbox-info">
+													<input id="singleCheckbox2" value="option2" checked="" aria-label="Single checkbox Two" type="checkbox">
+													<label></label>
+												</div>
+											</div>
+											<div class="q-data">
+												<span class="q-sequence">1</span>
+												<span class="text-medium-gray">[ 单选题 ]</span>
+												<span class="ml5 label-skill text-ellipsis">中等</span>
+												<span class="ml5 label-difficulty text-ellipsis">90%</span>
+												<span class="ml5 label-difficulty text-ellipsis">微积分</span>
+												<span class="ml5 text-muted-more f12">更新于 2018-03-20 16:37</span>
+												<label class="hide-input unselectable q-expand-toggle independent" style="margin-left: 0">
+										     	<a href="###" _fcksavedurl="###" onclick="openShutManager(this,'box4',false,'收起','展开')">展开</a>    
+										    </label>
+												<div class="q-title" style="margin-top: 10px;">
+													<p>最好的在线考试产品是哪个？</p>
+												</div>
+												<ul class="list-title-media mt10"></ul>
+												<div id="box4" style="display: none;">
+													<ul class="q-options-wrap mt20">
+														<li class="q-option">
+															<div class="checkbox checkbox-primary block-inline">
+																<input id="singleCheckbox2" value="" checked="" disabled="" type="checkbox">
+																<label></label>
+															</div>
+															<span class="option-index">A</span>
+															<div class="q-option-content pl5">华源创想在线考试系统</div>
+														</li>
+														<li class="q-option">
+															<div class="checkbox checkbox-primary block-inline">
+																<input id="singleCheckbox2" value="" disabled="" type="checkbox">
+																<label></label>
+															</div>
+															<span class="option-index">B</span>
+															<div class="q-option-content pl5">腾讯考试系统</div>
+														</li>
+														<li class="q-option">
+															<div class="checkbox checkbox-primary block-inline">
+																<input id="singleCheckbox2" value="" disabled="" type="checkbox">
+																<label></label>
+															</div>
+															<span class="option-index">C</span>
+															<div class="q-option-content pl5">百度考试系统</div>
+														</li>
+														<li class="q-option">
+															<div class="checkbox checkbox-primary block-inline">
+																<input id="singleCheckbox2" value="" disabled="" type="checkbox">
+																<label></label>
+															</div>
+															<span class="option-index">D</span>
+															<div class="q-option-content pl5">网易考试系统</div>
+														</li>
+													</ul>
+													<div class="q-answer mt20">
+													</div>
+													<div class="q-answer mt20" style="display: block;">
+														<p class="q-ans-label">题目解析：</p>
+														华源创想在线考试系统
+													</div>
+													<p class="mt5" style="color:#AAB2BD">
+														该题目来自题库：混合题型样题库  创建人：华源创想
+													</p>
+												</div>
+											</div>
+										</li>
+									</div>
+									<div class="q-list">
+										<li class="q-item sets-question-item">
+											<div class="check-wrap">
+												<div class="checkbox checkbox-info">
+													<input id="singleCheckbox2" value="option2" aria-label="" type="checkbox">
+													<label></label>
+												</div>
+											</div>
+											<div class="q-data">
+												<span class="q-sequence">2</span>
+												<span class="text-medium-gray">[ 单选题 ]</span>
+												<span class="ml5 label-skill text-ellipsis">中等</span>
+												<span class="ml5 label-difficulty text-ellipsis">90%</span>
+												<span class="ml5 label-difficulty text-ellipsis">微积分</span>
+												<span class="ml5 text-muted-more f12">更新于 2018-03-20 16:37</span>
+												<label class="hide-input unselectable q-expand-toggle independent" style="margin-left: 0">
+										     	<a href="###" _fcksavedurl="###" onclick="openShutManager(this,'box5',false,'收起','展开')">展开</a>    
+										    </label>
+												<div class="q-title" style="margin-top: 10px;">
+													<p>最好的在线考试产品是哪个？</p>
+												</div>
+												<ul class="list-title-media mt10"></ul>
+												<div id="box5" style="display: none;">
+													<ul class="q-options-wrap mt20">
+														<li class="q-option">
+															<div class="checkbox checkbox-primary block-inline">
+																<input id="singleCheckbox2" value="" checked="" disabled="" type="checkbox">
+																<label></label>
+															</div>
+															<span class="option-index">A</span>
+															<div class="q-option-content pl5">华源创想在线考试系统</div>
+														</li>
+														<li class="q-option">
+															<div class="checkbox checkbox-primary block-inline">
+																<input id="singleCheckbox2" value="" disabled="" type="checkbox">
+																<label></label>
+															</div>
+															<span class="option-index">B</span>
+															<div class="q-option-content pl5">腾讯考试系统</div>
+														</li>
+														<li class="q-option">
+															<div class="checkbox checkbox-primary block-inline">
+																<input id="singleCheckbox2" value="" disabled="" type="checkbox">
+																<label></label>
+															</div>
+															<span class="option-index">C</span>
+															<div class="q-option-content pl5">百度考试系统</div>
+														</li>
+														<li class="q-option">
+															<div class="checkbox checkbox-primary block-inline">
+																<input id="singleCheckbox2" value="" disabled="" type="checkbox">
+																<label></label>
+															</div>
+															<span class="option-index">D</span>
+															<div class="q-option-content pl5">网易考试系统</div>
+														</li>
+													</ul>
+													<div class="q-answer mt20">
+													</div>
+													<div class="q-answer mt20" style="display: block;">
+														<p class="q-ans-label">题目解析：</p>
+														华源创想在线考试系统
+													</div>
+													<p class="mt5" style="color:#AAB2BD">
+														该题目来自题库：混合题型样题库  创建人：华源创想
+													</p>
+												</div>
+											</div>
+										</li>
+									</div>
+									<div class="q-list">
+										<li class="q-item sets-question-item">
+											<div class="check-wrap">
+												<div class="checkbox checkbox-info">
+													<input id="singleCheckbox2" value="option2" aria-label="" type="checkbox">
+													<label></label>
+												</div>
+											</div>
+											<div class="q-data">
+												<span class="q-sequence">3</span>
+												<span class="text-medium-gray">[ 单选题 ]</span>
+												<span class="ml5 label-skill text-ellipsis">中等</span>
+												<span class="ml5 label-difficulty text-ellipsis">90%</span>
+												<span class="ml5 label-difficulty text-ellipsis">微积分</span>
+												<span class="ml5 text-muted-more f12">更新于 2018-03-20 16:37</span>
+												<label class="hide-input unselectable q-expand-toggle independent" style="margin-left: 0">
+										     	<a href="###" _fcksavedurl="###" onclick="openShutManager(this,'box6',false,'收起','展开')">展开</a>    
+										    </label>
+												<div class="q-title" style="margin-top: 10px;">
+													<p>最好的在线考试产品是哪个？</p>
+												</div>
+												<ul class="list-title-media mt10"></ul>
+												<div id="box6" style="display: none;">
+													<ul class="q-options-wrap mt20">
+														<li class="q-option">
+															<div class="checkbox checkbox-primary block-inline">
+																<input id="singleCheckbox2" value="" checked="" disabled="" type="checkbox">
+																<label></label>
+															</div>
+															<span class="option-index">A</span>
+															<div class="q-option-content pl5">华源创想在线考试系统</div>
+														</li>
+														<li class="q-option">
+															<div class="checkbox checkbox-primary block-inline">
+																<input id="singleCheckbox2" value="" disabled="" type="checkbox">
+																<label></label>
+															</div>
+															<span class="option-index">B</span>
+															<div class="q-option-content pl5">腾讯考试系统</div>
+														</li>
+														<li class="q-option">
+															<div class="checkbox checkbox-primary block-inline">
+																<input id="singleCheckbox2" value="" disabled="" type="checkbox">
+																<label></label>
+															</div>
+															<span class="option-index">C</span>
+															<div class="q-option-content pl5">百度考试系统</div>
+														</li>
+														<li class="q-option">
+															<div class="checkbox checkbox-primary block-inline">
+																<input id="singleCheckbox2" value="" disabled="" type="checkbox">
+																<label></label>
+															</div>
+															<span class="option-index">D</span>
+															<div class="q-option-content pl5">网易考试系统</div>
+														</li>
+													</ul>
+													<div class="q-answer mt20">
+													</div>
+													<div class="q-answer mt20" style="display: block;">
+														<p class="q-ans-label">题目解析：</p>
+														华源创想在线考试系统
+													</div>
+													<p class="mt5" style="color:#AAB2BD">
+														该题目来自题库：混合题型样题库  创建人：华源创想
+													</p>
+												</div>
+											</div>
+										</li>
+									</div>
+									<!-- End Example Toolbar -->
+							<div class="fixed-table-pagination">
+								<div class="pull-left pagination-detail">
+									<span class="pagination-info">显示第 71 到第 72 条记录，总共 72 条记录</span>
+									<span class="page-list">每页显示 <span class="btn-group dropup">
+										<button type="button" class="btn btn-default  dropdown-toggle" data-toggle="dropdown" aria-expanded="false"><span class="page-size">10</span> <span class="caret"></span></button>
+									<ul class="dropdown-menu" role="menu">
+										<li class="active">
+											<a href="javascript:void(0)">10</a>
+										</li>
+										<li>
+											<a href="javascript:void(0)">25</a>
+										</li>
+										<li>
+											<a href="javascript:void(0)">50</a>
+										</li>
+										<li>
+											<a href="javascript:void(0)">100</a>
+										</li>
+									</ul>
+									</span> 条记录</span>
+								</div>
+								<div class="pull-right pagination">
+									<ul class="pagination">
+										<li class="page-first">
+											<a href="javascript:void(0)">«</a>
+										</li>
+										<li class="page-pre">
+											<a href="javascript:void(0)">‹</a>
+										</li>
+										<li class="page-number">
+											<a href="javascript:void(0)">4</a>
+										</li>
+										<li class="page-number">
+											<a href="javascript:void(0)">5</a>
+										</li>
+										<li class="page-number">
+											<a href="javascript:void(0)">6</a>
+										</li>
+										<li class="page-number">
+											<a href="javascript:void(0)">7</a>
+										</li>
+										<li class="page-number active">
+											<a href="javascript:void(0)">8</a>
+										</li>
+										<li class="page-next disabled">
+											<a href="javascript:void(0)">›</a>
+										</li>
+										<li class="page-last disabled">
+											<a href="javascript:void(0)">»</a>
+										</li>
+									</ul>
+								</div>
+							</div>
+						
+								</div>
+								
+								
+								
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="height60"></div>
+			</div>
+			<div class="modal-footer text-center">
+				<button type="button" class="btn btn-primary" data-dismiss="modal">确认选择</button>
+				<button type="button" class="btn btn-default close-layer" data-dismiss="modal">取消</button>
+			</div>
+		</div>
+		<!--addcontent end-->
+		<!--js st-->
+		<script src="../../js/jquery.min.js?v=2.1.4"></script>
+		<script src="../../js/bootstrap.min.js?v=3.3.6"></script>
+		<script src="../../js/content.min.js?v=1.0.0"></script>
+		<script src="../../js/plugins/bootstrap-table/bootstrap-table.min.js"></script>
+		<script src="../../js/plugins/bootstrap-table/bootstrap-table-mobile.min.js"></script>
+		<script src="../../js/plugins/bootstrap-table/locale/bootstrap-table-zh-CN.min.js"></script>
+		<script src="../../js/demo/bootstrap-table-demo.min.js"></script>
+		<!--select-->
+		<script src="../../js/plugins/layer/layer.js"></script>
+		<!--下拉搜索框-->
+		<script src="../../js/plugins/chosen/chosen.jquery.js"></script>
+		<!--<script src="js/demo/form-advanced-demo.min.js"></script>-->
+		<!--ztree-->
+		<script src="../../js/plugins/zTree/jquery.ztree.core.js"></script>
+		<SCRIPT type="text/javascript">
+			var setting = {};
+			var zNodes = [{
+				name: "黄河水利学院",
+				open: true,
+				children: [{
+					name: "水利工程学院",
+					children: [{
+						name: "水利工程与管理类"
+					}]
+				}, {
+					name: "土木与交通工程学院",
+					children: [{
+						name: "土木工程检测技术"
+					}]
+				}, {
+					name: "外语系",
+					children: [{
+						name: "水电站运行与管理"
+					}]
+				}, {
+					name: "水利工程学院2",
+					children: [{
+						name: "工程造价"
+					}]
+				}, {
+					name: "机械工程学院",
+					children: [{
+						name: "模具设计与制造"
+					}]
+				}, {
+					name: "国际教育学院",
+					children: [{
+						name: "旅游英语"
+					}]
+				}, {
+					name: "财经系",
+					children: [{
+						name: "会计(注册会计师方向)"
+					}]
+				}]
+			}];
+			$(document).ready(function() {
+				$.fn.zTree.init($("#treeDemo"), setting, zNodes);
+			});
+			//-->
+		</SCRIPT>
+		<!--ztree end-->
+		<!--layer 弹框js-->
+		<script type="text/javascript">
+			$('.close-layer').click(function() {
+				layer.closeAll();
+			});
+			$('.popshijuan').click(function() {
+				layer.open({
+					title: '添加试题',
+					type: 1,
+					skin: 'layui-layer-rim', //加上边框
+					area: ['auto', 'auto'], //宽高
+					content: $('.popshijuancon')
+				})
+			});
+			$('.del').click(function() {
+				layer.open({
+					type: 1,
+					skin: 'layui-layer-rim', //加上边框
+					area: ['auto', 'auto'], //宽高
+					content: $('.delcon')
+				});
+			});
+			$('.addtest').click(function() {
+				layer.open({
+					title: '选择试题',
+					type: 1,
+					skin: 'layui-layer-rim', //加上边框
+					area: ['auto', 'auto'], //宽高
+					content: $('.table-addcon')
+				});
+			});
+		</script>
+		<script type="text/javascript">
+			//=点击展开关闭效果=
+			function openShutManager(oSourceObj, oTargetObj, shutAble, oOpenTip, oShutTip) {
+				var sourceObj = typeof oSourceObj == "string" ? document.getElementById(oSourceObj) : oSourceObj;
+				var targetObj = typeof oTargetObj == "string" ? document.getElementById(oTargetObj) : oTargetObj;
+				var openTip = oOpenTip || "";
+				var shutTip = oShutTip || "";
+				if (targetObj.style.display != "none") {
+					if (shutAble) return;
+					targetObj.style.display = "none";
+					if (openTip && shutTip) {
+						sourceObj.innerHTML = shutTip;
+					}
+				} else {
+					targetObj.style.display = "block";
+					if (openTip && shutTip) {
+						sourceObj.innerHTML = openTip;
+					}
+				}
+			}
+		</script>
+	</body>
+
+</html>

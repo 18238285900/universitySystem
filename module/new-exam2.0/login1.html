@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8"> 
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no">
+<meta http-equiv="Pragma" content="no-cache"> 
+<meta http-equiv="Cache-Control" content="no-cache"> 
+<meta http-equiv="Expires" content="0"> 
+<title>前台登录</title> 
+<link href="../../css/login.css" type="text/css" rel="stylesheet"> 
+</head> 
+<body class="login-bg2"> 
+<div class="login-wrap">
+	<div class="login-comter fl-l">
+		<div class="welcom-text">
+	<h2 class="login-name ">欢迎登录</h2>
+	<p class="system-name">智能在线考试系统 !</p>
+	</div>
+	   <img src="img/login-lf_03.png" style="width: 650px; margin-left: -86px;">	
+	</div>
+	<div class="welcom-text  xs-show">
+	<h2 class="login-name ">欢迎登录</h2>
+	<p class="system-name">智能在线考试系统 !</p>
+	</div>
+<div class="login fl-r">
+	
+	<div class="login-bg"><img src="img/login_03.png"></div>
+    <form method="post" class="login-form">
+		<input name="action" value="login" type="hidden">
+		<input name="username" placeholder="用户名" required="" type="text">
+		<hr class="hr15">
+		<input name="password" placeholder="密码" required="" type="password">
+		<hr class="hr15">
+		<!--<input name="password" placeholder="密码" required="" type="password">-->
+			<select class="cursor">
+				<option>请选择您的身份</option>
+				<option>老师</option>
+				<option>学生</option>
+			</select>
+		
+		
+		<hr class="hr20">
+		 <a class="fl-r" onClick="alert('请联系管理员')">忘记密码?</a> 
+		<hr class="hr15">
+		<input value="登录" style="width:100%;" type="submit">
+		
+	</form>
+
+	
+</div>
+<div class="clear"></div>
+</div>
+<div class="copyright text-center">© 2016品牌名称 by<a href="#" target="_blank">华源创想</a></div>
+
+</body>
+</html>

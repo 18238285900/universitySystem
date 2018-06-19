@@ -1,0 +1,22 @@
+		.login {
+			/*background: rgba(255,255,255,.2);*/
+			background: #FFFFFF;
+			border: 1px solid rgba(255, 255, 255, .3);
+			-moz-box-shadow: 0 3px 0 rgba(12, 12, 12, .03);
+			-webkit-box-shadow: 0 3px 0 rgba(12, 12, 12, .03);
+			box-shadow: 0 3px 0 rgba(12, 12, 12, .03);
+			-moz-border-radius: 3px;
+			-webkit-border-radius: 3px;
+			border-radius: 3px;
+			padding: 30px;
+			border: solid #f2f2f2 1px;
+		}
+		.login h3 { margin-bottom: 35px;}
+		
+		.logo-name {
+			margin-top: -50px;
+			padding-bottom: 15px;
+			/*border-bottom: solid 1px #eaeaea;*/
+			margin-bottom: 30px;
+		}
+.loginscreen.middle-box { width: 380px;}

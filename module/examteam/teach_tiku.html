@@ -1,0 +1,581 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<title>题库管理</title>
+		<meta name="keywords" content="">
+		<meta name="description" content="">
+		<link rel="shortcut icon" href="favicon.ico">
+		<link href="../../css/bootstrap.min14ed.css?v=3.3.6" rel="stylesheet">
+		<link href="../../css/font-awesome.min93e3.css?v=4.4.0" rel="stylesheet">
+		<link href="../../css/plugins/bootstrap-table/bootstrap-table.min.css" rel="stylesheet">
+		<link href="../../css/plugins/awesome-bootstrap-checkbox/awesome-bootstrap-checkbox.css" rel="stylesheet">
+		<link href="../../css/animate.min.css" rel="stylesheet">
+		<link href="../../css/style.min862f.css?v=4.1.0" rel="stylesheet">
+		<!--下拉搜索框-->
+		<link href="../../css/plugins/chosen/chosen.css" rel="stylesheet">
+		<!--zTree-->
+		<link href="../../css/plugins/zTreeStyle/zTreeStyle.css" rel="stylesheet">
+		<link href="../../css/pages.css" rel="stylesheet">
+	</head>
+
+	<body class="gray-bg">
+		<div class="wrapper wrapper-content animated fadeInRight">
+			<!-- Panel Other -->
+			<div class="ibox float-e-margins">
+				<div class="ibox-title exam-ibox">
+					<h5>
+						题库管理
+						<span></span>
+					</h5>
+					<div class="ibox-tools">
+						<a class="collapse-link">
+							<i class="fa fa-chevron-up"></i>
+						</a>
+						<a class="dropdown-toggle" data-toggle="dropdown" href="#">
+							<i class="fa fa-wrench"></i>
+						</a>
+						<a class="close-link">
+							<i class="fa fa-times"></i>
+						</a>
+					</div>
+				</div>
+				<div class="ibox-content">
+					<div class="popteam-list ">
+						<div class="popteam-title">高数基础版团队</div>
+						<div class="popteam-tag">
+							<li class="col-xs-6 col-sm-4 col-md-2">团队成员人数：<span class="tag">5人</span></li>
+							<li class="col-xs-6 col-sm-4 col-md-2">团队负责人：<span class="tag">张教授</span></li>
+							<li class="col-xs-6 col-sm-4 col-md-2">所属院系：<span class="tag">管理系 </span> </li>
+							<li class="col-xs-6 col-sm-4 col-md-2">包含课程：<span class="tag">3门</span></li>
+							<li class="col-xs-6 col-sm-4 col-md-2">选课学生数：<span class="tag">500人</span></li>
+							<li class="col-xs-6 col-sm-4 col-md-2">涵盖班级数：<span class="tag">10个</span></li>
+							<div class="clearfix"></div>
+						</div>
+						<div class="popteam-role fuzeren">
+							负责人
+						</div>
+					</div>
+					<div class="tiku-groupbtn">
+						<button type="button" class="btn btn-primary addtest">
+								<i class="fa fa-plus"></i>添加试题
+							</button>
+						<button type="button" class="btn btn-default">
+								<i class="fa fa-plus"></i>移动
+							</button>
+						<button type="button" class="btn btn-default del">
+								<i class="fa fa-trash-o fa-lg"></i>删除
+							</button>
+						<button type="button" class="btn btn-default addtest">
+								<i class="fa fa-edit"></i>编辑
+							</button>
+						<button type="button" class="btn btn-default">
+								<i class="fa fa-navicon"></i>批量修改
+							</button>
+						<button type="button" class="btn btn-default">
+								<i class="fa fa-search-plus"></i>查看
+							</button>
+						<button type="button" class="btn btn-default">
+								<i class="fa fa-expand"></i>
+							</button>
+					</div>
+					<div class="search-topform">
+						<form class="form-inline" id="searchForm">
+							<input class="form-control" id="" value="" name="wuStatus" placeholder="" type="hidden">
+							<input class="form-control" id="pageNo" value="1" name="pageNo" placeholder="" type="hidden">
+							<input class="form-control" id="pageSize" value="10" name="pageSize" placeholder="" type="hidden">
+							<div class="form-group">
+								<label for="">试题名称：</label>
+								<input class="form-control" id="" name="" value="" placeholder="输入试题名称" type="text">
+							</div>
+							<div class="form-group">
+								<label for="">知识点名称：</label>
+								<input class="form-control" id="" name="" value="" placeholder="输入知识点名称" type="text">
+							</div>
+							<div class="form-group">
+								<label for="">试题难度</label>
+								<select class="form-control" name="">
+									<option value="">全部</option>
+									<option value="中等">中等</option>
+									<option value="90%">90%</option>
+									<option value="微积分">微积分</option>
+								</select>
+							</div>
+							<div class="form-group">
+								<label for="">试题类型</label>
+								<select class="form-control" name="">
+					                <option value="">多选题</option>
+					                <option value="">不定项</option>
+					                <option value="">编程题</option>
+					                <option value="">问答题</option>
+					                <option value="">单选题</option>
+					                <option value="">判断题</option>
+					                <option value="">音频题</option>
+					                <option value="">视频题</option>
+					                <option value="">填空题</option>
+					                <option value="">单选问答题</option>
+					                <option value="">多选问答题</option>
+					                <option value="">不定项问答</option>
+					                <option value="">非确定单选</option>
+					                <option value="">组合题</option>
+								</select>
+							</div>
+							<button class="btn btn-primary" type="submit">搜索</button>
+							<button class="btn btn-default" type="reset">清空条件</button>
+						</form>
+					</div>
+					<div class="row">
+						<div class="col-sm-4 col-md-3">
+							<div class="tree-content">
+								<div class="tree-title">
+									章节信息
+								</div>
+								<div class="zTreeDemoBackground">
+									<ul id="treeDemo" class="ztree"></ul>
+
+								</div>
+							</div>
+						</div>
+						<div class="col-sm-8 col-md-9 animated fadeInRight">
+							<div class="box-title mb0">试题</div>
+							<div class="clear"></div>
+							<div class="tiku-shiti">
+								<div class="q-list">
+									<li class="q-item sets-question-item">
+										<div class="dropdown btn-contextmenu ">
+											<a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
+												<span class="caret"></span></a>
+												<ul class="dropdown-menu">
+													<li>
+														<a>
+															<i class="fa fa-plus"></i><label></label>移动</a>
+													</li>
+													<li class="addtest">
+														<a>
+															<i class="fa fa-edit"></i><label></label>编辑</a>
+													</li>
+													<li class="del">
+														<a>
+															<i class="fa fa-trash"></i><label></label>删除</a>
+													</li>
+												</ul>
+										</div>
+										<div class="check-wrap">
+											<div class="checkbox checkbox-info">
+												<input id="singleCheckbox2" value="option2" checked="" aria-label="Single checkbox Two" type="checkbox">
+												<label></label>
+											</div>
+										</div>
+										<div class="q-data">
+											<span class="q-sequence">1</span>
+											<span class="text-medium-gray">[ 单选题 ]</span>
+											<span class="ml5 label-skill text-ellipsis">中等</span>
+											<span class="ml5 label-difficulty text-ellipsis">90%</span>
+											<span class="ml5 label-difficulty text-ellipsis">微积分</span>
+											<span class="ml5 text-muted-more f12">更新于 2018-03-20 16:37</span>
+											<label class="hide-input unselectable q-expand-toggle independent" style="margin-left: 0">
+										     	<a href="###" _fcksavedurl="###" onclick="openShutManager(this,'box',false,'收起','展开')">展开</a>    
+										    </label>
+											<div class="q-title" style="margin-top: 10px;">
+												<p>最好的在线考试产品是哪个？</p>
+											</div>
+											<ul class="list-title-media mt10"></ul>
+											<div id="box" style="display: none;">
+												<ul class="q-options-wrap mt20">
+													<li class="q-option">
+														<div class="checkbox checkbox-primary block-inline">
+															<input id="singleCheckbox2" value="" checked="" disabled="" type="checkbox">
+															<label></label>
+														</div>
+														<span class="option-index">A</span>
+														<div class="q-option-content pl5">华源创想在线考试系统</div>
+													</li>
+													<li class="q-option">
+														<div class="checkbox checkbox-primary block-inline">
+															<input id="singleCheckbox2" value="" disabled="" type="checkbox">
+															<label></label>
+														</div>
+														<span class="option-index">B</span>
+														<div class="q-option-content pl5">腾讯考试系统</div>
+													</li>
+													<li class="q-option">
+														<div class="checkbox checkbox-primary block-inline">
+															<input id="singleCheckbox2" value="" disabled="" type="checkbox">
+															<label></label>
+														</div>
+														<span class="option-index">C</span>
+														<div class="q-option-content pl5">百度考试系统</div>
+													</li>
+													<li class="q-option">
+														<div class="checkbox checkbox-primary block-inline">
+															<input id="singleCheckbox2" value="" disabled="" type="checkbox">
+															<label></label>
+														</div>
+														<span class="option-index">D</span>
+														<div class="q-option-content pl5">网易考试系统</div>
+													</li>
+												</ul>
+												<div class="q-answer mt20">
+												</div>
+												<div class="q-answer mt20" style="display: block;">
+													<p class="q-ans-label">题目解析：</p>
+													华源创想在线考试系统
+												</div>
+												<p class="mt5" style="color:#AAB2BD">
+													该题目来自题库：混合题型样题库  创建人：华源创想
+												</p>
+											</div>
+										</div>
+									</li>
+								</div>
+								<div class="q-list">
+									<li class="q-item sets-question-item">
+										<div class="dropdown btn-contextmenu ">
+											<a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
+												<span class="caret"></span></a>
+											<ul class="dropdown-menu">
+												<li>
+													<a><i class="fa fa-plus"></i><label></label>移动</a>
+												</li>
+												<li class="addtest">
+													<a><i class="fa fa-edit"></i><label></label>编辑</a>
+												</li>
+												<li>
+													<a><i class="fa fa-trash"></i><label></label>删除</a>
+												</li>
+											</ul>
+										</div>
+										<div class="check-wrap">
+											<div class="checkbox checkbox-info">
+												<input id="singleCheckbox2" value="option2" aria-label="" type="checkbox">
+												<label></label>
+											</div>
+										</div>
+										<div class="q-data">
+											<span class="q-sequence">2</span>
+											<span class="text-medium-gray">[ 单选题 ]</span>
+											<span class="ml5 label-skill text-ellipsis">中等</span>
+											<span class="ml5 label-difficulty text-ellipsis">90%</span>
+											<span class="ml5 label-difficulty text-ellipsis">微积分</span>
+											<span class="ml5 text-muted-more f12">更新于 2018-03-20 16:37</span>
+											<label class="hide-input unselectable q-expand-toggle independent" style="margin-left: 0">
+										     	<a href="###" _fcksavedurl="###" onclick="openShutManager(this,'box2',false,'收起','展开')">展开</a>    
+										    </label>
+											<div class="q-title" style="margin-top: 10px;">
+												<p>最好的在线考试产品是哪个？</p>
+											</div>
+											<ul class="list-title-media mt10"></ul>
+											<div id="box2" style="display: none;">
+												<ul class="q-options-wrap mt20">
+													<li class="q-option">
+														<div class="checkbox checkbox-primary block-inline">
+															<input id="singleCheckbox2" value="" checked="" disabled="" type="checkbox">
+															<label></label>
+														</div>
+														<span class="option-index">A</span>
+														<div class="q-option-content pl5">华源创想在线考试系统</div>
+													</li>
+													<li class="q-option">
+														<div class="checkbox checkbox-primary block-inline">
+															<input id="singleCheckbox2" value="" disabled="" type="checkbox">
+															<label></label>
+														</div>
+														<span class="option-index">B</span>
+														<div class="q-option-content pl5">腾讯考试系统</div>
+													</li>
+													<li class="q-option">
+														<div class="checkbox checkbox-primary block-inline">
+															<input id="singleCheckbox2" value="" disabled="" type="checkbox">
+															<label></label>
+														</div>
+														<span class="option-index">C</span>
+														<div class="q-option-content pl5">百度考试系统</div>
+													</li>
+													<li class="q-option">
+														<div class="checkbox checkbox-primary block-inline">
+															<input id="singleCheckbox2" value="" disabled="" type="checkbox">
+															<label></label>
+														</div>
+														<span class="option-index">D</span>
+														<div class="q-option-content pl5">网易考试系统</div>
+													</li>
+												</ul>
+												<div class="q-answer mt20">
+												</div>
+												<div class="q-answer mt20" style="display: block;">
+													<p class="q-ans-label">题目解析：</p>
+													华源创想在线考试系统
+												</div>
+												<p class="mt5" style="color:#AAB2BD">
+													该题目来自题库：混合题型样题库  创建人：华源创想
+												</p>
+											</div>
+										</div>
+									</li>
+								</div>
+
+							</div>
+						
+						</div>
+					</div>
+				</div>
+			</div>
+			<!-- End Panel Other -->
+		</div>
+		<!--addcontent st-->
+		<!--addtest st-->
+		<div class="table-addcon" style="display: none;">
+			<div class="pop-content tiku-content">
+				<form class="form-horizontal" id="addEqsForm" action="" accept-charset="UTF-8" method="post">
+					<input type="hidden" name="eqId" value="" id="eqId">
+					<div class="form-body" >
+						<div class="form-group">
+							<label class="control-label col-sm-2"> <label for="">试题题型:</label>
+							</label>
+							<div class="col-sm-8">
+								<select class="form-control" id="optionType" name="eqType" onchange="initOption();">
+									<option value="">简答题</option>
+									<option value="">多选题</option>
+									<option value="">单选题</option>
+									<option value="">判断题</option>
+									<option value="">填空题</option>
+									<option value="">组合题</option>
+								</select>
+							</div>
+						</div>
+						<div class="form-group">
+							<label class="control-label col-sm-2"> <label for="">试题难度:</label>
+							</label>
+							<div class="col-sm-8">
+								<select class="form-control" name="eqDifficulty">
+									<option value="">简单</option>
+									<option value="">一般</option>
+									<option value="">困难</option>
+								</select>
+							</div>
+						</div>
+						<div class="form-group">
+							<label class="control-label col-sm-2"> <label for="">试题标签:</label>
+							</label>
+							<div class="col-sm-8">
+								<div class="checkbox checkbox-success checkbox-inline">
+                                    <input type="checkbox" id="inlineCheckbox1" checked="" value="option1">
+                                    <label for="inlineCheckbox1">考试</label>
+                                </div>	
+                                <div class="checkbox checkbox-success checkbox-inline">
+                                    <input type="checkbox" id="inlineCheckbox2" value="option2">
+                                    <label for="inlineCheckbox2">练习</label>
+                                </div>	
+							</div>
+						</div>
+						<div class="form-group">
+							<label class="control-label col-sm-2"> <label for="">章:</label>
+							</label>
+							<div class="col-sm-8">
+								<select class="form-control" name="eqChapter" onchange="getChapter2()">
+								<option value="">请选择章 </option>
+								<option value="">第一章制图基本知识</option>
+								<option value="">第二章三视图</option>
+								<option value="">第三章柱体三视图</option>
+								<option value="">第四章棱台</option>
+								<option value="">第五章简单叠加体</option>
+								<option value="">第六章简单切割体</option>
+								<option value="">第七章轴测图</option>
+								<option value="">第八章直线平面投影</option>
+								<option value="">第九章立体表面的点</option>
+								<option value="">第一十章平面体与曲面体相贯</option>
+								<option value="">第一十一章叠加类组合体</option>
+								<option value="">第一十二章切割类组合体</option>
+								<option value="">第一十三章综合类组合体</option>
+								<option value="">第一十四章剖视图与断面图</option>
+								</select>
+							</div>
+						</div>
+						<div class="form-group">
+							<label for="" class="control-label col-sm-2">节:</label>
+							<div class="col-sm-8">
+								<select class="form-control" name="eqChapter2" onchange="geteqKnowledge()">
+									<option value="" 'selected'="">请先选择章</option>
+								</select>
+							</div>
+						</div>
+						<div class="form-group">
+							<label for="" class="control-label col-sm-2">知识点:</label>
+							<div class="col-sm-8">
+								<select class="form-control" name="eqKnowledge">
+									<option value="">请先选择节</option>
+								</select>
+							</div>
+						</div>
+						<div class="form-group" >
+							<label class="control-label col-sm-2"> <label for="">试题描述:</label>
+							</label>
+							<div class="col-sm-8">
+								<img src="img/UEditor.jpg"/>
+							</div>
+						</div>
+						<div id="complex" >
+							<div class="form-group">
+								<label class="control-label col-sm-2" style="text-align:right">试题答案/关键字:</label>
+								<div class="col-sm-8" id="options">
+									<div attr="option" style="display:none">
+										<input name="eqoId" value="" type="hidden"> 答案/关键字
+										<form class="form-horizontal" attr="hsk">
+											<textarea class="form-control" id="optVal_ueditor" name="eqoContent"></textarea>
+										</form>
+									</div>
+									<div attr="option" style="display: block;">
+										<input name="eqoId" value="" type="hidden"> 答案/关键字
+										<form class="form-horizontal" attr="hsk">
+											<textarea class="form-control" id="A_ueditor" name="eqoContent"></textarea>
+										</form>
+									</div>
+									<div attr="option" style="display: block;">
+										<input name="eqoId" value="" type="hidden"> 答案/关键字
+										<form class="form-horizontal" attr="hsk">
+											<textarea class="form-control" id="B_ueditor" name="eqoContent"></textarea>
+										</form>
+									</div>
+								</div>
+							</div>
+							<div class="form-group">
+								<label class="control-label col-sm-2">&nbsp;</label>
+								<div class="col-sm-8">
+									<a href="javascript:addOption()" class="btn btn-primary" data-dismiss="modal">添加答案/关键字</a>
+									<a href="javascript:deleteOption()" class="btn btn-primary" data-dismiss="modal">删除答案/关键字</a>
+								</div>
+							</div>
+							<form class="form-horizontal" id="answerForm" >
+								<div class="form-group" >
+									<label class="control-label col-sm-2" style="text-align:right">答案解析:</label>
+									<div class="col-sm-8">
+										<img src="img/UEditor.jpg"/>
+									</div>
+								</div>
+							</form>
+						</div>
+					</div>
+				</form>
+				<div class="height60"></div>
+			</div>
+			<div class="modal-footer text-center">
+				<button type="button" class="btn btn-primary" data-dismiss="modal">保存</button>
+				<button type="button" class="btn btn-default close-layer" data-dismiss="modal">取消</button>
+			</div>
+		</div>
+		<!--delcon st-->
+		<div class="delcon" style="display: none;">
+			<div class="pop-content">
+				<div class="del-content">确定要删除所选的1个试题吗？删除的试题无法恢复！</div>
+			</div>
+			<div class="modal-footer text-center">
+				<button type="button" class="btn btn-primary" data-dismiss="modal">删除</button>
+				<button type="button" class="btn btn-default close-layer" data-dismiss="modal">取消</button>
+			</div>
+		</div>
+		<!--js st-->
+		<script src="../../js/jquery.min.js?v=2.1.4"></script>
+		<script src="../../js/bootstrap.min.js?v=3.3.6"></script>
+		<script src="../../js/content.min.js?v=1.0.0"></script>
+		<script src="../../js/plugins/bootstrap-table/bootstrap-table.min.js"></script>
+		<script src="../../js/plugins/bootstrap-table/bootstrap-table-mobile.min.js"></script>
+		<script src="../../js/plugins/bootstrap-table/locale/bootstrap-table-zh-CN.min.js"></script>
+		<script src="../../js/demo/bootstrap-table-demo.min.js"></script>
+		<!--select-->
+		<script src="../../js/plugins/layer/layer.js"></script>
+		<!--下拉搜索框-->
+		<script src="../../js/plugins/chosen/chosen.jquery.js"></script>
+		<!--<script src="js/demo/form-advanced-demo.min.js"></script>-->
+		<!--ztree-->
+		<script src="../../js/plugins/zTree/jquery.ztree.core.js"></script>
+		<script type="text/javascript" src="../../js/plugins/zTree/jquery.ztree.excheck.js"></script>
+		<script type="text/javascript" src="../../js/plugins/zTree/jquery.ztree.exedit.js"></script>
+		<SCRIPT type="text/javascript">
+			var setting = {};
+			var zNodes = [{
+				name: "第一章-制图基本知识",
+				open: true,
+				children: [{
+					name: "第1节-图幅、图框、标题栏"
+				}, {
+					name: "第2节-比例"
+				}, {
+					name: "第3节-线型"
+				}, {
+					name: "第4节-尺寸"
+				}, {
+					name: "第5节-剖面材料符号"
+				}, {
+					name: "第6节-字体"
+				}]
+			}, {
+				name: "第二章-三视图",
+				open: true,
+				children: [{
+					name: "第1节-三视图概念"
+				}]
+			}, {
+				name: "第三章-柱体三视图",
+				open: true,
+				children: [{
+					name: "第1节-直棱柱"
+				}, {
+					name: "第2节-圆柱"
+				}, {
+					name: "第3节-组合柱"
+				}]
+			}];
+			$(document).ready(function() {
+				$.fn.zTree.init($("#treeDemo"), setting, zNodes);
+			});
+		</SCRIPT>
+		<!--layer 弹框js-->
+		<script type="text/javascript">
+			$('.close-layer').click(function() {
+				layer.closeAll();
+			});
+			$('.del').click(function() {
+				layer.open({
+					type: 1,
+					skin: 'layui-layer-rim', //加上边框
+					area: ['auto', 'auto'], //宽高
+					content: $('.delcon')
+				});
+			});
+			$('.addtest').click(function() {
+				layer.open({
+					title: '添加试题',
+					type: 1,
+					skin: 'layui-layer-rim', //加上边框
+					area: ['auto', 'auto'], //宽高
+					content: $('.table-addcon')
+				});
+			});
+		</script>
+		<script type="text/javascript">
+			//=点击展开关闭效果=
+			function openShutManager(oSourceObj, oTargetObj, shutAble, oOpenTip, oShutTip) {
+				var sourceObj = typeof oSourceObj == "string" ? document.getElementById(oSourceObj) : oSourceObj;
+				var targetObj = typeof oTargetObj == "string" ? document.getElementById(oTargetObj) : oTargetObj;
+				var openTip = oOpenTip || "";
+				var shutTip = oShutTip || "";
+				if (targetObj.style.display != "none") {
+					if (shutAble) return;
+					targetObj.style.display = "none";
+					if (openTip && shutTip) {
+						sourceObj.innerHTML = shutTip;
+					}
+				} else {
+					targetObj.style.display = "block";
+					if (openTip && shutTip) {
+						sourceObj.innerHTML = openTip;
+					}
+				}
+			}
+		</script>
+
+	</body>
+
+</html>

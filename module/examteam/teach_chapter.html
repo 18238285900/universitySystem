@@ -1,0 +1,396 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<title>章节信息管理</title>
+		<meta name="keywords" content="">
+		<meta name="description" content="">
+		<link rel="shortcut icon" href="favicon.ico">
+		<link href="../../css/bootstrap.min14ed.css?v=3.3.6" rel="stylesheet">
+		<link href="../../css/font-awesome.min93e3.css?v=4.4.0" rel="stylesheet">
+		<link href="../../css/plugins/bootstrap-table/bootstrap-table.min.css" rel="stylesheet">
+		<link href="../../css/plugins/awesome-bootstrap-checkbox/awesome-bootstrap-checkbox.css" rel="stylesheet">
+		<link href="../../css/animate.min.css" rel="stylesheet">
+		<link href="../../css/style.min862f.css?v=4.1.0" rel="stylesheet">
+		<!--下拉搜索框-->
+		<link href="../../css/plugins/chosen/chosen.css" rel="stylesheet">
+		<!--zTree-->
+		<link href="../../css/plugins/zTreeStyle/zTreeStyle.css" rel="stylesheet">
+		<link href="../../css/pages.css" rel="stylesheet">
+	</head>
+
+	<body class="gray-bg">
+		<div class="wrapper wrapper-content animated fadeInRight">
+			<!-- Panel Other -->
+			<div class="ibox float-e-margins">
+				<div class="ibox-title exam-ibox">
+					<h5>
+						章节信息管理
+						<span></span>
+					</h5>
+					<div class="ibox-tools">
+						<a class="collapse-link">
+							<i class="fa fa-chevron-up"></i>
+						</a>
+						<a class="dropdown-toggle" data-toggle="dropdown" href="#">
+							<i class="fa fa-wrench"></i>
+						</a>
+						<a class="close-link">
+							<i class="fa fa-times"></i>
+						</a>
+					</div>
+				</div>
+				<div class="ibox-content">
+					<div class="popteam-list ">
+						<div class="popteam-title">高数基础版团队</div>
+						<div class="popteam-tag">
+							<li class="col-xs-6 col-sm-4 col-md-2">团队成员人数：<span class="tag">5人</span></li>
+							<li class="col-xs-6 col-sm-4 col-md-2">团队负责人：<span class="tag">张教授</span></li>
+							<li class="col-xs-6 col-sm-4 col-md-2">所属院系：<span class="tag">管理系 </span> </li>
+							<li class="col-xs-6 col-sm-4 col-md-2">包含课程：<span class="tag">3门</span></li>
+							<li class="col-xs-6 col-sm-4 col-md-2">选课学生数：<span class="tag">500人</span></li>
+							<li class="col-xs-6 col-sm-4 col-md-2">涵盖班级数：<span class="tag">10个</span></li>
+							<div class="clearfix"></div>
+						</div>
+						<div class="popteam-role fuzeren">
+							负责人
+						</div>
+					</div>
+
+					<div class="row">
+						<div class="col-sm-4 col-md-3">
+							<div class="tree-content">
+								<div class="tree-title">
+									章节信息
+								</div>
+								<div class="zTreeDemoBackground left">
+									<div class="chapter-btn">
+										<button class="btn btn-info" type="button">添加章 </button>
+										<button class="btn btn-default" type="button">删除</button>
+									</div>
+									<div class="chapter-search">
+										<span class="chapter-icon-search">
+											<i class="fa fa-search"></i>
+										</span>
+										<input type="text" class="form-control" id="" name="" value="" placeholder="输入名称">
+									</div>
+									<ul id="treeDemo" class="ztree"></ul>
+								</div>
+							</div>
+						</div>
+						<div class="col-sm-8 col-md-9 animated fadeInRight">
+							<div class="box-title mb0">知识点管理</div>
+							<div class="clear"></div>
+							<div class="chapter-edit">
+								<div class="chapter-tags">
+									<li class="chaptertag">
+										象限1
+									 	<div class="close-btn">
+									 		<i class="fa fa-close"></i>
+									 	</div>
+									</li>
+									<li class="chaptertag">
+										函数
+										<div class="close-btn">
+									 		<i class="fa fa-close"></i>
+									 	</div>
+									</li>
+									<li class="chaptertag">
+										数列
+										<div class="close-btn">
+									 		<i class="fa fa-close"></i>
+									 	</div>
+									</li>
+									<li class="chaptertag">
+										极限函数
+										<div class="close-btn">
+									 		<i class="fa fa-close"></i>
+									 	</div>
+									</li>
+									<li class="chaptertag">
+										极限函数
+										<div class="close-btn">
+									 		<i class="fa fa-close"></i>
+									 	</div>
+									</li>
+									<li class="chaptertag">
+										初等函数
+										<div class="close-btn">
+									 		<i class="fa fa-close"></i>
+									 	</div>
+									</li>
+									<li class="chaptertag chaptertag-fill">
+										<input type="text" class="chaptertag-input" name="" id="" placeholder="初等函数" />
+										<div class="close-btn">
+									 		<i class="fa fa-close"></i>
+									 	</div>
+									</li>
+									<li class="chaptertag-btn">
+										<button type="button" class="btn btn-info">添加知识点</button>
+									</li>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<!-- End Panel Other -->
+		</div>
+		<!--addcontent st-->
+		<!--delcon st-->
+		<div class="delcon" style="display: none;">
+			<div class="pop-content">
+				<div class="del-content">是否确定移除，删除后不可恢复？</div>
+			</div>
+			<div class="modal-footer text-center">
+				<button type="button" class="btn btn-primary" data-dismiss="modal">确定</button>
+				<button type="button" class="btn btn-default close-layer" data-dismiss="modal">取消</button>
+			</div>
+		</div>
+		<!--addcontent end-->
+		<!--js st-->
+		<script src="../../js/jquery.min.js?v=2.1.4"></script>
+		<script src="../../js/bootstrap.min.js?v=3.3.6"></script>
+		<script src="../../js/content.min.js?v=1.0.0"></script>
+		<script src="../../js/plugins/bootstrap-table/bootstrap-table.min.js"></script>
+		<script src="../../js/plugins/bootstrap-table/bootstrap-table-mobile.min.js"></script>
+		<script src="../../js/plugins/bootstrap-table/locale/bootstrap-table-zh-CN.min.js"></script>
+		<script src="../../js/demo/bootstrap-table-demo.min.js"></script>
+		<!--select-->
+		<script src="../../js/plugins/layer/layer.js"></script>
+		<!--下拉搜索框-->
+		<script src="../../js/plugins/chosen/chosen.jquery.js"></script>
+		<!--<script src="js/demo/form-advanced-demo.min.js"></script>-->
+		<!--ztree-->
+		<script src="../../js/plugins/zTree/jquery.ztree.core.js"></script>
+		<script type="text/javascript" src="../../js/plugins/zTree/jquery.ztree.excheck.js"></script>
+		<script type="text/javascript" src="../../js/plugins/zTree/jquery.ztree.exedit.js"></script>
+		<SCRIPT type="text/javascript">
+			var setting = {
+				view: {
+					addHoverDom: addHoverDom,
+					removeHoverDom: removeHoverDom,
+					selectedMulti: false
+				},
+				edit: {
+					enable: true,
+					editNameSelectAll: true,
+					showRemoveBtn: showRemoveBtn,
+					showRenameBtn: showRenameBtn
+				},
+				data: {
+					simpleData: {
+						enable: true
+					}
+				},
+				callback: {
+					beforeDrag: beforeDrag,
+					beforeEditName: beforeEditName,
+					beforeRemove: beforeRemove,
+					beforeRename: beforeRename,
+					onRemove: onRemove,
+					onRename: onRename
+				}
+			};
+			var zNodes = [{
+				id: 1,
+				pId: 0,
+				name: "第一章-制图基本知识",
+				open: true
+			}, {
+				id: 11,
+				pId: 1,
+				name: "第1节-图幅、图框、标题栏"
+			}, {
+				id: 12,
+				pId: 1,
+				name: "第2节-比例"
+			}, {
+				id: 13,
+				pId: 1,
+				name: "第3节-线型"
+			}, {
+				id: 14,
+				pId: 1,
+				name: "第4节-尺寸"
+			}, {
+				id: 15,
+				pId: 1,
+				name: "第5节-剖面材料符号"
+			}, {
+				id: 16,
+				pId: 1,
+				name: "第6节-字体"
+			}, {
+				id: 2,
+				pId: 0,
+				name: "第二章-三视图",
+				open: true
+			}, {
+				id: 21,
+				pId: 2,
+				name: "第1节-三视图概念"
+			}, {
+				id: 3,
+				pId: 0,
+				name: "第三章-柱体三视图",
+				open: true
+			}, {
+				id: 31,
+				pId: 3,
+				name: "第1节-直棱柱"
+			}, {
+				id: 32,
+				pId: 3,
+				name: "第2节-圆柱"
+			}, {
+				id: 33,
+				pId: 3,
+				name: "第3节-组合柱"
+			}, {
+				id: 4,
+				pId: 0,
+				name: "第四章-棱台",
+				open: true
+			}, {
+				id: 41,
+				pId: 4,
+				name: "第1节-圆锥和圆台"
+			}, {
+				id: 5,
+				pId: 0,
+				name: "第五章-简单叠加体",
+				open: true
+			}, {
+				id: 51,
+				pId: 5,
+				name: "第1节-圆锥和圆台"
+			}];
+			var log, className = "dark";
+
+			function beforeDrag(treeId, treeNodes) {
+				return false;
+			}
+
+			function beforeEditName(treeId, treeNode) {
+				className = (className === "dark" ? "" : "dark");
+				showLog("[ " + getTime() + " beforeEditName ]&nbsp;&nbsp;&nbsp;&nbsp; " + treeNode.name);
+				var zTree = $.fn.zTree.getZTreeObj("treeDemo");
+				zTree.selectNode(treeNode);
+				setTimeout(function() {
+					if (confirm("进入节点 -- " + treeNode.name + " 的编辑状态吗？")) {
+						setTimeout(function() {
+							zTree.editName(treeNode);
+						}, 0);
+					}
+				}, 0);
+				return false;
+			}
+
+			function beforeRemove(treeId, treeNode) {
+				className = (className === "dark" ? "" : "dark");
+				showLog("[ " + getTime() + " beforeRemove ]&nbsp;&nbsp;&nbsp;&nbsp; " + treeNode.name);
+				var zTree = $.fn.zTree.getZTreeObj("treeDemo");
+				zTree.selectNode(treeNode);
+				return confirm("确认删除 节点 -- " + treeNode.name + " 吗？");
+			}
+
+			function onRemove(e, treeId, treeNode) {
+				showLog("[ " + getTime() + " onRemove ]&nbsp;&nbsp;&nbsp;&nbsp; " + treeNode.name);
+			}
+
+			function beforeRename(treeId, treeNode, newName, isCancel) {
+				className = (className === "dark" ? "" : "dark");
+				showLog((isCancel ? "<span style='color:red'>" : "") + "[ " + getTime() + " beforeRename ]&nbsp;&nbsp;&nbsp;&nbsp; " + treeNode.name + (isCancel ? "</span>" : ""));
+				if (newName.length == 0) {
+					setTimeout(function() {
+						var zTree = $.fn.zTree.getZTreeObj("treeDemo");
+						zTree.cancelEditName();
+						alert("节点名称不能为空.");
+					}, 0);
+					return false;
+				}
+				return true;
+			}
+
+			function onRename(e, treeId, treeNode, isCancel) {
+				showLog((isCancel ? "<span style='color:red'>" : "") + "[ " + getTime() + " onRename ]&nbsp;&nbsp;&nbsp;&nbsp; " + treeNode.name + (isCancel ? "</span>" : ""));
+			}
+
+			function showRemoveBtn(treeId, treeNode) {
+				return !treeNode.isFirstNode;
+			}
+
+			function showRenameBtn(treeId, treeNode) {
+				return !treeNode.isLastNode;
+			}
+
+			function showLog(str) {
+				if (!log) log = $("#log");
+				log.append("<li class='" + className + "'>" + str + "</li>");
+				if (log.children("li").length > 8) {
+					log.get(0).removeChild(log.children("li")[0]);
+				}
+			}
+
+			function getTime() {
+				var now = new Date(),
+					h = now.getHours(),
+					m = now.getMinutes(),
+					s = now.getSeconds(),
+					ms = now.getMilliseconds();
+				return (h + ":" + m + ":" + s + " " + ms);
+			}
+			var newCount = 1;
+
+			function addHoverDom(treeId, treeNode) {
+				var sObj = $("#" + treeNode.tId + "_span");
+				if (treeNode.editNameFlag || $("#addBtn_" + treeNode.tId).length > 0) return;
+				var addStr = "<span class='button add' id='addBtn_" + treeNode.tId + "' title='add node' onfocus='this.blur();'></span>";
+				sObj.after(addStr);
+				var btn = $("#addBtn_" + treeNode.tId);
+				if (btn) btn.bind("click", function() {
+					var zTree = $.fn.zTree.getZTreeObj("treeDemo");
+					zTree.addNodes(treeNode, {
+						id: (100 + newCount),
+						pId: treeNode.id,
+						name: "new node" + (newCount++)
+					});
+					return false;
+				});
+			};
+
+			function removeHoverDom(treeId, treeNode) {
+				$("#addBtn_" + treeNode.tId).unbind().remove();
+			};
+
+			function selectAll() {
+				var zTree = $.fn.zTree.getZTreeObj("treeDemo");
+				zTree.setting.edit.editNameSelectAll = $("#selectAll").attr("checked");
+			}
+			$(document).ready(function() {
+				$.fn.zTree.init($("#treeDemo"), setting, zNodes);
+				$("#selectAll").bind("click", selectAll);
+			});
+		</SCRIPT>
+
+		<!--layer 弹框js-->
+		<script type="text/javascript">
+			$('.close-layer').click(function() {
+				layer.closeAll();
+			});
+			$('.del').click(function() {
+				layer.open({
+					type: 1,
+					skin: 'layui-layer-rim', //加上边框
+					area: ['auto', 'auto'], //宽高
+					content: $('.delcon')
+				});
+			});
+		</script>
+		
+	</body>
+
+</html>

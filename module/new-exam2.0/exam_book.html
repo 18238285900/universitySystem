@@ -1,0 +1,987 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<title>预约管理</title>
+		<meta name="keywords" content="黄河水利职业技术学院智能考场管理系统">
+		<meta name="description" content="黄河水利职业技术学院智能考场管理系统">
+		<link rel="shortcut icon" href="favicon.ico">
+		<link href="../../css/bootstrap.min14ed.css?v=3.3.6" rel="stylesheet">
+		<link href="../../css/font-awesome.min93e3.css?v=4.4.0" rel="stylesheet">
+		<link href="../../css/plugins/bootstrap-table/bootstrap-table.min.css" rel="stylesheet">
+		<link href="../../css/plugins/awesome-bootstrap-checkbox/awesome-bootstrap-checkbox.css" rel="stylesheet">
+		<link href="../../css/animate.min.css" rel="stylesheet">
+		<link href="../../css/style.min862f.css?v=4.1.0" rel="stylesheet">
+		<!--下拉搜索框-->
+		<link href="../../css/plugins/chosen/chosen.css" rel="stylesheet">
+
+		<link href="../../css/pages2.css" rel="stylesheet">
+
+	</head>
+
+	<body class="gray-bg">
+		 <div class="layui-inline">
+      <label class="layui-form-label">中文版</label>
+      <div class="layui-input-inline">
+        <input class="layui-input" id="test1" placeholder="yyyy-MM-dd" type="text">
+      </div>
+    </div>
+		<div class="wrapper wrapper-content animated fadeInRight">
+			<!-- Panel Other -->
+			<div class="ibox float-e-margins">
+				<div class="ibox-title exam-ibox">
+					<h5>预约管理</h5>
+					<div class="ibox-tools">
+						<a class="collapse-link">
+							<i class="fa fa-chevron-up"></i>
+						</a>
+						<a class="dropdown-toggle" data-toggle="dropdown" href="#">
+							<i class="fa fa-wrench"></i>
+						</a>
+						<a class="close-link">
+							<i class="fa fa-times"></i>
+						</a>
+					</div>
+				</div>
+				<div class="ibox-content">
+					<div class="search-topform">
+						<form role="form" class="form-inline">
+							<div class="form-group">
+								<label for="">考场名称</label>
+								<select name="hcRoomId" class="form-control">
+									<option value="">请选择</option>
+									<option value="0e57df43196240cab96f98a32b89d94e">
+										7209
+									</option>
+
+									<option value="28f5bbce7ba744f798432654f07dda49">
+										4422B
+									</option>
+
+									<option value="2b29fa7030294872877951a2cc12e5d8">
+										4422A
+									</option>
+
+									<option value="2c5498008f994393be8d109eaf99f4c4">
+										4423
+									</option>
+
+									<option value="389565f7e8114a8a99656bd2d1604487">
+										7202
+									</option>
+
+									<option value="426838fb8b5645a89f11b00a8db8cce1">
+										4426
+									</option>
+
+									<option value="49185ea4e03648b6a1dc0444c0da7851">
+										4424A
+									</option>
+
+									<option value="809177a31b934c33ac3169b254775c2f">
+										4424B
+									</option>
+
+									<option value="834a9a163e934c889c5456ca58effed8">
+										7204
+									</option>
+
+									<option value="97b129eebd004f9d9444f08d09190093">
+										3503
+									</option>
+
+									<option value="c938e8edf6d44e18a479088987ecd211">
+										4421
+									</option>
+
+									<option value="da15ab217304483db7f15a894d39ff6c">
+										3504
+									</option>
+
+									<option value="fe86eef6b79244959b0e46cddf221716">
+										4425
+									</option>
+
+								</select>
+							</div>
+							<div class="form-group">
+								<label>考试时间</label>
+								<input placeholder="开始日期" class="form-control layer-date layui-input" id="start">
+								<label>至</label>
+								<input placeholder="结束日期" class="form-control layer-date" id="end">
+							</div>
+							<button class="btn btn-primary" type="submit">搜索</button>
+						</form>
+					</div>
+					<div class="row row-lg">
+						<div class="col-sm-12">
+							<!-- Example Toolbar -->
+							<div class="bars pull-left bars-add">
+								<div id="toolbar">
+									<a class="btn btn-primary release"><i class="glyphicon glyphicon-plus"></i>发布主题预约</a>
+									<a class="btn btn-primary release-b"><i class="glyphicon glyphicon-plus"></i>发布集中考试</a>
+								</div>
+							</div>
+							<table id="exampleTableToolbar" class="table table-striped table-bordered table-hover" data-mobile-responsive="true">
+								<thead>
+									<tr>
+										<th data-field="name">姓名</th>
+										<th data-field="sex">性别</th>
+										<th data-field="phone">手机号</th>
+										<th data-field="mailbox">邮箱</th>
+										<th data-field="jobnumber">工号</th>
+										<th data-field="username">用户名</th>
+										<th data-field="dept">所在部门</th>
+										<th data-field="role">角色</th>
+										<th data-field="operation">操作</th>
+									</tr>
+								</thead>
+								<tbody>
+									<tr>
+										<td>院管理</td>
+										<td>男</td>
+										<td>111</td>
+										<td>11</td>
+										<td>11</td>
+										<td>yuanguanli</td>
+										<td>水利工程学院</td>
+										<td>院管理员</td>
+										<td>
+											<div class="btn-group" role="group">
+												<button type="button" class="edit btn btn-info">编辑</button>
+												<button type="button" class="disable btn btn-warning">禁用</button>
+												<button type="button" class="del btn btn-danger">删除</button>
+												<button type="button" class="reset btn btn-success">重置密码</button>
+											</div>
+										</td>
+									</tr>
+									<tr>
+										<td>张明明</td>
+										<td></td>
+										<td></td>
+										<td></td>
+										<td>1996740914</td>
+										<td>1996740914</td>
+										<td>人事处</td>
+										<td>课程管理教师</td>
+										<td>
+											<div class="btn-group" role="group">
+												<button type="button" class="edit btn btn-info">编辑</button>
+												<button type="button" class="disable btn btn-warning">禁用</button>
+												<button type="button" class="del btn btn-danger">删除</button>
+												<button type="button" class="reset btn btn-success">重置密码</button>
+											</div>
+										</td>
+									</tr>
+									<tr>
+										<td>曾平</td>
+										<td></td>
+										<td></td>
+										<td></td>
+										<td>1998790915</td>
+										<td>1998790915</td>
+										<td>后勤服务中心</td>
+										<td>课程管理教师</td>
+										<td>
+											<div class="btn-group" role="group">
+												<button type="button" class="edit btn btn-info">编辑</button>
+												<button type="button" class="disable btn btn-warning">禁用</button>
+												<button type="button" class="del btn btn-danger">删除</button>
+												<button type="button" class="reset btn btn-success">重置密码</button>
+											</div>
+										</td>
+									</tr>
+									<tr>
+										<td>祝玉华</td>
+										<td></td>
+										<td></td>
+										<td></td>
+										<td>1986650002</td>
+										<td>1986650002</td>
+										<td>校领导</td>
+										<td>课程管理教师</td>
+										<td>
+											<div class="btn-group" role="group">
+												<button type="button" class="edit btn btn-info">编辑</button>
+												<button type="button" class="disable btn btn-warning">禁用</button>
+												<button type="button" class="del btn btn-danger">删除</button>
+												<button type="button" class="reset btn btn-success">重置密码</button>
+											</div>
+										</td>
+									</tr>
+									<tr>
+										<td>郭向东</td>
+										<td></td>
+										<td></td>
+										<td></td>
+										<td>9000000129</td>
+										<td>9000000129</td>
+										<td>组织部（离退休工作处）</td>
+										<td>课程管理教师,考场管理员</td>
+										<td>
+											<div class="btn-group" role="group">
+												<button type="button" class="edit btn btn-info">编辑</button>
+												<button type="button" class="disable btn btn-warning">禁用</button>
+												<button type="button" class="del btn btn-danger">删除</button>
+												<button type="button" class="reset btn btn-success">重置密码</button>
+											</div>
+										</td>
+									</tr>
+									<tr>
+										<td>尚廉仲</td>
+										<td></td>
+										<td></td>
+										<td></td>
+										<td>9000000151</td>
+										<td>9000000151</td>
+										<td>组织部（离退休工作处）</td>
+										<td>课程管理教师</td>
+										<td>
+											<div class="btn-group" role="group">
+												<button type="button" class="edit btn btn-info">编辑</button>
+												<button type="button" class="disable btn btn-warning">禁用</button>
+												<button type="button" class="del btn btn-danger">删除</button>
+												<button type="button" class="reset btn btn-success">重置密码</button>
+											</div>
+										</td>
+									</tr>
+									<tr>
+										<td>刘丛山</td>
+										<td></td>
+										<td></td>
+										<td></td>
+										<td>9000000062</td>
+										<td>9000000062</td>
+										<td>组织部（离退休工作处）</td>
+										<td>课程管理教师</td>
+										<td>
+											<div class="btn-group" role="group">
+												<button type="button" class="edit btn btn-info">编辑</button>
+												<button type="button" class="disable btn btn-warning">禁用</button>
+												<button type="button" class="del btn btn-danger">删除</button>
+												<button type="button" class="reset btn btn-success">重置密码</button>
+											</div>
+										</td>
+									</tr>
+									<tr>
+										<td>常绪建</td>
+										<td></td>
+										<td></td>
+										<td></td>
+										<td>9000000137</td>
+										<td>9000000137</td>
+										<td>组织部（离退休工作处）</td>
+										<td>课程管理教师</td>
+										<td>
+											<div class="btn-group" role="group">
+												<button type="button" class="edit btn btn-info">编辑</button>
+												<button type="button" class="disable btn btn-warning">禁用</button>
+												<button type="button" class="del btn btn-danger">删除</button>
+												<button type="button" class="reset btn btn-success">重置密码</button>
+											</div>
+										</td>
+									</tr>
+									<tr>
+										<td>柴根群</td>
+										<td></td>
+										<td></td>
+										<td></td>
+										<td>9000000136</td>
+										<td>9000000136</td>
+										<td>组织部（离退休工作处）</td>
+										<td>课程管理教师</td>
+										<td>
+											<div class="btn-group" role="group">
+												<button type="button" class="edit btn btn-info">编辑</button>
+												<button type="button" class="disable btn btn-warning">禁用</button>
+												<button type="button" class="del btn btn-danger">删除</button>
+												<button type="button" class="reset btn btn-success">重置密码</button>
+											</div>
+										</td>
+									</tr>
+									<tr>
+										<td>杨化书</td>
+										<td></td>
+										<td></td>
+										<td></td>
+										<td>9000000053</td>
+										<td>9000000053</td>
+										<td>组织部（离退休工作处）</td>
+										<td>课程管理教师</td>
+										<td>
+											<div class="btn-group" role="group">
+												<button type="button" class="edit btn btn-info">编辑</button>
+												<button type="button" class="disable btn btn-warning">禁用</button>
+												<button type="button" class="del btn btn-danger">删除</button>
+												<button type="button" class="reset btn btn-success">重置密码</button>
+											</div>
+										</td>
+									</tr>
+
+								</tbody>
+							</table>
+							<!-- End Example Toolbar -->
+							<div class="fixed-table-pagination">
+								<div class="pull-left pagination-detail">
+									<span class="pagination-info">显示第 71 到第 72 条记录，总共 72 条记录</span>
+									<span class="page-list">每页显示 <span class="btn-group dropup">
+										<button type="button" class="btn btn-default  dropdown-toggle" data-toggle="dropdown" aria-expanded="false"><span class="page-size">10</span> <span class="caret"></span></button>
+									<ul class="dropdown-menu" role="menu">
+										<li class="active">
+											<a href="javascript:void(0)">10</a>
+										</li>
+										<li>
+											<a href="javascript:void(0)">25</a>
+										</li>
+										<li>
+											<a href="javascript:void(0)">50</a>
+										</li>
+										<li>
+											<a href="javascript:void(0)">100</a>
+										</li>
+									</ul>
+									</span> 条记录</span>
+								</div>
+								<div class="pull-right pagination">
+									<ul class="pagination">
+										<li class="page-first">
+											<a href="javascript:void(0)">«</a>
+										</li>
+										<li class="page-pre">
+											<a href="javascript:void(0)">‹</a>
+										</li>
+										<li class="page-number">
+											<a href="javascript:void(0)">4</a>
+										</li>
+										<li class="page-number">
+											<a href="javascript:void(0)">5</a>
+										</li>
+										<li class="page-number">
+											<a href="javascript:void(0)">6</a>
+										</li>
+										<li class="page-number">
+											<a href="javascript:void(0)">7</a>
+										</li>
+										<li class="page-number active">
+											<a href="javascript:void(0)">8</a>
+										</li>
+										<li class="page-next disabled">
+											<a href="javascript:void(0)">›</a>
+										</li>
+										<li class="page-last disabled">
+											<a href="javascript:void(0)">»</a>
+										</li>
+									</ul>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<!-- End Panel Other -->
+		</div>
+		<!--addcontent st-->
+		<!--table-release st-->
+		<div class="table-release" style="display: none;">
+			<div class="pop-content">
+				<form class="form-horizontal" id="addAuserForm" action="" accept-charset="UTF-8" method="post" novalidate="novalidate">
+					<div class="form-body">
+						<div class="form-group">
+							<label class="col-sm-3 control-label">考试开始时间:</label>
+							<div class="col-sm-8">
+								<input class="form-control layer-date" placeholder="YYYY-MM-DD hh:mm:ss" onclick="laydate({istime: true, format: 'YYYY-MM-DD hh:mm:ss'})">
+								<label class="laydate-icon"></label>
+							</div>
+						</div>
+						<div class="form-group">
+							<label class="col-sm-3 control-label">考试结束时间:</label>
+							<div class="col-sm-8">
+								<input class="form-control layer-date" placeholder="YYYY-MM-DD hh:mm:ss" onclick="laydate({istime: true, format: 'YYYY-MM-DD hh:mm:ss'})">
+								<label class="laydate-icon"></label>
+							</div>
+						</div>
+						<div class="form-group">
+							<label class="control-label col-sm-3"> <label for="">选择考场:</label>
+							</label>
+							<div class="col-sm-8">
+								<select class="form-control" name="computerRoomIds">
+									<option value="">请选择</option>
+
+									<option value="0e57df43196240cab96f98a32b89d94e">7209</option>
+
+									<option value="28f5bbce7ba744f798432654f07dda49">4422B</option>
+
+									<option value="2b29fa7030294872877951a2cc12e5d8">4422A</option>
+
+									<option value="2c5498008f994393be8d109eaf99f4c4">4423</option>
+
+									<option value="389565f7e8114a8a99656bd2d1604487">7202</option>
+
+									<option value="49185ea4e03648b6a1dc0444c0da7851">4424A</option>
+
+									<option value="809177a31b934c33ac3169b254775c2f">4424B</option>
+
+									<option value="834a9a163e934c889c5456ca58effed8">7204</option>
+
+									<option value="97b129eebd004f9d9444f08d09190093">3503</option>
+
+									<option value="c938e8edf6d44e18a479088987ecd211">4421</option>
+
+									<option value="da15ab217304483db7f15a894d39ff6c">3504</option>
+
+									<option value="fe86eef6b79244959b0e46cddf221716">4425</option>
+
+								</select>
+							</div>
+						</div>
+
+						<div class="form-group">
+							<label class="control-label col-sm-3"> <label for="">座位绑定方式:</label>
+							</label>
+							<div class="col-sm-8">
+								<div class="radio radio-success radio-inline">
+									<input type="radio" id="inlineRadio1" value="option1" name="radioInline" checked="">
+									<label for="inlineRadio1">预约时绑定</label>
+								</div>
+								<div class="radio radio-success radio-inline">
+									<input type="radio" id="inlineRadio2" value="option2" name="radioInline">
+									<label for="inlineRadio2">考试时绑定
+</label>
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="height60"></div>
+				</form>
+			</div>
+			<div class="modal-footer text-center">
+				<button type="button" class="btn btn-primary" data-dismiss="modal">保存</button>
+				<button type="button" class="btn btn-default close-layer" data-dismiss="modal">取消</button>
+			</div>
+		</div>
+		<!--editcon st-->
+		<div class="edit-role" style="display: none;">
+			<div class="pop-content">
+				<form class="form-horizontal nice-validator n-simple" id="addAuserForm" action="" accept-charset="UTF-8" method="post" novalidate="novalidate">
+					<input class="form-control" name="auId" value="ccee1152c17b463ca7d915f18004daf2" id="" type="hidden" placeholder="">
+					<div class="form-body">
+						<div class="form-group">
+							<label class="control-label col-sm-3"> <label for="">用户名:</label>
+							</label>
+							<div class="col-sm-8">
+								<input class="form-control" name="auAccountNo" value="yuanguanli" id="" type="text" placeholder="">
+							</div>
+						</div>
+						<div class="form-group">
+							<label class="control-label col-sm-3"> <label for="">姓名:</label>
+							</label>
+							<div class="col-sm-8">
+								<input class="form-control" name="auName" value="院管理" id="" type="text" placeholder="">
+							</div>
+						</div>
+
+						<div class="form-group">
+							<label class="control-label col-sm-3"> <label for="">性别:</label>
+							</label>
+							<div class="col-sm-8">
+								<div class="radio radio-success radio-inline">
+									<input type="radio" id="inlineRadio1" value="option1" name="radioInline" checked="">
+									<label for="inlineRadio1">男</label>
+								</div>
+								<div class="radio radio-success radio-inline">
+									<input type="radio" id="inlineRadio2" value="option2" name="radioInline">
+									<label for="inlineRadio2">女</label>
+								</div>
+							</div>
+						</div>
+						<div class="form-group">
+							<label class="control-label col-sm-3"> <label for="">手机号:</label>
+							</label>
+							<div class="col-sm-8">
+								<input class="form-control" name="auTel" value="111" id="" type="text" placeholder="">
+							</div>
+						</div>
+						<div class="form-group">
+							<label class="control-label col-sm-3"> <label for="">邮箱:</label>
+							</label>
+							<div class="col-sm-8">
+								<input class="form-control" name="auMail" value="11" id="" type="text" placeholder="">
+							</div>
+						</div>
+						<div class="form-group">
+							<label class="control-label col-sm-3"> <label for="">工号:</label>
+							</label>
+							<div class="col-sm-8">
+								<input class="form-control" name="auWorkNum" value="11" id="" type="text" placeholder="">
+							</div>
+						</div>
+						<div class="form-group">
+							<label class="control-label col-sm-3"> <label for="">所在部门:</label>
+							</label>
+							<div class="col-sm-8">
+								<select class="form-control" name="auUnitId">
+									<option value="8956804b5f9143e98279961cba9621d7">纪委(监察处、审计处)</option>
+									<option value="74049fb1a79d4296b8e843c942b7ef48">工会</option>
+									<option value="6b6ea7ce48f54b5587b0b764f4621b02">团委</option>
+									<option value="c1956d309478493c8020183e4ca22d1c">院领导</option>
+									<option value="0a6ac11bf0ca496c96bedf1ce4325705">组织部(离退休工作处)</option>
+									<option value="02d2a0861ef6486580638329b9287a27">教务处(示范建设与评估办公室)</option>
+									<option value="c8b1834cc9e941629378cd6eb87ff2ad">科技处</option>
+									<option value="bd1ee4fc736842ffb32173d2e62f870c">人事处</option>
+									<option value="e02aad2e875b4b4eabc8ebae2851be2f">计划财务处</option>
+									<option value="5ffca626402842d39fbdfdf1c87e269c">学生工作部、学生处(学生资助管理中心)</option>
+									<option value="47956f7399da40549b8526311f369840">国有资产管理处</option>
+									<option value="a00e61cda86645bf9f8f29719dcdf702">保卫处(武装部)</option>
+									<option value="3d428386be154482816eccecd78669a3">图书馆(档案馆、校史馆)</option>
+									<option value="c1fa08c9f65e482fa108338d2883b35f">学报编辑部</option>
+									<option value="3ca71405795848a8add315cebaec39db">教育教学督导室(高等职业教育研究室)</option>
+									<option value="4de63c06fc894190ae4ee23d71f31556">招生就业服务中心(校企合作办公室)</option>
+									<option value="de7a6284b8b84cb884a7ae1deee0cdf3">数字化校园建设与管理办公室</option>
+									<option value="5e1e01e326d74d4eaaacacbd6603c984">基本建设办公室</option>
+									<option value="9cb9757328e144e1b3cfb283224d4b2a">后勤管理办公室</option>
+									<option value="d4f0806043d8412cbc3dc8f61e550d15">后勤服务中心</option>
+									<option value="578385b1160f4c41bc288bfe7b2bf0c4">基础部</option>
+									<option value="bc8b104f26224ec49e1cb4de77e37e09">思想政治理论教学部</option>
+									<option value="df70c358474f4819b299f9f3c918da75">党委办公室、院办公室</option>
+									<option value="5a5ee8c3d8a141ed81e72114c1fcee5b">宣传部(统战部、文明办)</option>
+									<option value="de3036f0d3a5441998881dede52e2749">会计电算化</option>
+									<option value="9a4b3ccea4724f6da5e792ed2244f827">会计电算化(对口)</option>
+									<option value="50d6310400c84adea12f2b33a5720595">注册会计师(专门化)</option>
+									<option value="cae8142f507043e6807248b63b04c39b">会计(注册会计师方向)</option>
+									<option value="68fde2a6810a42628ca931cc12211a46">投资与理财</option>
+									<option value="ff847021d5c648e3abddf8022486a269">保险实务</option>
+									<option value="f9a2a57420a74e2f8d38b3a159261f10">财务信息管理</option>
+									<option value="6649152666b146caad7562e92bb413bb">会计</option>
+									<option value="684b96efa0c54390a85c79e66c7f36c9">会计信息管理</option>
+									<option value="19eeb91a5d8e47aa84f1645b511c038c">测量工程(工程测量方向)</option>
+									<option value="4c22934e151b4c639bbc34b9e74d78e1">测量工程(摄影测量方向)</option>
+									<option value="3ac64232b1e54d22866efd512a897e3a">地理信息系统</option>
+									<option value="8fa4667da2ac4d62a958b2054b3b0b81">地理信息系统与地图制图技术</option>
+									<option value="7b0290964d774e2cafa1489e5a94c0b1">地理信息系统与地图制图技术(3+2)</option>
+									<option value="19e29b270e644a5b907c0c509fde134f">工程测量技术</option>
+									<option value="550ca0f1ef904b1096238677366b4c79">工程测量技术(3+2)</option>
+									<option value="e84ce76c4c24420ca1d64ef25c4205d6">工程测量技术(地籍测绘与土地管理方向)</option>
+									<option value="f3408356a9954f29bb26754dbfd11756">工程测量技术(对口)</option>
+									<option value="9a6ba2019ee14ad6a204675027d0d929">工程测量技术(摄影测量与遥感技术方向)</option>
+									<option value="7350f8f9553d44448ed8f515db32c8f1">地理信息系统与地图制图技术(五年制)</option>
+									<option value="ab5213a266a44dd08c8fe9931b743b75">工程测量技术(地籍测绘与土地管理)(对口)</option>
+									<option value="4aa634b7cbeb48329f8c66fef175660d">工程测量技术(五年制)</option>
+									<option value="63a0c7494d56461b8fd4d395a5978ace">工程测量技术(水工方向)</option>
+									<option value="853ba40f1bef4c4fb19a104f1be7f69f">工程测量技术（地籍与土管方向五年制）</option>
+									<option value="75ed4479dd1e4b5aa0d050e2f40901c6">工程测量技术（摄影与遥感方向五年制）</option>
+									<option value="231e4f24f0d842478d6c734f11081ec7">工程测量技术(摄影与遥感3＋2)</option>
+									<option value="89170beb41104c9f92d29e84278312f2">摄影测量与遥感技术</option>
+									<option value="c6390ace9be64f45b39a451d7a1b552f">工程测量技术(地籍测量与土地管理D)</option>
+									<option value="3d69710abf524a218e3d27b57901258e">摄影测量与遥感技术(对口)</option>
+									<option value="33e5c3b7a82049b590cf2df99af691f4">工程测量技术(中外合作办学)</option>
+									<option value="6a747f67ba34466d9ad5b40e58316a7f">地理信息系统与地图制图技术（单招）</option>
+									<option value="c6a2ba9e9951456d814279efbd198338">测绘工程</option>
+									<option value="e7bb45824e54413caa069d0d28e56199">摄影测量与遥感技术（单招）</option>
+									<option value="2e43af2d73c449b1a48f91424b4b48f9">测绘工程技术</option>
+									<option value="d7a18ce730b141508ef20d3d8e773e24">地籍测绘与土地管理</option>
+									<option value="119edcd4970f4a11855e0716d433cffc">测绘地理信息技术</option>
+									<option value="c568b969378a4e1486f60678b9199cb0">水利工程学院2</option>
+									<option value="3e14f492fa544adeab2cfaa7cb0ef15b">土木与交通工程学院</option>
+									<option value="418718909c1c4cf7b554c3513ad2ac7e">测绘工程学院</option>
+									<option value="a8f4cab6bd8644fe86aeac66c5ea7736">机械工程学院</option>
+									<option value="70ed8bc8c7ef439ea8048e58927b421c">国际教育学院(外语系、外事办公室)</option>
+									<option value="9aa5edf55c9341edb5d000578e16ca30">环境与化学工程系</option>
+									<option value="f90636f8b2ec42a9abbd48f3cd90a896">财经系</option>
+									<option value="d822ca40bf864ffbaa33e57f3c53b066">管理系</option>
+									<option value="23a943fc0a34435fb4c4c87fd6d24bf4">信息工程系</option>
+									<option value="52b671ce78dc444096b385b236e35d45">自动化工系</option>
+									<option value="49f070ae262d4b43a3e7f50945d3dbb7">旅游系</option>
+									<option value="260cdf6fdcf8428794efc1f7d2b72781">艺术系(艺术教育中心)</option>
+									<option value="d3e8e815ca844625afde59b674f93f0f">体育部</option>
+									<option value="304512e91a874f1c8187e43efc27ddb4">继续教育学院</option>
+									<option value="8139051550a44b418d89a046757c2233">自动化工程系</option>
+									<option value="0c758bc39e9a48818b5efd5949a4b54b">电子商务</option>
+									<option value="ddd2803d2da44b4c932878c2fc324bac">旅游与酒店管理</option>
+									<option value="b8cad1d2b27941f29c3395a105c617e5">市场营销</option>
+								</select>
+							</div>
+						</div>
+						<div class="form-group">
+							<label class="control-label col-sm-3"> <label for="">角色:</label>
+							</label>
+							<div class="col-sm-8">
+								<div class="radio radio-success radio-inline">
+									<input type="radio" id="inlineRadio3" value="cjgly" name="radioInline" checked="">
+									<label for="inlineRadio3">超级管理员</label>
+								</div>
+								<div class="radio radio-success radio-inline">
+									<input type="radio" id="inlineRadio4" value="cjgly" name="radioInline">
+									<label for="inlineRadio4">课程负责人</label>
+								</div>
+								<div class="radio radio-success radio-inline">
+									<input type="radio" id="inlineRadio5" value="kcgljs" name="radioInline">
+									<label for="inlineRadio5">课程管理教师</label>
+								</div>
+								<div class="radio radio-success radio-inline">
+									<input type="radio" id="inlineRadio6" value="ksgly" name="radioInline">
+									<label for="inlineRadio6">考场管理员</label>
+								</div>
+								<div class="radio radio-success radio-inline">
+									<input type="radio" id="inlineRadio7" value="xgly" name="radioInline">
+									<label for="inlineRadio7">校管理员</label>
+								</div>
+								<div class="radio radio-success radio-inline">
+									<input type="radio" id="inlineRadio8" value="ygly" name="radioInline">
+									<label for="inlineRadio8">院管理员</label>
+								</div>
+							</div>
+						</div>
+					</div>
+				</form>
+				<div class="height60"></div>
+			</div>
+			<div class="modal-footer text-center">
+				<button type="button" class="btn btn-primary" data-dismiss="modal">保存</button>
+				<button type="button" class="btn btn-default close-layer" data-dismiss="modal">取消</button>
+			</div>
+		</div>
+		<!--delcon st-->
+		<div class="delcon" style="display: none;">
+			<div class="pop-content">
+				<div class="del-content">是否确定删除，删除后不可恢复？</div>
+			</div>
+			<div class="modal-footer text-center">
+				<button type="button" class="btn btn-primary" data-dismiss="modal">保存</button>
+				<button type="button" class="btn btn-default close-layer" data-dismiss="modal">取消</button>
+			</div>
+		</div>
+		<!--addcontent end-->
+		<!--js st-->
+		<script src="../../js/jquery.min.js?v=2.1.4"></script>
+		<script src="../../js/bootstrap.min.js?v=3.3.6"></script>
+		<script src="../../js/content.min.js?v=1.0.0"></script>
+		<script src="../../js/plugins/bootstrap-table/bootstrap-table.min.js"></script>
+		<script src="../../js/plugins/bootstrap-table/bootstrap-table-mobile.min.js"></script>
+		<script src="../../js/plugins/bootstrap-table/locale/bootstrap-table-zh-CN.min.js"></script>
+		<script src="../../js/demo/bootstrap-table-demo.min.js"></script>
+		<!--select-->
+		<script src="../../js/plugins/layer/layer.js"></script>
+		
+		<!--时间选择器-->
+		<script src="../../layui/layui.js" charset="utf-8"></script>
+		<!--下拉搜索框-->
+		<script src="../../js/plugins/chosen/chosen.jquery.js"></script>
+		<script src="../../js/demo/form-advanced-demo.min.js"></script>
+
+		<script type="text/javascript">
+			$('.release').click(function() {
+				layer.open({
+					title: '发布自主预约',
+					type: 1,
+					skin: 'layui-layer-rim', //加上边框
+					area: ['auto', 'auto'], //宽高
+					content: $('.table-release')
+				});
+			});
+			$('.disable').click(function() {
+				layer.msg('启用成功');
+			});
+			$('.reset').click(function() {
+				layer.msg('更新成功');
+			});
+			$('.close-layer').click(function() {
+				layer.closeAll();
+			});
+			$('.del').click(function() {
+				layer.open({
+					title: '信息',
+					type: 1,
+					skin: 'layui-layer-rim', //加上边框
+					area: ['auto', 'auto'], //宽高
+					content: $('.delcon')
+				});
+			});
+			$('.edit').click(function() {
+				layer.open({
+					title: '编辑',
+					type: 1,
+					skin: 'layui-layer-rim', //加上边框
+					area: ['auto', 'auto'], //宽高
+					content: $('.edit-role')
+				});
+			});
+		</script>
+
+<!--时间选择器-->
+<script>
+layui.use('laydate', function(){
+  var laydate = layui.laydate;
+  
+  //常规用法
+  laydate.render({
+    elem: '#test1'
+  });
+  
+  //国际版
+  laydate.render({
+    elem: '#test1-1'
+    ,lang: 'en'
+  });
+  
+  //年选择器
+  laydate.render({
+    elem: '#test2'
+    ,type: 'year'
+  });
+  
+  //年月选择器
+  laydate.render({
+    elem: '#test3'
+    ,type: 'month'
+  });
+  
+  //时间选择器
+  laydate.render({
+    elem: '#test4'
+    ,type: 'time'
+  });
+  
+  //时间选择器
+  laydate.render({
+    elem: '#test5'
+    ,type: 'datetime'
+  });
+  
+  //日期范围
+  laydate.render({
+    elem: '#test6'
+    ,range: true
+  });
+  
+  //年范围
+  laydate.render({
+    elem: '#test7'
+    ,type: 'year'
+    ,range: true
+  });
+  
+  //年月范围
+  laydate.render({
+    elem: '#test8'
+    ,type: 'month'
+    ,range: true
+  });
+  
+  //时间范围
+  laydate.render({
+    elem: '#test9'
+    ,type: 'time'
+    ,range: true
+  });
+  
+  //日期时间范围
+  laydate.render({
+    elem: '#test10'
+    ,type: 'datetime'
+    ,range: true
+  });
+  
+  //自定义格式
+  laydate.render({
+    elem: '#test11'
+    ,format: 'yyyy年MM月dd日'
+  });
+  laydate.render({
+    elem: '#test12'
+    ,format: 'dd/MM/yyyy'
+  });
+  laydate.render({
+    elem: '#test13'
+    ,format: 'yyyyMMdd'
+  });
+  laydate.render({
+    elem: '#test14'
+    ,type: 'time'
+    ,format: 'H点m分'
+  });
+  laydate.render({
+    elem: '#test15'
+    ,type: 'month'
+    ,range: '~'
+    ,format: 'yyyy-MM'
+  });
+  laydate.render({
+    elem: '#test16'
+    ,type: 'datetime'
+    ,range: '到'
+    ,format: 'yyyy年M月d日H时m分s秒'
+  });
+  
+  //开启公历节日
+  laydate.render({
+    elem: '#test17'
+    ,calendar: true
+  });
+  
+  //自定义重要日
+  laydate.render({
+    elem: '#test18'
+    ,mark: {
+      '0-10-14': '生日'
+      ,'0-12-31': '跨年' //每年的日期
+      ,'0-0-10': '工资' //每月某天
+      ,'0-0-15': '月中'
+      ,'2017-8-15': '' //如果为空字符，则默认显示数字+徽章
+      ,'2099-10-14': '呵呵'
+    }
+    ,done: function(value, date){
+      if(date.year === 2017 && date.month === 8 && date.date === 15){ //点击2017年8月15日，弹出提示语
+        layer.msg('这一天是：中国人民抗日战争胜利72周年');
+      }
+    }
+  });
+  
+  //限定可选日期
+  var ins22 = laydate.render({
+    elem: '#test-limit1'
+    ,min: '2016-10-14'
+    ,max: '2080-10-14'
+    ,ready: function(){
+      ins22.hint('日期可选值设定在 <br> 2016-10-14 到 2080-10-14');
+    }
+  });
+  
+  //前后若干天可选，这里以7天为例
+  laydate.render({
+    elem: '#test-limit2'
+    ,min: -7
+    ,max: 7
+  });
+  
+  //限定可选时间
+  laydate.render({
+    elem: '#test-limit3'
+    ,type: 'time'
+    ,min: '09:30:00'
+    ,max: '17:30:00'
+    ,btns: ['clear', 'confirm']
+  });
+  
+  //同时绑定多个
+  lay('.test-item').each(function(){
+    laydate.render({
+      elem: this
+      ,trigger: 'click'
+    });
+  });
+  
+  //初始赋值
+  laydate.render({
+    elem: '#test19'
+    ,value: '1989-10-14'
+  });
+  
+  //选中后的回调
+  laydate.render({
+    elem: '#test20'
+    ,done: function(value, date){
+      layer.alert('你选择的日期是：' + value + '<br>获得的对象是' + JSON.stringify(date));
+    }
+  });
+  
+  //日期切换的回调
+  laydate.render({
+    elem: '#test21'
+    ,change: function(value, date){
+      layer.msg('你选择的日期是：' + value + '<br><br>获得的对象是' + JSON.stringify(date));
+    }
+  });
+  //不出现底部栏
+  laydate.render({
+    elem: '#test22'
+    ,showBottom: false
+  });
+  
+  //只出现确定按钮
+  laydate.render({
+    elem: '#test23'
+    ,btns: ['confirm']
+  });
+  
+  //自定义事件
+  laydate.render({
+    elem: '#test24'
+    ,trigger: 'mousedown'
+  });
+  
+  //点我触发
+  laydate.render({
+    elem: '#test25'
+    ,eventElem: '#test25-1'
+    ,trigger: 'click'
+  });
+  
+  //双击我触发
+  lay('#test26-1').on('dblclick', function(){
+    laydate.render({
+      elem: '#test26'
+      ,show: true
+      ,closeStop: '#test26-1'
+    });
+  });
+  
+  //日期只读
+  laydate.render({
+    elem: '#test27'
+    ,trigger: 'click'
+  });
+  
+  //非input元素
+  laydate.render({
+    elem: '#test28'
+  });
+  
+  //墨绿主题
+  laydate.render({
+    elem: '#test29'
+    ,theme: 'molv'
+  });
+  
+  //自定义颜色
+  laydate.render({
+    elem: '#test30'
+    ,theme: '#393D49'
+  });
+  
+  //格子主题
+  laydate.render({
+    elem: '#test31'
+    ,theme: 'grid'
+  });
+  
+  
+  //直接嵌套显示
+  laydate.render({
+    elem: '#test-n1'
+    ,position: 'static'
+  });
+  laydate.render({
+    elem: '#test-n2'
+    ,position: 'static'
+    ,lang: 'en'
+  });
+  laydate.render({
+    elem: '#test-n3'
+    ,type: 'month'
+    ,position: 'static'
+  });
+  laydate.render({
+    elem: '#test-n4'
+    ,type: 'time'
+    ,position: 'static'
+  });
+});
+</script>
+
+
+
+	</body>
+
+</html>
