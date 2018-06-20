@@ -1,0 +1,963 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<title>期末考试安排</title>
+		<meta name="keywords" content="黄河水利职业技术学院智能考场管理系统">
+		<meta name="description" content="黄河水利职业技术学院智能考场管理系统">
+		<link rel="shortcut icon" href="favicon.ico">
+		<link href="../../css/bootstrap.min14ed.css?v=3.3.6" rel="stylesheet">
+		<link href="../../css/font-awesome.min93e3.css?v=4.4.0" rel="stylesheet">
+		<link href="../../css/plugins/bootstrap-table/bootstrap-table.min.css" rel="stylesheet">
+		<link href="../../css/plugins/awesome-bootstrap-checkbox/awesome-bootstrap-checkbox.css" rel="stylesheet">
+		<link href="../../css/animate.min.css" rel="stylesheet">
+		<link href="../../css/style.min862f.css?v=4.1.0" rel="stylesheet">
+		<!--下拉搜索框-->
+		<link href="../../css/plugins/chosen/chosen.css" rel="stylesheet">
+		<!--zTree-->
+		<link href="../../css/plugins/zTreeStyle/zTreeStyle.css" rel="stylesheet">
+		<link href="../../css/pages.css" rel="stylesheet">
+	</head>
+
+	<body class="gray-bg">
+		<div class="wrapper wrapper-content animated fadeInRight">
+			<!-- Panel Other -->
+			<div class="ibox float-e-margins">
+				<div class="ibox-title exam-ibox">
+					<h5>期末考试安排</h5>
+					<div class="ibox-tools">
+						<!--<a class="dropdown-toggle" data-toggle="dropdown" href="index.html">
+							<i class="fa fa-wrench"></i>返回工作台
+						</a>-->
+						<a class="collapse-link">
+							<i class="fa fa-chevron-up"></i>
+						</a>
+						<a class="close-link">
+							<i class="fa fa-times"></i>
+						</a>
+					</div>
+				</div>
+				<div class="ibox-content">
+					<div class="search-topform">
+						<form class="form-inline" id="searchForm">
+							<input type="hidden" class="form-control" id="" value="" name="wuStatus" placeholder="">
+							<input type="hidden" class="form-control" id="pageNo" value="1" name="pageNo" placeholder="">
+							<input type="hidden" class="form-control" id="pageSize" value="10" name="pageSize" placeholder="">
+							<div class="form-group">
+								<label for="">考场名称：</label>
+								<select class="form-control" name="wuType">
+									<option value="">全部</option>
+									<option value="">科技楼第一机房</option>
+								</select>
+							</div>
+							<button class="btn btn-primary" type="submit">搜索</button>
+							<button class="btn btn-default" type="reset">清空条件</button>
+						</form>
+					</div>
+					<div class="row row-lg">
+						<div class="col-sm-12">
+							<!-- Example Toolbar -->
+							<div class="bars pull-left bars-add">
+								<div id="toolbar">
+									<a class="btn btn-primary indrole">
+										<!--<i class="glyphicon glyphicon-plus"></i>-->发布自主预约</a>
+									<a class="conrole btn btn-warning">发布集中预约</a>
+									<a class="phonrole btn btn-success">发布手机考试</a>
+									<a class="btn btn-info anyrole">
+										<!--<i class="glyphicon glyphicon-copy "></i>-->发布随到随考
+									</a>
+									<a class="reset btn btn-danger">结束预约</a>
+								</div>
+							</div>
+							<table id="exampleTableToolbar" class="table table-striped table-bordered table-hover" data-mobile-responsive="true">
+								<thead>
+									<tr>
+										<th>
+											<div class="checkbox checkbox-info checkbox-inline">
+												<input type="checkbox" id="inlineCheckbox1" value="option1">
+												<label for="inlineCheckbox1">全选</label>
+											</div>
+										</th>
+										<th data-field="time">考试时间</th>
+										<th data-field="name">考场名称</th>
+										<th data-field="sits">可用座位数</th>
+										<th data-field="appointment">预约进度</th>
+										<th data-field="scope">预约范围</th>
+										<th data-field="type">考试类型</th>
+										<th data-field="state">考试状态</th>
+										<th data-field="operation">操作</th>
+									</tr>
+								</thead>
+								<tbody>
+									<tr>
+										<td class="check-td">
+											<div class="checkbox checkbox-info checkbox-inline">
+												<input type="checkbox" id="inlineCheckbox1" value="option1">
+												<label for="inlineCheckbox1"></label>
+											</div>
+										</td>
+										<td>2018-02-15 14：00：00</td>
+										<td>90分</td>
+										<td>20</td>
+										<td>
+											<span class="">20% 完成</span>
+											<div class="progress">
+												<div class="progress-bar progress-bar-info" role="progressbar" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100" style="width: 20%;">
+												</div>
+											</div>
+										</td>
+										<td>范围</td>
+										<td>考试类型</td>
+										<td><span class="label label-success">已考试</span></td>
+										<td>
+											<div class="btn-group" role="group">
+												<script type="text/javascript">
+													function a() {
+														parent.$("[href='exam_qbook_detail.html']").click();
+													}
+												</script>
+												<button type="button" class="edit btn btn-info" onclick="a()">查看预约详情</button>
+												<script type="text/javascript">
+													function c() {
+														parent.$("[href='exam_qbook_manage.html']").click();
+													}
+												</script>
+												<button type="button" class="J_menuItem manage btn btn-success" onclick="c()">管理</button>
+												<button type="button" class="del btn btn-danger">删除</button>
+												<button type="button" class="btn gencon btn-primary">生成试卷/二维码</button>
+											</div>
+										</td>
+									</tr>
+
+									<tr>
+										<td class="check-td">
+											<div class="checkbox checkbox-info checkbox-inline">
+												<input type="checkbox" id="inlineCheckbox1" value="option1">
+												<label for="inlineCheckbox1"></label>
+											</div>
+										</td>
+										<td>2018-02-15 14：00：00</td>
+										<td>60分</td>
+										<td>40</td>
+										<td>
+											<span class="">70% 完成</span>
+											<div class="progress">
+												<div class="progress-bar progress-bar-info" role="progressbar" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100" style="width: 70%;">
+												</div>
+											</div>
+										</td>
+										<td>范围</td>
+										<td>考试类型</td>
+										<td><span class="label label-success">已考试</span></td>
+										<td>
+											<div class="btn-group" role="group">
+												<script type="text/javascript">
+													function a() {
+														parent.$("[href='exam_qbook_detail.html']").click();
+													}
+												</script>
+												<button type="button" class="edit btn btn-info" onclick="a()">查看预约详情</button>
+												<script type="text/javascript">
+													function c() {
+														parent.$("[href='exam_qbook_manage.html']").click();
+													}
+												</script>
+												<button type="button" class="J_menuItem manage btn btn-success" onclick="c()">管理</button>
+												<button type="button" class="del btn btn-danger">删除</button>
+												<button type="button" class="btn gencon btn-primary">生成试卷/二维码</button>
+											</div>
+										</td>
+									</tr>
+
+								</tbody>
+							</table>
+							<!-- End Example Toolbar -->
+							<div class="fixed-table-pagination">
+								<div class="pull-left pagination-detail">
+									<span class="pagination-info">显示第 71 到第 72 条记录，总共 72 条记录</span>
+									<span class="page-list">每页显示 <span class="btn-group dropup">
+										<button type="button" class="btn btn-default  dropdown-toggle" data-toggle="dropdown" aria-expanded="false"><span class="page-size">10</span> <span class="caret"></span></button>
+									<ul class="dropdown-menu" role="menu">
+										<li class="active">
+											<a href="javascript:void(0)">10</a>
+										</li>
+										<li>
+											<a href="javascript:void(0)">25</a>
+										</li>
+										<li>
+											<a href="javascript:void(0)">50</a>
+										</li>
+										<li>
+											<a href="javascript:void(0)">100</a>
+										</li>
+									</ul>
+									</span> 条记录</span>
+								</div>
+								<div class="pull-right pagination">
+									<ul class="pagination">
+										<li class="page-first">
+											<a href="javascript:void(0)">«</a>
+										</li>
+										<li class="page-pre">
+											<a href="javascript:void(0)">‹</a>
+										</li>
+										<li class="page-number">
+											<a href="javascript:void(0)">4</a>
+										</li>
+										<li class="page-number">
+											<a href="javascript:void(0)">5</a>
+										</li>
+										<li class="page-number">
+											<a href="javascript:void(0)">6</a>
+										</li>
+										<li class="page-number">
+											<a href="javascript:void(0)">7</a>
+										</li>
+										<li class="page-number active">
+											<a href="javascript:void(0)">8</a>
+										</li>
+										<li class="page-next disabled">
+											<a href="javascript:void(0)">›</a>
+										</li>
+										<li class="page-last disabled">
+											<a href="javascript:void(0)">»</a>
+										</li>
+									</ul>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<!-- End Panel Other -->
+		</div>
+		<!--addcontent st-->
+		<!--table-indcon st-->
+		<div class="table-indcon" style="display: none;">
+			<div class="pop-content">
+				<form class="form-horizontal" id="addAuserForm" action="" accept-charset="UTF-8" method="post" novalidate="novalidate">
+					<div class="form-body">
+						<div class="form-group">
+							<label class="control-label col-sm-3"> <label for="">选择考试计划:</label>
+							</label>
+							<div class="col-sm-8">
+								<select class="form-control" name="auUnitId">
+									<option value="">请选择</option>
+									<option value="">考试计划</option>
+								</select>
+							</div>
+						</div>
+						<div class="form-group">
+							<label class="control-label col-sm-3"> <label for="">选择考场预约范围:</label>
+							</label>
+							<div class="col-sm-8">
+								<select class="form-control" name="auUnitId">
+									<option value="">学校</option>
+									<option value="">学院</option>
+								</select>
+							</div>
+						</div>
+
+						<div class="form-group">
+							<label class="control-label col-sm-3"> <label for="">选择预约考场:</label>
+							</label>
+							<div class="col-sm-8">
+								<div class="border over-wrap">
+									<div class="checkbox checkbox-info checkbox-inline">
+										<input type="checkbox" id="inlineRadio3" value="cjgly" name="radioInline" checked="">
+										<label for="inlineRadio3">4200</label>
+									</div>
+									<div class="checkbox checkbox-info checkbox-inline">
+										<input type="checkbox" id="inlineRadio4" value="cjgly" name="radioInline">
+										<label for="inlineRadio4">44112A</label>
+									</div>
+									<div class="checkbox checkbox-info checkbox-inline">
+										<input type="checkbox" id="inlineRadio5" value="kcgljs" name="radioInline">
+										<label for="inlineRadio5">44178A</label>
+									</div>
+									<div class="checkbox checkbox-info checkbox-inline">
+										<input type="checkbox" id="inlineRadio6" value="ksgly" name="radioInline">
+										<label for="inlineRadio6">56112c</label>
+									</div>
+									<div class="checkbox checkbox-info checkbox-inline">
+										<input type="checkbox" id="inlineRadio7" value="xgly" name="radioInline">
+										<label for="inlineRadio7">7580</label>
+									</div>
+									<div class="checkbox checkbox-info checkbox-inline">
+										<input type="checkbox" id="inlineRadio8" value="ygly" name="radioInline">
+										<label for="inlineRadio8">32100</label>
+									</div>
+								</div>
+							</div>
+
+						</div>
+						<div class="form-group">
+							<label class="control-label col-sm-3"> <label for="">座位绑定方式:</label>
+							</label>
+							<div class="col-sm-8">
+								<div class="radio radio-info radio-inline">
+									<input type="radio" id="i1" value="option1" name="radioInlines" checked="">
+									<label for="i1">预约时绑定</label>
+								</div>
+								<div class="radio radio-info radio-inline">
+									<input type="radio" id="i2" value="option2" name="radioInlines">
+									<label for="i2">考试时绑定</label>
+								</div>
+							</div>
+						</div>
+						<div class="form-group">
+							<label class="control-label col-sm-3"> <label for="">批次类型:</label>
+							</label>
+							<div class="col-sm-8">
+								<div class="radio sig-btn radio-info radio-inline">
+									<input type="radio" id="i3" value="option3" name="radioInline" checked="">
+									<label for="i3">单个批次</label>
+								</div>
+								<div class="radio mor-btn radio-info radio-inline">
+									<input type="radio" id="i4" value="option4" name="radioInline">
+									<label for="i4">多个批次</label>
+								</div>
+							</div>
+						</div>
+						<div class="form-group single">
+							<label class="control-label col-sm-3"> <label for="">考试开始时间:</label>
+							</label>
+							<div class="col-sm-8">
+								<input class="form-control" name="auName" id="time1" type="text" placeholder="考试开始时间">
+							</div>
+						</div>
+
+						<div class="form-group single">
+							<label class="control-label col-sm-3"> <label for="">考试结束时间:</label>
+							</label>
+							<div class="col-sm-8">
+								<input class="form-control" name="auTel" id="time2" type="text" placeholder="考试结束时间">
+							</div>
+						</div>
+						<div class="form-group one-more">
+							<label class="control-label col-sm-3"> <label for="">开始时间:</label>
+							</label>
+							<div class="col-sm-8">
+								<input class="form-control" name="auMail" id="time3" type="text" placeholder="开始时间">
+							</div>
+						</div>
+						<div class="form-group one-more">
+							<label class="control-label col-sm-3"> <label for="">考试时间:</label>
+							</label>
+							<div class="col-sm-8">
+								<input class="form-control" name="auMail" id="time4" type="text" placeholder="考试时间">
+							</div>
+						</div>
+						<div class="form-group one-more">
+							<label class="control-label col-sm-3"> <label for="">间隔时间:</label>
+							</label>
+							<div class="col-sm-8">
+								<input class="form-control" name="auMail" id="" type="text" placeholder="">
+							</div>
+						</div>
+						<div class="form-group one-more">
+							<label class="control-label col-sm-3"> <label for="">批次数:</label>
+							</label>
+							<div class="col-sm-8">
+								<select class="form-control" name="auUnitId">
+									<option value="">1</option>
+									<option value="">2</option>
+									<option value="">3</option>
+								</select>
+							</div>
+						</div>
+						<!--下边这个 form-group 根据其上边的下拉框选择的数字不同显示-->
+						<div class="form-group one-more">
+							<label class="control-label col-sm-3"> <label for=""></label>
+							</label>
+							<div class="col-sm-8">
+								<table id="exampleTableToolbar" class="table table-striped table-bordered table-hover" data-mobile-responsive="true">
+									<thead>
+										<tr>
+											<th data-field="begin">开始时间</th>
+											<th data-field="end">结束时间</th>
+										</tr>
+									</thead>
+									<tbody>
+										<tr>
+											<td><input class="form-control" name="auMail" id="time5" type="text" placeholder="开始时间"></td>
+											<td><input class="form-control" name="auMail" id="time6" type="text" placeholder="结束时间"></td>
+										</tr>
+
+									</tbody>
+								</table>
+								<div class="checkbox checkbox-info checkbox-inline">
+									<input type="checkbox" id="inlineRadio3" value="cjgly" name="radioInline" checked="">
+									<label for="inlineRadio3">应用于多个日期</label>
+								</div>
+							</div>
+						</div>
+						<!--上边这个 form-group 根据其上边的下拉框选择的数字不同显示-->
+					</div>
+					<div class="height60"></div>
+				</form>
+			</div>
+			<div class="modal-footer text-center">
+				<button type="button" class="btn btn-primary" data-dismiss="modal">保存</button>
+				<button type="button" class="btn btn-default close-layer" data-dismiss="modal">取消</button>
+			</div>
+		</div>
+		<!--table-concon st-->
+		<div class="table-concon" style="display: none;">
+			<div class="pop-content">
+				<form class="form-horizontal" id="addAuserForm" action="" accept-charset="UTF-8" method="post" novalidate="novalidate">
+					<div class="form-body">
+						<div class="form-group">
+							<label class="control-label col-sm-3"> <label for="">选择考试计划:</label>
+							</label>
+							<div class="col-sm-8">
+								<select class="form-control" name="auUnitId">
+									<option value="">请选择</option>
+									<option value="">考试计划</option>
+								</select>
+							</div>
+						</div>
+						<div class="form-group">
+							<label class="control-label col-sm-3"> <label for="">选择预约考场:</label>
+							</label>
+							<div class="col-sm-8">
+								<div class="border over-wrap">
+									<div class="checkbox checkbox-info checkbox-inline">
+										<input type="checkbox" id="inlineRadio3" value="cjgly" name="radioInline" checked="">
+										<label for="inlineRadio3">4200</label>
+									</div>
+									<div class="checkbox checkbox-info checkbox-inline">
+										<input type="checkbox" id="inlineRadio4" value="cjgly" name="radioInline">
+										<label for="inlineRadio4">44112A</label>
+									</div>
+									<div class="checkbox checkbox-info checkbox-inline">
+										<input type="checkbox" id="inlineRadio5" value="kcgljs" name="radioInline">
+										<label for="inlineRadio5">44178A</label>
+									</div>
+									<div class="checkbox checkbox-info checkbox-inline">
+										<input type="checkbox" id="inlineRadio6" value="ksgly" name="radioInline">
+										<label for="inlineRadio6">56112c</label>
+									</div>
+									<div class="checkbox checkbox-info checkbox-inline">
+										<input type="checkbox" id="inlineRadio7" value="xgly" name="radioInline">
+										<label for="inlineRadio7">7580</label>
+									</div>
+									<div class="checkbox checkbox-info checkbox-inline">
+										<input type="checkbox" id="inlineRadio8" value="ygly" name="radioInline">
+										<label for="inlineRadio8">32100</label>
+									</div>
+								</div>
+							</div>
+
+						</div>
+						<div class="form-group">
+							<label class="control-label col-sm-3"> <label for="">考试开始时间:</label>
+							</label>
+							<div class="col-sm-8">
+								<input class="form-control" name="auName" id="time7" type="text" placeholder="考试开始时间">
+							</div>
+						</div>
+
+						<div class="form-group">
+							<label class="control-label col-sm-3"> <label for="">考试结束时间:</label>
+							</label>
+							<div class="col-sm-8">
+								<input class="form-control" name="auTel" id="time8" type="text" placeholder="考试结束时间">
+							</div>
+						</div>
+						<div class="form-group">
+							<label class="control-label col-sm-3"> <label for="">选择课程:</label>
+							</label>
+							<div class="col-sm-8">
+								<select class="form-control" name="courseIds" id="courseIds" onchange="refashGrade()">
+									<option value="">请选择</option>
+									<option value="">工程项目承揽与合同管理</option>
+									<option value="">计算机应用基础测试</option>
+									<option value="">土力学</option>
+									<option value="">土工材料试验检测</option>
+									<option value="">教学效果评价考试</option>
+								</select>
+							</div>
+						</div>
+						<div class="form-group">
+							<label class="control-label col-sm-3"> <label for="">选择班级:</label>
+							</label>
+							<div class="col-sm-8">
+								<select class="form-control" name="courseIds" id="courseIds" onchange="refashGrade()">
+									<option value="">请选择</option>
+									<option value="">工程项目承揽与合同管理</option>
+									<option value="">计算机应用基础测试</option>
+									<option value="">土力学</option>
+									<option value="">土工材料试验检测</option>
+									<option value="">教学效果评价考试</option>
+								</select>
+							</div>
+						</div>
+						<div class="form-group">
+							<label class="control-label col-sm-3"> <label for="">座位绑定方式:</label>
+							</label>
+							<div class="col-sm-8">
+								<div class="radio radio-info radio-inline">
+									<input type="radio" id="i5" value="option5" name="ww" checked="">
+									<label for="i5">预约时绑定</label>
+								</div>
+								<div class="radio radio-info radio-inline">
+									<input type="radio" id="i6" value="option6" name="ww">
+									<label for="i6">考试时绑定</label>
+								</div>
+							</div>
+						</div>
+
+					</div>
+					<div class="height60"></div>
+				</form>
+			</div>
+			<div class="modal-footer text-center">
+				<button type="button" class="btn btn-primary" data-dismiss="modal">保存</button>
+				<button type="button" class="btn btn-default close-layer" data-dismiss="modal">取消</button>
+			</div>
+		</div>
+		<!--table-phoncon st-->
+		<div class="table-phoncon" style="display: none;">
+			<div class="pop-content">
+				<form class="form-horizontal" id="addAuserForm" action="" accept-charset="UTF-8" method="post" novalidate="novalidate">
+					<div class="form-body">
+						<div class="form-group">
+							<label class="control-label col-sm-3"> <label for="">选择考试计划:</label>
+							</label>
+							<div class="col-sm-8">
+								<select class="form-control" name="auUnitId">
+									<option value="">请选择</option>
+									<option value="">考试计划</option>
+								</select>
+							</div>
+						</div>
+						<div class="form-group">
+							<label class="control-label col-sm-3"> <label for="">选择预约考场:</label>
+							</label>
+							<div class="col-sm-8">
+								<div class="border over-wrap">
+									<div class="checkbox checkbox-info checkbox-inline">
+										<input type="checkbox" id="inlineRadio3" value="cjgly" name="radioInline" checked="">
+										<label for="inlineRadio3">4200</label>
+									</div>
+									<div class="checkbox checkbox-info checkbox-inline">
+										<input type="checkbox" id="inlineRadio4" value="cjgly" name="radioInline">
+										<label for="inlineRadio4">44112A</label>
+									</div>
+									<div class="checkbox checkbox-info checkbox-inline">
+										<input type="checkbox" id="inlineRadio5" value="kcgljs" name="radioInline">
+										<label for="inlineRadio5">44178A</label>
+									</div>
+									<div class="checkbox checkbox-info checkbox-inline">
+										<input type="checkbox" id="inlineRadio6" value="ksgly" name="radioInline">
+										<label for="inlineRadio6">56112c</label>
+									</div>
+									<div class="checkbox checkbox-info checkbox-inline">
+										<input type="checkbox" id="inlineRadio7" value="xgly" name="radioInline">
+										<label for="inlineRadio7">7580</label>
+									</div>
+									<div class="checkbox checkbox-info checkbox-inline">
+										<input type="checkbox" id="inlineRadio8" value="ygly" name="radioInline">
+										<label for="inlineRadio8">32100</label>
+									</div>
+								</div>
+								<p class="text-danger mt-10">提示：只显示教室考场</p>
+							</div>
+
+						</div>
+						<div class="form-group">
+							<label class="control-label col-sm-3"> <label for="">考试开始时间:</label>
+							</label>
+							<div class="col-sm-8">
+								<input class="form-control" name="auName" id="time9" type="text" placeholder="考试开始时间">
+							</div>
+						</div>
+
+						<div class="form-group">
+							<label class="control-label col-sm-3"> <label for="time10">考试结束时间:</label>
+							</label>
+							<div class="col-sm-8">
+								<input class="form-control" name="auTel" id="" type="text" placeholder="考试结束时间">
+							</div>
+						</div>
+						<div class="form-group">
+							<label class="control-label col-sm-3"> <label for="">选择课程:</label>
+							</label>
+							<div class="col-sm-8">
+								<select class="form-control" name="courseIds" id="courseIds" onchange="refashGrade()">
+									<option value="">请选择</option>
+									<option value="">工程项目承揽与合同管理</option>
+									<option value="">计算机应用基础测试</option>
+									<option value="">土力学</option>
+									<option value="">土工材料试验检测</option>
+									<option value="">教学效果评价考试</option>
+								</select>
+							</div>
+						</div>
+						<div class="form-group">
+							<label class="control-label col-sm-3"> <label for="">选择班级:</label>
+							</label>
+							<div class="col-sm-8">
+								<select class="form-control" name="courseIds" id="courseIds" onchange="refashGrade()">
+									<option value="">请选择</option>
+									<option value="">工程项目承揽与合同管理</option>
+									<option value="">计算机应用基础测试</option>
+									<option value="">土力学</option>
+									<option value="">土工材料试验检测</option>
+									<option value="">教学效果评价考试</option>
+								</select>
+							</div>
+						</div>
+
+					</div>
+					<div class="height60"></div>
+				</form>
+			</div>
+			<div class="modal-footer text-center">
+				<button type="button" class="btn btn-primary" data-dismiss="modal">保存</button>
+				<button type="button" class="btn btn-default close-layer" data-dismiss="modal">取消</button>
+			</div>
+		</div>
+		<!--table-anycon st-->
+		<div class="table-anycon" style="display: none;">
+			<div class="pop-content">
+				<form class="form-horizontal" id="addAuserForm" action="" accept-charset="UTF-8" method="post" novalidate="novalidate">
+					<div class="form-body">
+						<div class="form-group">
+							<label class="control-label col-sm-3"> <label for="">选择考试计划:</label>
+							</label>
+							<div class="col-sm-8">
+								<select class="form-control" name="auUnitId">
+									<option value="">请选择</option>
+									<option value="">考试计划</option>
+								</select>
+							</div>
+						</div>
+						<div class="form-group">
+							<label class="control-label col-sm-3"> <label for="">选择预约考场:</label>
+							</label>
+							<div class="col-sm-8">
+								<div class="border over-wrap">
+									<div class="checkbox checkbox-info checkbox-inline">
+										<input type="checkbox" id="inlineRadio3" value="cjgly" name="radioInline" checked="">
+										<label for="inlineRadio3">4200</label>
+									</div>
+									<div class="checkbox checkbox-info checkbox-inline">
+										<input type="checkbox" id="inlineRadio4" value="cjgly" name="radioInline">
+										<label for="inlineRadio4">44112A</label>
+									</div>
+									<div class="checkbox checkbox-info checkbox-inline">
+										<input type="checkbox" id="inlineRadio5" value="kcgljs" name="radioInline">
+										<label for="inlineRadio5">44178A</label>
+									</div>
+									<div class="checkbox checkbox-info checkbox-inline">
+										<input type="checkbox" id="inlineRadio6" value="ksgly" name="radioInline">
+										<label for="inlineRadio6">56112c</label>
+									</div>
+									<div class="checkbox checkbox-info checkbox-inline">
+										<input type="checkbox" id="inlineRadio7" value="xgly" name="radioInline">
+										<label for="inlineRadio7">7580</label>
+									</div>
+									<div class="checkbox checkbox-info checkbox-inline">
+										<input type="checkbox" id="inlineRadio8" value="ygly" name="radioInline">
+										<label for="inlineRadio8">32100</label>
+									</div>
+								</div>
+							</div>
+
+						</div>
+						<div class="form-group">
+							<label class="control-label col-sm-3"> <label for="">考试开始时间:</label>
+							</label>
+							<div class="col-sm-8">
+								<input class="form-control" name="auName" id="time11" type="text" placeholder="考试开始时间">
+							</div>
+						</div>
+
+						<div class="form-group">
+							<label class="control-label col-sm-3"> <label for="">考试结束时间:</label>
+							</label>
+							<div class="col-sm-8">
+								<input class="form-control" name="auTel" id="time12" type="text" placeholder="考试结束时间">
+							</div>
+						</div>
+						<div class="form-group">
+							<label class="control-label col-sm-3"> <label for="">座位绑定方式:</label>
+							</label>
+							<div class="col-sm-8">
+								<div class="radio radio-info radio-inline">
+									<input type="radio" id="i7" value="option5" name="ss" checked="">
+									<label for="i7">预约时绑定</label>
+								</div>
+								<div class="radio radio-info radio-inline">
+									<input type="radio" id="i8" value="option6" name="ss">
+									<label for="i8">考试时绑定</label>
+								</div>
+							</div>
+						</div>
+
+					</div>
+					<div class="height60"></div>
+				</form>
+			</div>
+			<div class="modal-footer text-center">
+				<button type="button" class="btn btn-primary" data-dismiss="modal">保存</button>
+				<button type="button" class="btn btn-default close-layer" data-dismiss="modal">取消</button>
+			</div>
+		</div>
+
+		<!--gencon st-->
+		<div class="table-gencon" style="display: none;">
+			<div class="pop-content">
+				<div class="text-center ">
+					<p>扫一扫，信息一目了然！</p>
+				</div>
+				<div class="text-center ma-wrap">
+					<img src="../../img/ma.jpg" width="300px">
+				</div>
+				<div class="height60"></div>
+			</div>
+			<div class="modal-footer text-center">
+				<button type="button" class="btn btn-default close-layer" data-dismiss="modal">关闭</button>
+			</div>
+		</div>
+
+		<!--delcon st-->
+		<div class="delcon" style="display: none;">
+			<div class="pop-content">
+				<div class="del-content">是否确定删除，删除后不可恢复？</div>
+			</div>
+			<div class="modal-footer text-center">
+				<button type="button" class="btn btn-primary" data-dismiss="modal">确定</button>
+				<button type="button" class="btn btn-default close-layer" data-dismiss="modal">取消</button>
+			</div>
+		</div>
+		<!--addcontent end-->
+		<!--js st-->
+		<script src="js/jquery.min.js?v=2.1.4"></script>
+		<script src="js/bootstrap.min.js?v=3.3.6"></script>
+		<script src="js/content.min.js?v=1.0.0"></script>
+		<script src="js/plugins/bootstrap-table/bootstrap-table.min.js"></script>
+		<script src="js/plugins/bootstrap-table/bootstrap-table-mobile.min.js"></script>
+		<script src="js/plugins/bootstrap-table/locale/bootstrap-table-zh-CN.min.js"></script>
+		<script src="js/demo/bootstrap-table-demo.min.js"></script>
+		<script src="js/plugins/layer/layer.js" charset="utf-8"></script>
+		<script src="laydate/laydate.js" charset="utf-8"></script>	
+		
+		<!--下拉搜索框-->
+		<script src="js/plugins/chosen/chosen.jquery.js"></script>
+		<!--ztree-->
+		<script src="js/plugins/zTree/jquery.ztree.core.js"></script>
+		<SCRIPT type="text/javascript">
+			var setting = {};
+			var zNodes = [{
+				name: "黄河水利学院",
+				open: true,
+				children: [{
+					name: "水利工程学院",
+					children: [{
+						name: "水利工程与管理类"
+					}]
+				}, {
+					name: "土木与交通工程学院",
+					children: [{
+						name: "土木工程检测技术"
+					}]
+				}, {
+					name: "外语系",
+					children: [{
+						name: "水电站运行与管理"
+					}]
+				}, {
+					name: "水利工程学院2",
+					children: [{
+						name: "工程造价"
+					}]
+				}, {
+					name: "机械工程学院",
+					children: [{
+						name: "模具设计与制造"
+					}]
+				}, {
+					name: "国际教育学院",
+					children: [{
+						name: "旅游英语"
+					}]
+				}, {
+					name: "财经系",
+					children: [{
+						name: "会计(注册会计师方向)"
+					}]
+				}]
+			}];
+			$(document).ready(function() {
+				$.fn.zTree.init($("#treeDemo"), setting, zNodes);
+			});
+			//-->
+		</SCRIPT>
+		<!--jstree end-->
+		<!--日期插件-->
+		<script>
+				//时间选择器
+				laydate.render({
+					elem: '#time1',
+					type: 'datetime',
+					theme: '#3ca2e0'
+						//					theme: '#393D49'  //调整色调
+				});
+				laydate.render({
+					elem: '#time2',
+					type: 'datetime',
+					theme: '#3ca2e0'
+
+				});
+				laydate.render({
+					elem: '#time3',
+					type: 'datetime',
+					theme: '#3ca2e0'
+						//					theme: '#393D49'  //调整色调
+				});
+				laydate.render({
+					elem: '#time4',
+					type: 'datetime',
+					theme: '#3ca2e0'
+				});
+				laydate.render({
+					elem: '#time5',
+					type: 'datetime',
+					theme: '#3ca2e0'
+						//					theme: '#393D49'  //调整色调
+				});
+				laydate.render({
+					elem: '#time6',
+					type: 'datetime',
+					theme: '#3ca2e0'
+				});
+				laydate.render({
+					elem: '#time7',
+					type: 'datetime',
+					theme: '#3ca2e0'
+						//					theme: '#393D49'  //调整色调
+				});
+				laydate.render({
+					elem: '#time8',
+					type: 'datetime',
+					theme: '#3ca2e0'
+				});
+				laydate.render({
+					elem: '#time9',
+					type: 'datetime',
+					theme: '#3ca2e0'
+						//					theme: '#393D49'  //调整色调
+				});
+				laydate.render({
+					elem: '#time10',
+					type: 'datetime',
+					theme: '#3ca2e0'
+				});
+				laydate.render({
+					elem: '#time11',
+					type: 'datetime',
+					theme: '#3ca2e0'
+						//					theme: '#393D49'  //调整色调
+				});
+				laydate.render({
+					elem: '#time12',
+					type: 'datetime',
+					theme: '#3ca2e0'
+				});
+		</script>
+
+		<!--单个 多个批次-->
+		<script type="text/javascript">
+			$(document).ready(function() {
+				$(".single").show();
+				$(".one-more").hide();
+				$(".sig-btn").click(function() {
+					$(".single").show();
+					$(".one-more").hide();
+				});
+				$(".mor-btn").click(function() {
+					$(".single").hide();
+					$(".one-more").show();
+				});
+			});
+		</script>
+
+		<script type="text/javascript">
+			$('.indrole').click(function() {
+				layer.open({
+					title: '发布自主预约',
+					type: 1,
+					skin: 'layui-layer-rim', //加上边框
+					area: ['auto', 'auto'], //宽高
+					content: $('.table-indcon')
+				});
+			});
+
+			$('.conrole').click(function() {
+				layer.open({
+					title: '发布集中预约',
+					type: 1,
+					skin: 'layui-layer-rim', //加上边框
+					area: ['auto', 'auto'], //宽高
+					content: $('.table-concon')
+				});
+			});
+
+			$('.phonrole').click(function() {
+				layer.open({
+					title: '发布手机考试',
+					type: 1,
+					skin: 'layui-layer-rim', //加上边框
+					area: ['auto', 'auto'], //宽高
+					content: $('.table-phoncon')
+				});
+			});
+			$('.anyrole').click(function() {
+				layer.open({
+					title: '发布随到随考',
+					type: 1,
+					skin: 'layui-layer-rim', //加上边框
+					area: ['auto', 'auto'], //宽高
+					content: $('.table-anycon')
+				});
+			});
+
+			$('.disable').click(function() {
+				layer.msg('启用成功');
+			});
+			$('.reset').click(function() {
+				layer.msg('更新成功');
+			});
+			$('.close-layer').click(function() {
+				layer.closeAll();
+			});
+			$('.del').click(function() {
+				layer.open({
+					title: '信息',
+					type: 1,
+					skin: 'layui-layer-rim', //加上边框
+					area: ['auto', 'auto'], //宽高
+					content: $('.delcon')
+				});
+			});
+
+			$('.gencon').click(function() {
+				layer.open({
+					title: '试卷二维码',
+					type: 1,
+					skin: 'layui-layer-rim', //加上边框
+					area: ['auto', 'auto'], //宽高
+					content: $('.table-gencon')
+				});
+			});
+
+		</script>
+
+	</body>
+
+</html>

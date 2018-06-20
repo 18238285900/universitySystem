@@ -1,0 +1,298 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<title>查看诊断报告</title>
+		<meta name="keywords" content="黄河水利职业技术学院智能考场管理系统">
+		<meta name="description" content="黄河水利职业技术学院智能考场管理系统">
+		<link rel="shortcut icon" href="favicon.ico">
+		<link href="../../css/bootstrap.min14ed.css?v=3.3.6" rel="stylesheet">
+		<link href="../../css/font-awesome.min93e3.css?v=4.4.0" rel="stylesheet">
+		<link href="../../css/plugins/bootstrap-table/bootstrap-table.min.css" rel="stylesheet">
+		<link href="../../css/plugins/awesome-bootstrap-checkbox/awesome-bootstrap-checkbox.css" rel="stylesheet">
+		<link href="../../css/animate.min.css" rel="stylesheet">
+		<link href="../../css/style.min862f.css?v=4.1.0" rel="stylesheet">
+		<link href="../../css/pages.css" rel="stylesheet">
+	</head>
+
+	<body class="gray-bg">
+		<div class="wrapper wrapper-content animated fadeInRight">
+			<!-- Panel Other -->
+			<div class="ibox float-e-margins">
+				<div class="ibox-title exam-ibox">
+					<h5>查看诊断报告</h5>
+					<div class="ibox-tools">
+						<a class="collapse-link">
+							<i class="fa fa-chevron-up"></i>
+						</a>
+						<a class="dropdown-toggle" data-toggle="dropdown" href="#">
+							<i class="fa fa-wrench"></i>
+						</a>
+						<a class="close-link">
+							<i class="fa fa-times"></i>
+						</a>
+					</div>
+				</div>
+				<div class="ibox-content">
+					<div class="bars bars-add mb-20">
+						<div id="toolbar">
+							<script type="text/javascript">
+	                           function b() {
+		                            parent.$("[href='teaching_report_k.html']").click();
+	                               }
+                             </script>
+							<a class="btn btn-primary" onclick="b()">知识点诊断</a>
+							
+							<script type="text/javascript">
+	                           function c() {
+		                            parent.$("[href='teaching_report_t.html']").click();
+	                               }
+                             </script>
+							<a class="btn btn-default" onclick="c()">试题诊断</a>
+							
+							<script type="text/javascript">
+								function a() {
+									parent.$("[href='teaching_course.html']").click();
+								}
+							</script>
+							<a class="btn btn-default pull-right " onclick="a()"><i class="fa fa-mail-reply mr-6"></i>返回</a>
+						</div>
+					</div>
+					<div class="instructions">
+						<blockquote class="text-warning" style="font-size:14px">
+							<strong>诊断：</strong>
+							<br>1.错误率超过30%的知识点，对于学生来讲，是难点，需要教师注意。
+							<br>2.错误率在10%以下的知识点，对学生来讲，比较容易掌握。
+							<br>3.整个错误情况如实反映了教师对课程难易程度分析。
+							<br>4.可以考虑在难点上降低难度或者调整教学方法。
+						</blockquote>
+
+						<hr>
+					</div>
+					<div class="search-topform">
+						<form class="form-inline" id="searchForm">
+							<input type="hidden" class="form-control" id="" value="" name="wuStatus" placeholder="">
+							<input type="hidden" class="form-control" id="pageNo" value="1" name="pageNo" placeholder="">
+							<input type="hidden" class="form-control" id="pageSize" value="10" name="pageSize" placeholder="">
+							<div class="form-group">
+								<label for="">选择分析条件：</label>
+								<select class="form-control choose_conditions" name="wuType">
+									<option class="chapter_opt" value="按章分析">按章分析 </option>
+									<option class="section_opt" value="按节分析">按节分析</option>
+									<option class="knowledge_opt" value="按知识点分析">按知识点分析</option>
+								</select>
+							</div>
+
+							<div class="form-group chapter">
+								<label for="">章：</label>
+								<select class="form-control" name="wuType">
+									<option value="">水面线绘制</option>
+									<option value="">静水压强分布图及压力体剖面图绘制</option>
+									<option value="">水力分析与计算基础</option>
+									<option value="">静水作用力分析与计算</option>
+								</select>
+							</div>
+
+							<div class="form-group section">
+								<label for="">节：</label>
+								<select class="form-control" name="wuType">
+									<option value="">静水水力分析与计算基础</option>
+									<option value="">运动水流分类</option>
+									<option value="">恒定总流的连续方程分析与计算</option>
+									<option value="">恒定总流的能量方程分析与计算</option>
+								</select>
+							</div>
+
+							<button class="btn btn-primary" type="submit">搜索</button>
+							<button class="btn btn-default" type="reset">清空条件</button>
+						</form>
+					</div>
+					<div class="row">
+						<div class="col-sm-12">
+							<h3 class="mb-20">详细数据</h3></div>
+						<div class="col-sm-4">
+							<div class="widget navy-bg style1">
+								<div class="row">
+									<div class="col-xs-4 text-center">
+										<!--<i class="fa fa-area-chart "></i>-->
+										<i class="fa fa-file-text-o fa-5x"></i>
+									</div>
+									<div class="col-xs-8 text-right">
+										<span> 考试出题总数 </span>
+										<h2 class="font-48">124,232</h2>
+									</div>
+								</div>
+							</div>
+						</div>
+						<div class="col-sm-4">
+							<div class="widget style1 lazur-bg">
+								<div class="row">
+									<div class="col-xs-4">
+										<i class="fa fa-bar-chart-o fa-5x"></i>
+									</div>
+									<div class="col-xs-8 text-right">
+										<span> 错题总数 </span>
+										<h2 class="font-48">1,460</h2>
+									</div>
+								</div>
+							</div>
+						</div>
+						<div class="col-sm-4">
+							<div class="widget style1 yellow-bg">
+								<div class="row">
+									<div class="col-xs-4">
+										<!--<i class="fa fa-line-chart fa-5x"></i>-->
+										<i class="fa fa-pie-chart fa-5x"></i>
+									</div>
+									<div class="col-xs-8 text-right">
+										<span> 错题率 </span>
+										<h2 class="font-48">12%</h2>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+					<hr>
+					<div class="row row-lg">
+						<div class="col-sm-12">
+							<table id="exampleTableToolbar" class="table table-striped table-bordered table-hover" data-mobile-responsive="true">
+								<thead>
+									<tr>
+										<th data-field="chapter">章节名称</th>
+										<th data-field="section">节名称</th>
+										<th data-field="test">试题数</th>
+										<th data-field="draw">出题次数</th>
+										<th data-field="wrong_time">错误次数</th>
+										<th data-field="wrong">错误率</th>
+									</tr>
+								</thead>
+								<tbody>
+									<tr>
+										<td>水面线绘制</td>
+										<td>水面线绘制</td>
+										<td>7</td>
+										<td>4228</td>
+										<td>2025</td>
+										<td>48% <span class="label label-danger">过高</span></td>
+									</tr>
+									<tr>
+										<td>水面线绘制</td>
+										<td>水面线绘制</td>
+										<td>7</td>
+										<td>4228</td>
+										<td>2025</td>
+										<td>48% <span class="label label-danger">过高</span></td>
+									</tr>
+									<tr>
+										<td>水面线绘制</td>
+										<td>水面线绘制</td>
+										<td>7</td>
+										<td>4228</td>
+										<td>2025</td>
+										<td>48% <span class="label label-danger">过高</span></td>
+									</tr>
+									<tr>
+										<td>水力分析与计算基础</td>
+										<td>第一次课</td>
+										<td>13</td>
+										<td>4194</td>
+										<td>942</td>
+										<td>22%</td>
+									</tr>
+									<tr>
+										<td>水力分析与计算基础</td>
+										<td>第一次课</td>
+										<td>21</td>
+										<td>6042</td>
+										<td>1337</td>
+										<td>22%</td>
+									</tr>
+
+								</tbody>
+							</table>
+							<!-- End Example Toolbar -->
+							<div class="fixed-table-pagination">
+								<div class="pull-left pagination-detail">
+									<span class="pagination-info">显示第 71 到第 72 条记录，总共 72 条记录</span>
+									<span class="page-list">每页显示 <span class="btn-group dropup">
+										<button type="button" class="btn btn-default  dropdown-toggle" data-toggle="dropdown" aria-expanded="false"><span class="page-size">10</span> <span class="caret"></span></button>
+									<ul class="dropdown-menu" role="menu">
+										<li class="active">
+											<a href="javascript:void(0)">10</a>
+										</li>
+										<li>
+											<a href="javascript:void(0)">25</a>
+										</li>
+										<li>
+											<a href="javascript:void(0)">50</a>
+										</li>
+										<li>
+											<a href="javascript:void(0)">100</a>
+										</li>
+									</ul>
+									</span> 条记录</span>
+								</div>
+								<div class="pull-right pagination">
+									<ul class="pagination">
+										<li class="page-first">
+											<a href="javascript:void(0)">«</a>
+										</li>
+										<li class="page-pre">
+											<a href="javascript:void(0)">‹</a>
+										</li>
+										<li class="page-number">
+											<a href="javascript:void(0)">4</a>
+										</li>
+										<li class="page-number">
+											<a href="javascript:void(0)">5</a>
+										</li>
+										<li class="page-number">
+											<a href="javascript:void(0)">6</a>
+										</li>
+										<li class="page-number">
+											<a href="javascript:void(0)">7</a>
+										</li>
+										<li class="page-number active">
+											<a href="javascript:void(0)">8</a>
+										</li>
+										<li class="page-next disabled">
+											<a href="javascript:void(0)">›</a>
+										</li>
+										<li class="page-last disabled">
+											<a href="javascript:void(0)">»</a>
+										</li>
+									</ul>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<!-- End Panel Other -->
+		</div>
+		<!--addcontent st-->
+		<!--addcontent end-->
+		<!--js st-->
+		<script src="js/jquery.min.js?v=2.1.4"></script>
+		<script src="js/bootstrap.min.js?v=3.3.6"></script>
+		<script src="js/content.min.js?v=1.0.0"></script>
+		<script src="js/plugins/bootstrap-table/bootstrap-table.min.js"></script>
+		<script src="js/plugins/bootstrap-table/bootstrap-table-mobile.min.js"></script>
+		<script src="js/plugins/bootstrap-table/locale/bootstrap-table-zh-CN.min.js"></script>
+		<script src="js/demo/bootstrap-table-demo.min.js"></script>
+		<!--筛选条件-->
+		<script>
+			$(".section").hide();
+			$('.choose_conditions').change(function() {
+				if($(this).find(':selected').val() === '按章分析') {
+					$(".section").hide();
+				} else {
+					$(".section").show();
+				}
+			});
+		</script>
+	</body>
+
+</html>

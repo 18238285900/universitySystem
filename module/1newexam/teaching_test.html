@@ -1,0 +1,314 @@
+<!DOCTYPE html>
+<html>
+	<!-- Mirrored from www.zi-han.net/theme/hplus/graph_echarts.html by HTTrack Website Copier/3.x [XR&CO'2014], Wed, 20 Jan 2016 14:18:59 GMT -->
+
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<title>试题统计</title>
+		<meta name="keywords" content="H+后台主题,后台bootstrap框架,会员中心主题,后台HTML,响应式后台">
+		<meta name="description" content="H+是一个完全响应式，基于Bootstrap3最新版本开发的扁平化主题，她采用了主流的左右两栏式布局，使用了Html5+CSS3等现代技术">
+
+		<link rel="shortcut icon" href="favicon.ico">
+		<link href="../../css/bootstrap.min14ed.css?v=3.3.6" rel="stylesheet">
+		<link href="../../css/font-awesome.min93e3.css?v=4.4.0" rel="stylesheet">
+		<link href="../../css/animate.min.css" rel="stylesheet">
+		<link href="../../css/style.min862f.css?v=4.1.0" rel="stylesheet">
+		<link href="../../css/pages.css" rel="stylesheet">
+	</head>
+
+	<body class="gray-bg">
+		<div class="wrapper wrapper-content animated fadeInRight">
+			<div class="ibox float-e-margins">
+				<div class="ibox float-e-margins">
+					<div class="ibox-title exam-ibox">
+						<h5>试题统计</h5>
+						<div class="ibox-tools">
+							<a class="collapse-link">
+								<i class="fa fa-chevron-up"></i>
+							</a>
+							<a class="dropdown-toggle" data-toggle="dropdown" href="#">
+								<i class="fa fa-wrench"></i>
+							</a>
+							<a class="close-link">
+								<i class="fa fa-times"></i>
+							</a>
+						</div>
+					</div>
+					<div class="ibox-content">
+						<div class="bars bars-add mb-20">
+							<div id="toolbar">
+								<a class="btn btn-primary">按照学院统计</a>
+								<a class="btn btn-default">按照专业统计</a>
+								<a class="btn btn-default">按照团队统计</a>
+								<a class="btn btn-default">按照课程统计</a>
+							</div>
+						</div>
+						<div class="search-topform">
+							<form class="form-inline" id="searchForm">
+								<input type="hidden" class="form-control" id="" value="" name="wuStatus" placeholder="">
+								<input type="hidden" class="form-control" id="pageNo" value="1" name="pageNo" placeholder="">
+								<input type="hidden" class="form-control" id="pageSize" value="10" name="pageSize" placeholder="">
+								<div class="form-group">
+									<label>学院：</label>
+									<select class="form-control" name="hcRoomOwner">
+										<option value="">请选择学院</option>
+										<option value="">商学院</option>
+										<option value="">管理学院</option>
+									</select>
+								</div>
+								<div class="form-group">
+									<label>搜索时间：</label>
+									<input class="form-control " id="start" placeholder="开始日期" type="datetime"> 至
+									<input class="form-control" id="end" placeholder="结束日期" type="datetime">
+								</div>
+								<button class="btn btn-primary" type="submit">搜索</button>
+								<button class="btn btn-default" type="button">清空条件</button>
+							</form>
+						</div>
+						<!--第三行-->
+						<div class="row">
+							<div class="col-sm-12">
+								<div class="ibox float-e-margins">
+									<div class="mb-20">
+										<h3 class="pull-left">题库难度分析</h3>
+										<div class="clear"></div>
+									</div>
+									<div class="data-ner-wrap">
+										<div class="col-sm-12 mt-15">
+											<div class="echarts" id="shape-five" style="height: 400px;"></div>
+										</div>
+										<div class="clearfix"></div>
+									</div>
+								</div>
+							</div>
+						</div>
+						<!--第四行-->
+						<div class="row">
+							<div class="col-sm-12">
+								<div class="ibox float-e-margins">
+									<div class="mb-20">
+										<h3 class="pull-left">错题率</h3>
+										<div class="clear"></div>
+									</div>
+									<div class="data-ner-wrap">
+										<div class="">
+											<table class="table table-hover table-bordered" data-toggle="table">
+												<thead>
+													<tr>
+														<th>课程</th>
+														<th>试题数量</th>
+														<th>占比</th>
+														<th>环比</th>
+													</tr>
+												</thead>
+												<tbody>
+													<tr>
+														<td>高等数学</td>
+														<td>45200</td>
+														<td>
+															<span class="">35% 完成</span>
+															<div class="progress">
+																<div class="progress-bar progress-bar-info" role="progressbar" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100" style="width: 35%;">
+																</div>
+															</div>
+														</td>
+
+														<td class="text-navy"> <i class="fa fa-level-up"></i> 40%</td>
+													</tr>
+													<tr>
+														<td>大学英语</td>
+														<td>12000</td>
+														<td>
+															<span class="">20% 完成</span>
+															<div class="progress">
+																<div class="progress-bar progress-bar-info" role="progressbar" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100" style="width: 20%;">
+																</div>
+															</div>
+														</td>
+
+														<td class="text-warning"> <i class="fa fa-level-down"></i> -20%</td>
+													</tr>
+													<tr>
+														<td>课程C</td>
+														<td>54000</td>
+														<td>
+															<span class="">15% 完成</span>
+															<div class="progress">
+																<div class="progress-bar progress-bar-info" role="progressbar" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100" style="width: 15%;">
+																</div>
+															</div>
+														</td>
+
+														<td class="text-navy"> <i class="fa fa-level-up"></i> 26%</td>
+													</tr>
+													<tr>
+														<td>新生团队</td>
+														<td>45200</td>
+														<td>
+															<span class="">35% 完成</span>
+															<div class="progress">
+																<div class="progress-bar progress-bar-info" role="progressbar" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100" style="width: 35%;">
+																</div>
+															</div>
+														</td>
+
+														<td class="text-navy"> <i class="fa fa-level-up"></i> 40%</td>
+													</tr>
+													<tr>
+														<td>课程E</td>
+														<td>12000</td>
+														<td>
+															<span class="">20% 完成</span>
+															<div class="progress">
+																<div class="progress-bar progress-bar-info" role="progressbar" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100" style="width: 20%;">
+																</div>
+															</div>
+														</td>
+
+														<td class="text-warning"> <i class="fa fa-level-down"></i> -20%</td>
+													</tr>
+													<tr>
+														<td>竞赛团队</td>
+														<td>54000</td>
+														<td>
+															<span class="">15% 完成</span>
+															<div class="progress">
+																<div class="progress-bar progress-bar-info" role="progressbar" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100" style="width: 15%;">
+																</div>
+															</div>
+														</td>
+
+														<td class="text-navy"> <i class="fa fa-level-up"></i> 26%</td>
+													</tr>
+												</tbody>
+											</table>
+										</div>
+										<div class="clearfix"></div>
+									</div>
+								</div>
+							</div>
+						</div>
+						<!--第五行-->
+						<div class="row">
+							<div class="col-sm-12">
+								<div class="ibox float-e-margins">
+									<div class="mb-20">
+										<h3 class="pull-left">题库出题情况分析</h3>
+										<div class="form-inline">
+											<div class="form-group pull-right">
+												<!--<label>搜索时间：</label>-->
+												<input class="form-control " id="time1" placeholder="开始日期" type="datetime"> 至
+												<input class="form-control" id="time2" placeholder="结束日期" type="datetime">
+											</div>
+											<div class="clear"></div>
+										</div>
+										<div class="clear"></div>
+									</div>
+
+									<div class="data-ner-wrap">
+										<div class="col-sm-12 mt-15">
+											<div class="echarts" id="shape-seven" style="height: 400px;"></div>
+										</div>
+										<div class="clearfix"></div>
+									</div>
+								</div>
+							</div>
+						</div>
+
+						<!--第五行-->
+						<div class="row">
+							<div class="col-sm-12">
+								<div class="ibox float-e-margins">
+									<div class="mb-20">
+										<h3 class="pull-left">详细数据</h3>
+										<div class="clear"></div>
+									</div>
+									
+									<div class="data-ner-wrap">
+										<table class="table table-hover table-bordered" data-toggle="table">
+											<thead>
+												<tr>
+													<th>课程名称</th>
+													<th>考试批次</th>
+													<th>所在考场</th>
+													<th>考试时间（分钟）</th>
+													<th>成绩</th>
+												</tr>
+											</thead>
+											<tbody>
+												<tr>
+													<td>工程力学</td>
+													<td>2017-06-23 10:40-11:10</td>
+													<td>3503</td>
+													<td>60</td>
+													<td>84.00</td>
+												</tr>
+												<tr>
+													<td>高等数学</td>
+													<td>2017-12-28 15:00-16:00</td>
+													<td>3803</td>
+													<td>60</td>
+													<td>74.00</td>
+												</tr>
+												<tr>
+													<td>计算机基础</td>
+													<td>2017-06-23 10:40-11:10</td>
+													<td>3503</td>
+													<td>60</td>
+													<td>95.00</td>
+												</tr>
+											</tbody>
+										</table>
+
+										<div class="clearfix"></div>
+									</div>
+								</div>
+							</div>
+						</div>
+
+					</div>
+				</div>
+			</div>
+		</div>
+		<script src="js/jquery.min.js?v=2.1.4"></script>
+		<script src="js/bootstrap.min.js?v=3.3.6"></script>
+		<!--<script src="js/plugins/echarts/echarts-all.js"></script>-->
+		<script src="js/demo/echarts.min.js"></script>
+		<script src="js/content.min.js?v=1.0.0"></script>
+		<script src="js/plugins/layer/layer.js" charset="utf-8"></script>
+		<script src="laydate/laydate.js" charset="utf-8"></script>
+		<script src="js/demo/echarts-new-t.js"></script>
+		<script src="layui/layui.all.js" charset="utf-8"></script>
+		<script>
+			//时间选择器
+			laydate.render({
+				elem: '#start',
+				type: 'datetime',
+				theme: '#3ca2e0'
+					//					theme: '#393D49'  //调整色调
+					//					istime:true,
+					//					istoday:false,
+					//					choose:function(datas){end.min=datas;end.start=datas}
+			});
+			laydate.render({
+				elem: '#end',
+				type: 'datetime',
+				theme: '#3ca2e0'
+			});
+
+			laydate.render({
+				elem: '#time1',
+				type: 'datetime',
+				theme: '#3ca2e0'
+			});
+
+			laydate.render({
+				elem: '#time2',
+				type: 'datetime',
+				theme: '#3ca2e0'
+			});
+		</script>
+	</body>
+
+</html>

@@ -1,0 +1,285 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<title>补考考试详情</title>
+		<meta name="keywords" content="黄河水利职业技术学院智能考场管理系统">
+		<meta name="description" content="黄河水利职业技术学院智能考场管理系统">
+		<link rel="shortcut icon" href="favicon.ico">
+		<link href="../../css/bootstrap.min14ed.css?v=3.3.6" rel="stylesheet">
+		<link href="../../css/font-awesome.min93e3.css?v=4.4.0" rel="stylesheet">
+		<link href="../../css/plugins/bootstrap-table/bootstrap-table.min.css" rel="stylesheet">
+		<link href="../../css/plugins/awesome-bootstrap-checkbox/awesome-bootstrap-checkbox.css" rel="stylesheet">
+		<link href="../../css/animate.min.css" rel="stylesheet">
+		<link href="../../css/style.min862f.css?v=4.1.0" rel="stylesheet">
+		<link href="../../css/pages.css" rel="stylesheet">
+	</head>
+
+	<body class="gray-bg">
+		<div class="wrapper wrapper-content animated fadeInRight">
+			<!-- Panel Other -->
+			<div class="ibox float-e-margins">
+				<div class="ibox-title exam-ibox">
+					<h5>补考考试详情</h5>
+					<div class="ibox-tools">
+						<a class="collapse-link">
+							<i class="fa fa-chevron-up"></i>
+						</a>
+						<a class="dropdown-toggle" data-toggle="dropdown" href="#">
+							<i class="fa fa-wrench"></i>
+						</a>
+						<a class="close-link">
+							<i class="fa fa-times"></i>
+						</a>
+					</div>
+				</div>
+				<div class="ibox-content">
+					<div class="search-topform">
+						<h3 class="mb-20">考试时间:2018-03-10 15:45:00 ——2018-03-10 16:45:00</h3>
+						<form class="form-inline" id="searchForm">
+							<input type="hidden" class="form-control" id="" value="" name="wuStatus" placeholder="">
+							<input type="hidden" class="form-control" id="pageNo" value="1" name="pageNo" placeholder="">
+							<input type="hidden" class="form-control" id="pageSize" value="10" name="pageSize" placeholder="">
+							<div class="form-group">
+								<label for="">考场名称：</label>
+								<select name="hcRoomId" class="form-control" onchange="">
+									<option value="">请选择</option>
+									<option value="">7209</option>
+									<option value="">4422B</option>
+									<option value="">4422A</option>
+									<option value="">4423</option>
+									<option value="">7202</option>
+									<option value="">4426</option>
+									<option value="">4424A</option>
+									<option value="">4424B</option>
+									<option value="">7204</option>
+									<option value="">3503</option>
+									<option value="">4421</option>
+									<option value="">3504</option>
+									<option value="">4425</option>
+								</select>
+							</div>
+							<button class="btn btn-primary" type="submit">搜索</button>
+							<button class="btn btn-default" type="reset">清空条件</button>
+						</form>
+
+					</div>
+
+					<div class="row row-lg">
+						<div class="col-sm-12">
+							<!-- Example Toolbar -->
+							<div class="bars pull-left bars-add">
+								<div id="toolbar">
+									<script type="text/javascript">
+                                                     function b(){ 
+                                                  	parent.$("[href='exam_makeup.html']").click();
+                                                     }
+			                                    </script>
+									<a class="btn btn-default" onclick="b()"><i class="fa fa-mail-reply mr-6"></i>返回</a>
+								</div>
+							</div>
+							<div class="pull-left">
+								<!--<p>考试时间:2018-03-10 15:45:00 ——2018-03-10 16:45:00</p>-->
+							</div>
+							<table id="exampleTableToolbar" class="table table-striped table-bordered table-hover" data-mobile-responsive="true">
+								<thead>
+									<tr class="table-th">
+										<th data-field="student">考生</th>
+										<th data-field="year">级别</th>
+										<th data-field="num">学号</th>
+										<th data-field="col">学院</th>
+										<th data-field="department ">系别</th>
+										<th data-field="grate">班级</th>
+										<th data-field="exam">考试名称</th>
+										<th data-field="sits">座位号</th>
+									</tr>
+								</thead>
+								<tbody>
+									<tr>
+										<td>申利浩 </td>
+										<td>2015</td>
+										<td>20151040315</td>
+										<td>水利工程学院</td>
+										<td>院系</td>
+										<td>水文地质1502</td>
+										<td>工程地质学</td>
+										<td>61</td>
+									</tr>
+
+									<tr>
+										<td>秦甲雨 </td>
+										<td>2016</td>
+										<td>20161072620</td>
+										<td>水利工程学院</td>
+										<td>院系</td>
+										<td>水利管理1611</td>
+										<td>水工混凝土结构</td>
+										<td>47</td>
+									</tr>
+
+									<tr>
+										<td>王忠康 </td>
+										<td>2016</td>
+										<td>20151072726</td>
+										<td>水利工程学院</td>
+										<td>院系</td>
+										<td>水文水资源1602</td>
+										<td>水力分析与计算</td>
+										<td>42</td>
+									</tr>
+
+									<tr>
+										<td>吴添尧 </td>
+										<td>2016</td>
+										<td>20161090530</td>
+										<td>水利工程学院</td>
+										<td>院系</td>
+										<td>水文水资源1602</td>
+										<td>水力分析与计算</td>
+										<td>8</td>
+									</tr>
+
+									<tr>
+										<td>刘森 </td>
+										<td>2016</td>
+										<td>20161072713</td>
+										<td>水利工程学院</td>
+										<td>院系</td>
+										<td>水利管理1612</td>
+										<td>水工混凝土结构</td>
+										<td>15</td>
+									</tr>
+
+									<tr>
+										<td>周毅鸣 </td>
+										<td>2016</td>
+										<td>20161230339</td>
+										<td>水利工程学院</td>
+										<td>院系</td>
+										<td>城市水利1601</td>
+										<td>水工建筑物</td>
+										<td>74</td>
+									</tr>
+
+									<tr>
+										<td>杨博通 </td>
+										<td>2016</td>
+										<td>20161071227</td>
+										<td>水利工程学院</td>
+										<td>院系</td>
+										<td>水工建筑1604</td>
+										<td>水力分析与计算</td>
+										<td>87</td>
+									</tr>
+
+									<tr>
+										<td>苗峰源 </td>
+										<td>2017</td>
+										<td>2017013721</td>
+										<td>水利工程学院</td>
+										<td>院系</td>
+										<td>水文水资源1702</td>
+										<td>水利工程测量</td>
+										<td>51</td>
+									</tr>
+
+									<tr>
+										<td>薛晓东 </td>
+										<td>2016</td>
+										<td>20161072628</td>
+										<td>水利工程学院</td>
+										<td>院系</td>
+										<td>水利管理1611</td>
+										<td>水工建筑物</td>
+										<td>36</td>
+									</tr>
+
+									<tr>
+										<td>黄义港 </td>
+										<td>2015</td>
+										<td>20151072607</td>
+										<td>水利工程学院</td>
+										<td>院系</td>
+										<td>水利施工1503</td>
+										<td>水利工程经济</td>
+										<td>35</td>
+									</tr>
+
+								</tbody>
+							</table>
+
+							<!-- End Example Toolbar -->
+							<div class="fixed-table-pagination">
+								<div class="pull-left pagination-detail">
+									<span class="pagination-info">显示第 71 到第 72 条记录，总共 72 条记录</span>
+									<span class="page-list">每页显示 <span class="btn-group dropup">
+										<button type="button" class="btn btn-default  dropdown-toggle" data-toggle="dropdown" aria-expanded="false"><span class="page-size">10</span> <span class="caret"></span></button>
+									<ul class="dropdown-menu" role="menu">
+										<li class="active">
+											<a href="javascript:void(0)">10</a>
+										</li>
+										<li>
+											<a href="javascript:void(0)">25</a>
+										</li>
+										<li>
+											<a href="javascript:void(0)">50</a>
+										</li>
+										<li>
+											<a href="javascript:void(0)">100</a>
+										</li>
+									</ul>
+									</span> 条记录</span>
+								</div>
+								<div class="pull-right pagination">
+									<ul class="pagination">
+										<li class="page-first">
+											<a href="javascript:void(0)">«</a>
+										</li>
+										<li class="page-pre">
+											<a href="javascript:void(0)">‹</a>
+										</li>
+										<li class="page-number">
+											<a href="javascript:void(0)">4</a>
+										</li>
+										<li class="page-number">
+											<a href="javascript:void(0)">5</a>
+										</li>
+										<li class="page-number">
+											<a href="javascript:void(0)">6</a>
+										</li>
+										<li class="page-number">
+											<a href="javascript:void(0)">7</a>
+										</li>
+										<li class="page-number active">
+											<a href="javascript:void(0)">8</a>
+										</li>
+										<li class="page-next disabled">
+											<a href="javascript:void(0)">›</a>
+										</li>
+										<li class="page-last disabled">
+											<a href="javascript:void(0)">»</a>
+										</li>
+									</ul>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<!-- End Panel Other -->
+		</div>
+		<!--addcontent end-->
+		<!--js st-->
+		<script src="js/jquery.min.js?v=2.1.4"></script>
+		<script src="js/bootstrap.min.js?v=3.3.6"></script>
+		<script src="js/content.min.js?v=1.0.0"></script>
+		<script src="js/plugins/bootstrap-table/bootstrap-table.min.js"></script>
+		<script src="js/plugins/bootstrap-table/bootstrap-table-mobile.min.js"></script>
+		<script src="js/plugins/bootstrap-table/locale/bootstrap-table-zh-CN.min.js"></script>
+		<script src="js/demo/bootstrap-table-demo.min.js"></script>
+		<!--select-->
+	</body>
+
+</html>

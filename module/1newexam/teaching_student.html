@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<title>考生分析</title>
+		<meta name="keywords" content="黄河水利职业技术学院智能考场管理系统">
+		<meta name="description" content="黄河水利职业技术学院智能考场管理系统">
+		<link rel="shortcut icon" href="favicon.ico">
+		<link href="../../css/bootstrap.min14ed.css?v=3.3.6" rel="stylesheet">
+		<link href="../../css/font-awesome.min93e3.css?v=4.4.0" rel="stylesheet">
+		<link href="../../css/plugins/bootstrap-table/bootstrap-table.min.css" rel="stylesheet">
+		<link href="../../css/plugins/awesome-bootstrap-checkbox/awesome-bootstrap-checkbox.css" rel="stylesheet">
+		<link href="../../css/animate.min.css" rel="stylesheet">
+		<link href="../../css/style.min862f.css?v=4.1.0" rel="stylesheet">
+		<link href="../../css/pages.css" rel="stylesheet">
+	</head>
+
+	<body class="gray-bg">
+		<div class="wrapper wrapper-content animated fadeInRight">
+			<!-- Panel Other -->
+			<div class="ibox float-e-margins">
+				<div class="ibox-title exam-ibox">
+					<h5>考生分析</h5>
+					<div class="ibox-tools">
+						<a class="collapse-link">
+							<i class="fa fa-chevron-up"></i>
+						</a>
+						<a class="dropdown-toggle" data-toggle="dropdown" href="#">
+							<i class="fa fa-wrench"></i>
+						</a>
+						<a class="close-link">
+							<i class="fa fa-times"></i>
+						</a>
+					</div>
+				</div>
+				<div class="ibox-content">
+					<div class="search-topform">
+						<form class="form-inline" id="searchForm">
+							<input type="hidden" class="form-control" id="" value="" name="wuStatus" placeholder="">
+							<input type="hidden" class="form-control" id="pageNo" value="1" name="pageNo" placeholder="">
+							<input type="hidden" class="form-control" id="pageSize" value="10" name="pageSize" placeholder="">
+							<div class="form-group">
+								<label for="">考生姓名：</label>
+								<input type="text" class="form-control" id="" name="hgName" value="" placeholder="请输入角色名称">
+							</div>
+							<div class="form-group">
+								<label for="">考号：</label>
+								<input type="text" class="form-control" id="" name="hgName" value="" placeholder="请输入角色名称">
+							</div>
+							<div class="form-group">
+								<label for="">所属学院</label>
+								<select class="form-control" name="wuType">
+									<option value="土木工程学院">土木工程学院</option>
+									<option value="计算机学院">计算机学院</option>
+									<option value="数学系">数学系</option>
+									<option value="人文哲学">人文哲学</option>
+								</select>
+							</div>
+							<div class="form-group">
+								<label for="">专业</label>
+								<select class="form-control" name="wuType">
+									<option value="数学">数学</option>
+									<option value="计算机">计算机</option>
+								</select>
+							</div>
+							<div class="form-group">
+								<label for="">所属年级</label>
+								<select class="form-control" name="wuType">
+									<option value="">全部</option>
+									<option value="院系">院系</option>
+									<option value="行政">行政</option>
+									<option value="党群">党群</option>
+									<option value="学校">学校</option>
+								</select>
+							</div>
+							<button class="btn btn-primary" type="submit">搜索</button>
+							<button class="btn btn-default" type="reset">清空条件</button>
+						</form>
+
+					</div>
+
+					<div class="row row-lg">
+						<div class="col-sm-12">
+							<!-- Example Toolbar -->
+							<!--<div class="bars pull-left bars-add">
+								<div id="toolbar">
+									<a class="btn btn-primary addrole">添加角色</a>
+								</div>
+							</div>-->
+							<table id="exampleTableToolbar" class="table table-striped table-bordered table-hover" data-mobile-responsive="true">
+								<thead>
+									<tr>
+										<th data-field="name">考生姓名</th>
+										<th data-field="sex">性别</th>
+										<th data-field="student ">学号</th>
+										<th data-field="departments">院系</th>
+										<th data-field="professional">专业</th>
+										<th data-field="grade">年级</th>
+										<th data-field="class">班级</th>
+										<th data-field="operation">操作</th>
+									</tr>
+								</thead>
+								<tbody>
+									<tr>
+										<td>王克倩</td>
+										<td>女</td>
+										<td>20151071328</td>
+										<td>水利工程学院</td>
+										<td>水工建筑</td>
+										<td>2015</td>
+										<td>水工建筑1501</td>
+										<td>
+											<script type="text/javascript">
+												function a() {
+													parent.$("[href='teaching_student_detail.html']").click();
+												}
+											</script>
+											<div class="btn-group" role="group">
+												<button type="button" class="btn btn-info " onclick="a()">详细分析 </button>
+											</div>
+										</td>
+									</tr>
+									<tr>
+										<td>陈启航</td>
+										<td>男</td>
+										<td>20161090602 	</td>
+										<td>土木与交通工程学院</td>
+										<td>道路桥梁工程技术</td>
+										<td>2016</td>
+										<td>道路桥梁1604</td>
+										<td>
+											<div class="btn-group" role="group">
+												<button type="button" class="btn btn-info " onclick="a()">详细分析 </button>
+											</div>
+										</td>
+									</tr>
+									<tr>
+										<td>张钦</td>
+										<td>男</td>
+										<td>20151030334 	</td>
+										<td>水利工程学院</td>
+										<td>水利管理</td>
+										<td>2017</td>
+										<td>水利管理1710</td>
+										<td>
+											<div class="btn-group" role="group">
+												<button type="button" class="btn btn-info " onclick="a()">详细分析 </button>
+											</div>
+										</td>
+									</tr>
+								</tbody>
+							</table>
+							<!-- End Example Toolbar -->
+							<div class="fixed-table-pagination">
+								<div class="pull-left pagination-detail">
+									<span class="pagination-info">显示第 71 到第 72 条记录，总共 72 条记录</span>
+									<span class="page-list">每页显示 <span class="btn-group dropup">
+										<button type="button" class="btn btn-default  dropdown-toggle" data-toggle="dropdown" aria-expanded="false"><span class="page-size">10</span> <span class="caret"></span></button>
+									<ul class="dropdown-menu" role="menu">
+										<li class="active">
+											<a href="javascript:void(0)">10</a>
+										</li>
+										<li>
+											<a href="javascript:void(0)">25</a>
+										</li>
+										<li>
+											<a href="javascript:void(0)">50</a>
+										</li>
+										<li>
+											<a href="javascript:void(0)">100</a>
+										</li>
+									</ul>
+									</span> 条记录</span>
+								</div>
+								<div class="pull-right pagination">
+									<ul class="pagination">
+										<li class="page-first">
+											<a href="javascript:void(0)">«</a>
+										</li>
+										<li class="page-pre">
+											<a href="javascript:void(0)">‹</a>
+										</li>
+										<li class="page-number">
+											<a href="javascript:void(0)">4</a>
+										</li>
+										<li class="page-number">
+											<a href="javascript:void(0)">5</a>
+										</li>
+										<li class="page-number">
+											<a href="javascript:void(0)">6</a>
+										</li>
+										<li class="page-number">
+											<a href="javascript:void(0)">7</a>
+										</li>
+										<li class="page-number active">
+											<a href="javascript:void(0)">8</a>
+										</li>
+										<li class="page-next disabled">
+											<a href="javascript:void(0)">›</a>
+										</li>
+										<li class="page-last disabled">
+											<a href="javascript:void(0)">»</a>
+										</li>
+									</ul>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<!-- End Panel Other -->
+		</div>
+		<!--addcontent st-->
+		<!--addcontent end-->
+		<!--js st-->
+		<script src="js/jquery.min.js?v=2.1.4"></script>
+		<script src="js/bootstrap.min.js?v=3.3.6"></script>
+		<script src="js/content.min.js?v=1.0.0"></script>
+		<script src="js/plugins/bootstrap-table/bootstrap-table.min.js"></script>
+		<script src="js/plugins/bootstrap-table/bootstrap-table-mobile.min.js"></script>
+		<script src="js/plugins/bootstrap-table/locale/bootstrap-table-zh-CN.min.js"></script>
+		<script src="js/demo/bootstrap-table-demo.min.js"></script>
+		<!--select-->
+		<script src="js/plugins/layer/layer.js"></script>
+	</body>
+
+</html>
