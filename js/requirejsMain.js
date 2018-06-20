@@ -23,6 +23,7 @@ var requireConfig = {
     'mySelect':'mySelect',
     'pace':'plugins/pace/pace.min',
     'hdb' : 'handlebars-v4.0.5',
+      'ajax' : 'ajax_amd',
   },
   shim: {
     'bootstrap': {deps: ['jquery']},
@@ -33,5 +34,6 @@ var requireConfig = {
     'hplus': {deps: ['layer']},
     'contabs': {deps: ['jquery']},
     'hdb':{ exports: ['Handlebars'] },
+      'ajax': { deps: ['jquery'] }
   }
 };
