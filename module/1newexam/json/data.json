@@ -1,0 +1,35 @@
+{
+    "total": 20,
+    "rows": [
+        {
+            "id": 1,
+            "roleName": "校管理员",
+            "roleDescription": "学校管理员",
+            "dataScope": "所有数据"
+        },
+        {
+            "id": 2,
+            "roleName": "院管理员",
+            "roleDescription": "学院管理员",
+            "dataScope": "部分数据"
+        },
+        {
+            "id": 3,
+            "roleName": "考场管理员",
+            "roleDescription": "管理考场相关功能",
+            "dataScope": "部分数据"
+        },
+        {
+            "id": 4,
+            "roleName": "校管理员1",
+            "roleDescription": "学校管理员12",
+            "dataScope": "部分数据"
+        },
+        {
+            "id": 5,
+            "roleName": "校管理员2",
+            "roleDescription": "学校管理员22",
+            "dataScope": "所有数据"
+        }
+    ]
+}

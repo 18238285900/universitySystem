@@ -20,3 +20,46 @@
 			margin-bottom: 30px;
 		}
 .loginscreen.middle-box { width: 380px;}
+.captchaDiv{
+	float: left;
+	position: relative;
+}
+.captchaInput{
+	float: left;
+	width: 120px;
+	margin-bottom: 8px;
+}
+#captcha{
+	height: 34px;
+	float: left;
+	margin-left: 20px;
+}
+.captchaIcon{
+	font-size: 25px;
+    color: #1E9FFF;
+    cursor: pointer;
+    float: left;
+	line-height: 34px;
+	margin-left: 15px;
+}
+#captchaInput-error{
+	position: absolute;
+	left: 0;
+	right: 0;
+	top: 33px;
+}
+.form-group .error{
+	margin-left: 0;
+}
+.form-group label{
+	margin-bottom: 0;
+}
+
+/* tips */
+.layui-layer-dialog{
+	background-color: rgba(0,0,0,.6);
+	color: #fff;
+	border: none;
+	text-align: center;
+}
+
