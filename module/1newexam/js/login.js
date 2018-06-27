@@ -85,5 +85,17 @@ require(['jquery', 'hdb', 'utils', 'layer', 'bootstrap', 'jquery.metisMenu', 'jq
             return false
         }
     })
+    Utils.getJson('http://39.106.139.151:8080/exam-admin/sys/user/info').then((res)=>{
+        console.log(res)
+    })
+    Utils.getJson('http://39.106.139.151:8080/exam-admin/sys/user/list?page=1&limit=2').then((res)=>{
+        console.log(res)
+    })
+    Utils.getJson('http://39.106.139.151:8080/exam-admin/sys/user/info/1').then((res)=>{
+        console.log(res)
+    })
+    Utils.getJson('http://39.106.139.151:8080/exam-admin/sys/role/list?page=1&limit=2').then((res)=>{
+        console.log(res)
+    })
 
 })

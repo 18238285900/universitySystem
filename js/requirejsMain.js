@@ -39,6 +39,7 @@ var requireConfig = {
     'hplus': { deps: ['jquery'] },
     'hplus': { deps: ['layer'] },
     'contabs': { deps: ['jquery'] },
+    'content':{deps:['jquery']},
     'hdb': { exports: ['Handlebars'] },
     'ajax': { deps: ['jquery'] },
     'validate':{ deps: ['jquery'] },

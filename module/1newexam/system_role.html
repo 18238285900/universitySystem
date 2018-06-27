@@ -14,6 +14,7 @@
 		<link href="../../css/plugins/awesome-bootstrap-checkbox/awesome-bootstrap-checkbox.css" rel="stylesheet">
 		<link href="../../css/animate.min.css" rel="stylesheet">
 		<link href="../../css/style.min862f.css?v=4.1.0" rel="stylesheet">
+		<link rel="stylesheet" href="../../js/plugins/layer/theme/default/layer.css">
 		<link href="../../css/pages.css" rel="stylesheet">
 	</head>
 
@@ -43,9 +44,9 @@
 							<input type="hidden" class="form-control" id="pageSize" value="10" name="pageSize" placeholder="">
 							<div class="form-group">
 								<label for="">角色名称</label>
-								<input type="text" class="form-control" id="" name="hgName" value="" placeholder="请输入角色名称">
+								<input type="text" class="form-control" id="serchInput" name="hgName" value="" placeholder="请输入角色名称">
 							</div>
-							<button class="btn btn-primary" type="submit">搜索</button>
+							<button class="btn btn-primary" type="submit" id="serch">搜索</button>
 							<button class="btn btn-default" type="reset">清空条件</button>
 						</form>
 
@@ -180,14 +181,14 @@
 							<label class="control-label col-sm-2"> <label for="">角色名称:</label>
 							</label>
 							<div class="col-sm-9">
-								<input name="hrRoleName" value="" class="form-control" type="text" aria-required="true">
+								<input name="hrRoleName" value="" class="form-control addroleName" type="text" aria-required="true">
 							</div>
 						</div>
 						<div class="form-group">
 							<label class="control-label col-sm-2"> <label for="">角色描述:</label>
 							</label>
 							<div class="col-sm-9">
-								<textarea name="hrRoleDescribe" cols="" rows="" class="form-control" aria-required="true"></textarea>
+								<textarea name="hrRoleDescribe" class="form-control addroleDes" aria-required="true"></textarea>
 							</div>
 						</div>
 						<div class="form-group">
@@ -201,31 +202,31 @@
 									   <div class="group">	
 										<div class="team-tit"><strong>系统设置</strong></div>
 										<div class="checkbox checkbox-info checkbox-inline">
-											<input type="checkbox" id="inlineCheckbox1" value="option1" checked="">
+											<input type="checkbox" id="inlineCheckbox1" value="1" class="addsystem">
 											<label for="inlineCheckbox1">角色权限</label>
 										</div>
 										<div class="checkbox checkbox-info checkbox-inline">
-											<input type="checkbox" id="inlineCheckbox2" value="option1">
+											<input type="checkbox" id="inlineCheckbox2" value="2" class="addsystem">
 											<label for="inlineCheckbox2">菜单管理</label>
 										</div>
 										<div class="checkbox checkbox-info checkbox-inline">
-											<input type="checkbox" id="inlineCheckbox3" value="option1">
+											<input type="checkbox" id="inlineCheckbox3" value="3" class="addsystem">
 											<label for="inlineCheckbox3">组织机构管理</label>
 										</div>
 										<div class="checkbox checkbox-info checkbox-inline">
-											<input type="checkbox" id="inlineCheckbox4" value="option1">
+											<input type="checkbox" id="inlineCheckbox4" value="4" class="addsystem">
 											<label for="inlineCheckbox4">班级管理</label>
 										</div>
 										<div class="checkbox checkbox-info checkbox-inline">
-											<input type="checkbox" id="inlineCheckbox5" value="option1">
+											<input type="checkbox" id="inlineCheckbox5" value="5" class="addsystem">
 											<label for="inlineCheckbox5">学生管理</label>
 										</div>
 										<div class="checkbox checkbox-info checkbox-inline">
-											<input type="checkbox" id="inlineCheckbox6" value="option1">
+											<input type="checkbox" id="inlineCheckbox6" value="6" class="addsystem">
 											<label for="inlineCheckbox6">教师管理</label>
 										</div>
 										<div class="checkbox checkbox-info checkbox-inline">
-											<input type="checkbox" id="inlineCheckbox6" value="option1">
+											<input type="checkbox" id="inlineCheckbox6" value="7" class="addsystem">
 											<label for="inlineCheckbox6">全局配置</label>
 										</div>
 										</div>
@@ -235,27 +236,27 @@
 									<h3 class="quanxian_title">教学团队</h3>
 									<div class="source_choose2">
 										<div class="checkbox checkbox-info checkbox-inline">
-											<input type="checkbox" id="inlineCheckbox7" value="option1" checked="">
+											<input type="checkbox" id="inlineCheckbox7" value="1" class="addtecherTeam">
 											<label for="inlineCheckbox7">课程代码管理</label>
 										</div>
 										<div class="checkbox checkbox-info checkbox-inline">
-											<input type="checkbox" id="inlineCheckbox8" value="option1">
+											<input type="checkbox" id="inlineCheckbox8" value="2" class="addtecherTeam">
 											<label for="inlineCheckbox8">学期设置</label>
 										</div>
 										<div class="checkbox checkbox-info checkbox-inline">
-											<input type="checkbox" id="inlineCheckbox9" value="option1">
+											<input type="checkbox" id="inlineCheckbox9" value="3" class="addtecherTeam">
 											<label for="inlineCheckbox9">开课管理</label>
 										</div>
 										<div class="checkbox checkbox-info checkbox-inline">
-											<input type="checkbox" id="inlineCheckbox10" value="option1">
+											<input type="checkbox" id="inlineCheckbox10" value="4" class="addtecherTeam">
 											<label for="inlineCheckbox10">课程审核</label>
 										</div>
 										<div class="checkbox checkbox-info checkbox-inline">
-											<input type="checkbox" id="inlineCheckbox11" value="option1">
+											<input type="checkbox" id="inlineCheckbox11" value="5" class="addtecherTeam">
 											<label for="inlineCheckbox11">学生选课统计</label>
 										</div>
 										<div class="checkbox checkbox-info checkbox-inline">
-											<input type="checkbox" id="inlineCheckbox12" value="option1">
+											<input type="checkbox" id="inlineCheckbox12" value="6" class="addtecherTeam">
 											<label for="inlineCheckbox12">学生选课管理</label>
 										</div>
 									</div>
@@ -264,15 +265,15 @@
 									<h3 class="quanxian_title">教学诊断</h3>
 									<div class="source_choose2">
 										<div class="checkbox checkbox-info checkbox-inline">
-											<input type="checkbox" id="inlineCheckbox13" value="option1" checked="">
+											<input type="checkbox" id="inlineCheckbox13" value="1" class="addDiagnosis">
 											<label for="inlineCheckbox13">考场管理</label>
 										</div>
 										<div class="checkbox checkbox-info checkbox-inline">
-											<input type="checkbox" id="inlineCheckbox14" value="option1">
+											<input type="checkbox" id="inlineCheckbox14" value="2" class="addDiagnosis">
 											<label for="inlineCheckbox14">考试管理</label>
 										</div>
 										<div class="checkbox checkbox-info checkbox-inline">
-											<input type="checkbox" id="inlineCheckbox15" value="option1">
+											<input type="checkbox" id="inlineCheckbox15" value="3" class="addDiagnosis">
 											<label for="inlineCheckbox15">补考管理</label>
 										</div>
 									</div>
@@ -284,7 +285,7 @@
 				<div class="height60"></div>
 			</div>
 			<div class="modal-footer text-center">
-				<button type="button" class="btn btn-primary" data-dismiss="modal">保存</button>
+				<button type="button" id="addrole" class="btn btn-primary" data-dismiss="modal">保存</button>
 				<button type="button" class="btn btn-default close-layer" data-dismiss="modal">取消</button>
 			</div>
 		</div>
@@ -298,14 +299,14 @@
 							<label class="control-label col-sm-2"> <label for="">角色名称:</label>
 							</label>
 							<div class="col-sm-9">
-								<input name="hrRoleName" value="学生" class="form-control" type="text" aria-required="true">
+								<input name="hrRoleName" value="学生" class="form-control editrolName" type="text" aria-required="true">
 							</div>
 						</div>
 						<div class="form-group">
 							<label class="control-label col-sm-2"> <label for="">角色描述:</label>
 							</label>
 							<div class="col-sm-9">
-								<textarea name="hrRoleDescribe" cols="" rows="" class="form-control" aria-required="true">学生</textarea>
+								<textarea name="hrRoleDescribe" cols="" rows="" class="form-control editDes" aria-required="true">学生</textarea>
 							</div>
 						</div>
 						<div class="form-group">
@@ -319,32 +320,32 @@
 									   <div class="group">	
 										<div class="team-tit"><strong>系统设置</strong></div>
 										<div class="checkbox checkbox-info checkbox-inline">
-											<input type="checkbox" id="inlineCheckbox1" value="option1" checked="">
+											<input type="checkbox" id="inlineCheckbox1" class="systemmanagement" value="1">
 											<label for="inlineCheckbox1">角色权限</label>
 										</div>
 										<div class="checkbox checkbox-info checkbox-inline">
-											<input type="checkbox" id="inlineCheckbox2" value="option1">
+											<input type="checkbox" id="inlineCheckbox2" class="systemmanagement" value="2">
 											<label for="inlineCheckbox2">菜单管理</label>
 										</div>
 										<div class="checkbox checkbox-info checkbox-inline">
-											<input type="checkbox" id="inlineCheckbox3" value="option1">
+											<input type="checkbox" id="inlineCheckbox3" class="systemmanagement" value="3">
 											<label for="inlineCheckbox3">组织机构管理</label>
 										</div>
 										<div class="checkbox checkbox-info checkbox-inline">
-											<input type="checkbox" id="inlineCheckbox4" value="option1">
+											<input type="checkbox" id="inlineCheckbox4" class="systemmanagement" value="4">
 											<label for="inlineCheckbox4">班级管理</label>
 										</div>
 										<div class="checkbox checkbox-info checkbox-inline">
-											<input type="checkbox" id="inlineCheckbox5" value="option1">
+											<input type="checkbox" id="inlineCheckbox5" class="systemmanagement" value="5">
 											<label for="inlineCheckbox5">学生管理</label>
 										</div>
 										<div class="checkbox checkbox-info checkbox-inline">
-											<input type="checkbox" id="inlineCheckbox6" value="option1">
+											<input type="checkbox" id="inlineCheckbox6" class="systemmanagement" value="6">
 											<label for="inlineCheckbox6">教师管理</label>
 										</div>
 										<div class="checkbox checkbox-info checkbox-inline">
-											<input type="checkbox" id="inlineCheckbox6" value="option1">
-											<label for="inlineCheckbox6">全局配置</label>
+											<input type="checkbox" id="inlineCheckbox7" class="systemmanagement" value="7">
+											<label for="inlineCheckbox7">全局配置</label>
 										</div>
 										</div>
 									</div>
@@ -353,27 +354,27 @@
 									<h3 class="quanxian_title">教学团队</h3>
 									<div class="source_choose2">
 										<div class="checkbox checkbox-info checkbox-inline">
-											<input type="checkbox" id="inlineCheckbox7" value="option1" checked="">
+											<input type="checkbox" id="inlineCheckbox7" class="teachingTeam" value="1">
 											<label for="inlineCheckbox7">课程代码管理</label>
 										</div>
 										<div class="checkbox checkbox-info checkbox-inline">
-											<input type="checkbox" id="inlineCheckbox8" value="option1">
+											<input type="checkbox" id="inlineCheckbox8" class="teachingTeam" value="2">
 											<label for="inlineCheckbox8">学期设置</label>
 										</div>
 										<div class="checkbox checkbox-info checkbox-inline">
-											<input type="checkbox" id="inlineCheckbox9" value="option1">
+											<input type="checkbox" id="inlineCheckbox9" class="teachingTeam" value="3">
 											<label for="inlineCheckbox9">开课管理</label>
 										</div>
 										<div class="checkbox checkbox-info checkbox-inline">
-											<input type="checkbox" id="inlineCheckbox10" value="option1">
+											<input type="checkbox" id="inlineCheckbox10" class="teachingTeam" value="4">
 											<label for="inlineCheckbox10">课程审核</label>
 										</div>
 										<div class="checkbox checkbox-info checkbox-inline">
-											<input type="checkbox" id="inlineCheckbox11" value="option1">
+											<input type="checkbox" id="inlineCheckbox11" class="teachingTeam" value="5">
 											<label for="inlineCheckbox11">学生选课统计</label>
 										</div>
 										<div class="checkbox checkbox-info checkbox-inline">
-											<input type="checkbox" id="inlineCheckbox12" value="option1">
+											<input type="checkbox" id="inlineCheckbox12" class="teachingTeam" value="6">
 											<label for="inlineCheckbox12">学生选课管理</label>
 										</div>
 									</div>
@@ -382,15 +383,15 @@
 									<h3 class="quanxian_title">教学诊断</h3>
 									<div class="source_choose2">
 										<div class="checkbox checkbox-info checkbox-inline">
-											<input type="checkbox" id="inlineCheckbox13" value="option1" checked="">
+											<input type="checkbox" id="inlineCheckbox13" value="1" class="teachingDiagnosis">
 											<label for="inlineCheckbox13">考场管理</label>
 										</div>
 										<div class="checkbox checkbox-info checkbox-inline">
-											<input type="checkbox" id="inlineCheckbox14" value="option1">
+											<input type="checkbox" id="inlineCheckbox14" value="2" class="teachingDiagnosis">
 											<label for="inlineCheckbox14">考试管理</label>
 										</div>
 										<div class="checkbox checkbox-info checkbox-inline">
-											<input type="checkbox" id="inlineCheckbox15" value="option1">
+											<input type="checkbox" id="inlineCheckbox15" value="3" class="teachingDiagnosis">
 											<label for="inlineCheckbox15">补考管理</label>
 										</div>
 									</div>
@@ -402,7 +403,7 @@
 				<div class="height60"></div>
 			</div>
 			<div class="modal-footer text-center">
-				<button type="button" class="btn btn-primary" data-dismiss="modal">保存</button>
+				<button type="button" id="editKeep" class="btn btn-primary" data-dismiss="modal">保存</button>
 				<button type="button" class="btn btn-default close-layer" data-dismiss="modal">取消</button>
 			</div>
 		</div>
@@ -412,23 +413,25 @@
 				<div class="del-content">是否确定删除，删除后不可恢复？</div>
 			</div>
 			<div class="modal-footer text-center">
-				<button type="button" class="btn btn-primary" data-dismiss="modal">确定</button>
+				<button type="button" class="btn btn-primary delete" data-dismiss="modal">确定</button>
 				<button type="button" class="btn btn-default close-layer" data-dismiss="modal">取消</button>
 			</div>
 		</div>
 		
 		<!--addcontent end-->
 		<!--js st-->
-		<script src="../../js/jquery.min.js?v=2.1.4"></script>
+		<!-- <script src="../../js/jquery.min.js?v=2.1.4"></script>
 		<script src="../../js/bootstrap.min.js?v=3.3.6"></script>
-		<script src="../../js/content.min.js?v=1.0.0"></script>
-		<script src="../../js/plugins/bootstrap-table/bootstrap-table.min.js"></script>
+		<script src="../../js/content.min.js?v=1.0.0"></script> -->
+		<!-- <script src="../../js/plugins/bootstrap-table/bootstrap-table.min.js"></script> -->
 		<!-- <script src="../../js/plugins/bootstrap-table/bootstrap-table-mobile.min.js"></script> -->
-		<script src="../../js/plugins/bootstrap-table/locale/bootstrap-table-zh-CN.min.js"></script>
+		<!-- <script src="../../js/plugins/bootstrap-table/locale/bootstrap-table-zh-CN.min.js"></script> -->
 		<!-- <script src="../../js/demo/bootstrap-table-demo.min.js"></script> -->
 		<!--select-->
-		<script src="../../js/plugins/layer/layer.js"></script>
-		<script src="js/system_role.js"></script>
+		<!-- <script src="../../js/plugins/layer/layer.js"></script> -->
+		<script src="../../js/requirejsMain.js"></script>
+		<script src="../../js/requirejs/requirejs.min.js" data-main="js/system_role.js"></script>
+		<!-- <script src="js/system_role.js"></script> -->
 
 	</body>
 
